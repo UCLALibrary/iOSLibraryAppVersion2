@@ -1,0 +1,6 @@
+framework module Pods_UCLA_Library {
+  umbrella header "Pods-UCLA Library-umbrella.h"
+
+  export *
+  module * { export * }
+}

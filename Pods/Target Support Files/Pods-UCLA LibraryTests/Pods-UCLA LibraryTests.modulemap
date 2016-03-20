@@ -1,0 +1,6 @@
+framework module Pods_UCLA_LibraryTests {
+  umbrella header "Pods-UCLA LibraryTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
