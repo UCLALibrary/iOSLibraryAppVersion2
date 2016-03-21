@@ -16,6 +16,7 @@
 		73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */; };
 		73771B601C9E6B1700DDF5ED /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5F1C9E6B1700DDF5ED /* Library.swift */; };
 		73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B691C9E87F000DDF5ED /* DetailViewController.swift */; };
+		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
 		EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD22D2C0361120A338CDD9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListTableViewController.swift; sourceTree = "<group>"; };
 		73771B5F1C9E6B1700DDF5ED /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
 		B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B9FD22D2C0361120A338CDD9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 				73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */,
 				73771B691C9E87F000DDF5ED /* DetailViewController.swift */,
 				73771B311C9E629F00DDF5ED /* Main.storyboard */,
+				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
 				73771B341C9E629F00DDF5ED /* Assets.xcassets */,
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73771B601C9E6B1700DDF5ED /* Library.swift in Sources */,
+				739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */,
 				73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */,
 				73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */,
 				73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */,

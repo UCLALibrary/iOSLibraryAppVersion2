@@ -64,16 +64,22 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4f-cf-0Mm" userLabel="Hours View">
+                                <rect key="frame" x="-6" y="222" width="606" height="128"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nameLabel" destination="Txe-mD-k7E" id="nAj-KA-AM1"/>
+                        <outlet property="scrollView" destination="m4f-cf-0Mm" id="kIk-Nt-hYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="-225"/>
+            <point key="canvasLocation" x="1099" y="-187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF0-gp-Siu">
