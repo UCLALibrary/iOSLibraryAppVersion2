@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var library: Library?
+    var library: Library!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +25,17 @@ class DetailViewController: UIViewController {
         }
         
         
-        var center = CGPoint(x: 0, y: 50)
-        var size = CGSize(width: 50, height: 50)
-        var ugh = dayOfWeekAndHoursBox(frame: CGRect(origin: center, size: size))
-        
-    
-
-        let count = 10
-        for i in 0..<count {
-            //sugh.center = CGPoint(x: 0 + i*50, y: 0)
-            self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:0+i*50, y:50), size: CGSize(width: 50, height: 50))))
+        self.scrollView.contentSize = CGSizeMake(1100, 100)
+        //7 days in week
+        //POPULATE the day of week and hours of the scroll
+        for i in 0..<7 {
+            
+            let day = self.library?.week[i] as dayInWeek!
+            let name = day.name
+            let open = day.open
+            let close = day.close
+            print(name)
+            self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: 100, height: 100)), dayOfweek:name ,open:open, close:close))
 
         }
 

@@ -10,29 +10,41 @@ import UIKit
 
 class dayOfWeekAndHoursBox: UIView {
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, dayOfweek:String, open:String, close:String) {
         super.init(frame: frame);
-        self.customInit("50", open: "88", close: "50");
+        self.customInit(dayOfweek, open: open, close: close);
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
-        self.customInit("50", open: "40", close: "50");
+        self.customInit("50", open: "50", close: "50");
     }
     
     func customInit(day:String, open:String, close:String) {
-//        self.layer.cornerRadius = 10;
-//        self.layer.shadowColor = UIColor(white: 0, alpha: 1).CGColor;
-//        self.layer.shadowOffset = CGSizeMake(2, 2);
-//        self.layer.shadowOpacity = 0.5;
-//        self.layer.shadowRadius = 3;
-        self.layer.backgroundColor = UIColor.blueColor().CGColor
-        var label = UILabel(frame: CGRectMake(0, 0, 50, 50))
-        label.center = CGPointMake(25, 25)
-        label.textAlignment = NSTextAlignment.Center
-        label.text = open
-        label.backgroundColor = UIColor.yellowColor()
-        self.addSubview(label)
+        self.layer.cornerRadius = 10;
+
+        self.backgroundColor = UIColor.blueColor()
+        
+        //create a LABEL for day, opening time, closing time
+        let dayOfweek = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+        let openTime = UILabel(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
+        let closeTime = UILabel(frame: CGRect(x: 0, y: 40, width: 100, height: 20))
+
+        //CENTER day of week, open time, close time
+        dayOfweek.textAlignment = NSTextAlignment.Center
+        openTime.textAlignment = NSTextAlignment.Center
+        closeTime.textAlignment = NSTextAlignment.Center
+
+        //insert text
+        dayOfweek.text = "\(day)"
+        openTime.text = "\(open)"
+        closeTime.text = "\(close)"
+        
+        dayOfweek.backgroundColor = UIColor.yellowColor()
+        
+        self.addSubview(dayOfweek)
+        self.addSubview(openTime)
+        self.addSubview(closeTime)
     
     }
     /*

@@ -21,6 +21,7 @@ struct dayInWeek {
     }
 }
 
+
 class Library: NSObject {
     var name: String!
     var id: Int!
@@ -34,9 +35,4 @@ class Library: NSObject {
         super.init()
     }
     
-//    init(name: String? = nil, id: Int? = nil) {
-//        self.name = name
-//        self.id = id
-//        super.init()
-//    }
 }
