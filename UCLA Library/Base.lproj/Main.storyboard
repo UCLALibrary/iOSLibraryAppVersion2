@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Library List Table View Controller-->
@@ -59,23 +59,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="powell.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="maX-xR-hHd">
-                                <rect key="frame" x="0.0" y="0.0" width="603" height="246"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
+                                    <constraint firstAttribute="width" constant="600" id="LI6-Gq-CAK"/>
+                                </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4f-cf-0Mm" userLabel="Hours View">
-                                <rect key="frame" x="-3" y="311" width="606" height="128"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
+                                <rect key="frame" x="0.0" y="300" width="600" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="maX-xR-hHd" firstAttribute="leading" secondItem="m4f-cf-0Mm" secondAttribute="leading" multiplier="0.5" id="aCz-tg-BhH"/>
+                            <constraint firstItem="7wP-3x-CPp" firstAttribute="top" secondItem="miE-Y2-fMC" secondAttribute="topMargin" id="KdP-kS-cYf"/>
+                            <constraint firstItem="7wP-3x-CPp" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="NVm-eX-ozU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7wP-3x-CPp" secondAttribute="trailing" constant="-20" id="O1E-qB-rzT"/>
+                            <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="P4u-kH-lhN"/>
+                            <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" id="j55-mO-Crb"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="maX-xR-hHd" id="sNz-9D-REl"/>
-                        <outlet property="scrollView" destination="m4f-cf-0Mm" id="kIk-Nt-hYq"/>
+                        <outlet property="imageView" destination="7wP-3x-CPp" id="kaq-nm-7ua"/>
+                        <outlet property="scrollView" destination="D6G-6Q-h49" id="5G0-2L-cZg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,7 +112,4 @@
             <point key="canvasLocation" x="-433" y="110"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="powell.jpg" width="640" height="425"/>
-    </resources>
 </document>

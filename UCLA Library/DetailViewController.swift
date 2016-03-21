@@ -21,20 +21,25 @@ class DetailViewController: UIViewController {
         if let library = self.library {
             if let name = library.name {
                 self.navigationItem.title = name
+                self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+                self.navigationController?.navigationBar.shadowImage = UIImage()
+                self.navigationController?.navigationBar.translucent = true
+                self.navigationController?.view.backgroundColor = UIColor.clearColor()
             }
         }
-        
+
         
         //set image of the library
         self.imageView.image = UIImage(named: "powell.jpg")
+        self.imageView.backgroundColor = UIColor.yellowColor()
         
-        
-        
-        self.scrollView.contentSize = CGSizeMake(1100, 40)
+        //1010 specifies the overall width of the scroll view (which extends beyond the screen)
+        self.scrollView.contentSize = CGSizeMake(1010, self.scrollView.frame.size.height)
+        //scrollView.contentSize = CGSizeMake(scrollView.contentSize.width,scrollView.frame.size.height);
+
         //7 days in week
-        //POPULATE the day of week and hours of the scroll
+        //POPULATE the scrollview with tiles showing the day and hours open
         for i in 0..<7 {
-            
             let day = self.library?.week[i] as dayInWeek!
             let name = day.name
             let open = day.open

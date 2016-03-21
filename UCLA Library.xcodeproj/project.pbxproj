@@ -122,14 +122,14 @@
 		73771B2C1C9E629F00DDF5ED /* UCLA Library */ = {
 			isa = PBXGroup;
 			children = (
-				739E4DDA1C9FBBF7007AAA1D /* powell.jpg */,
-				739E4DD81C9FB5B7007AAA1D /* logo.png */,
 				73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */,
 				73771B691C9E87F000DDF5ED /* DetailViewController.swift */,
-				73771B311C9E629F00DDF5ED /* Main.storyboard */,
 				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
+				739E4DDA1C9FBBF7007AAA1D /* powell.jpg */,
+				739E4DD81C9FB5B7007AAA1D /* logo.png */,
+				73771B311C9E629F00DDF5ED /* Main.storyboard */,
 				73771B341C9E629F00DDF5ED /* Assets.xcassets */,
 				73771B361C9E629F00DDF5ED /* LaunchScreen.storyboard */,
 				73771B391C9E629F00DDF5ED /* Info.plist */,
