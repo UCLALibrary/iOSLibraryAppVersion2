@@ -15,6 +15,15 @@ class LibraryListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //library logo
+        let image = UIImage(named: "logo.png")!
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
+        imageView.contentMode = .ScaleAspectFit
+        imageView.image = image
+        self.navigationItem.titleView = imageView
+        
+        //get data from Anumat's server
         self.getLibraryData()
         
 

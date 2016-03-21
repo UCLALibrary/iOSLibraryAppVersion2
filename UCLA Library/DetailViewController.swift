@@ -10,8 +10,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet var nameLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var library: Library!
     
@@ -20,12 +20,17 @@ class DetailViewController: UIViewController {
         
         if let library = self.library {
             if let name = library.name {
-                self.nameLabel.text = name
+                self.navigationItem.title = name
             }
         }
         
         
-        self.scrollView.contentSize = CGSizeMake(1100, 100)
+        //set image of the library
+        self.imageView.image = UIImage(named: "powell.jpg")
+        
+        
+        
+        self.scrollView.contentSize = CGSizeMake(1100, 40)
         //7 days in week
         //POPULATE the day of week and hours of the scroll
         for i in 0..<7 {
