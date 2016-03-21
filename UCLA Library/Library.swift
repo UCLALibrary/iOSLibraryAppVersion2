@@ -31,7 +31,15 @@ class Library: NSObject {
     init(name: String? = nil) {
         self.name = name
         self.id = nil
-        self.week = []
+        
+        //Swift doesn't support initializing an empty array of size 7 yet
+        //the reason we are doing this is because the JSON recieved is out of order from Anumat's server
+        //i.e {tuesday:"...", monday:"...", friday:"...",} etc.
+        //this way we can directly hash into the array i.e if(monday) library.week[0] = "monday's value"
+        //sorting is another option, but we would like to avoid the cpu of that
+        var temp = dayInWeek(name:"",open:"",close:"")
+        self.week = Array<dayInWeek>(count: 7, repeatedValue: temp)
+        
         super.init()
     }
     

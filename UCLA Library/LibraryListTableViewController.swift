@@ -120,6 +120,19 @@ class LibraryListTableViewController: UITableViewController {
     
     
     func getLibraryData() {
+        
+        let sortDictionary: [String:Int] = [
+            "monday" : 0,
+            "tuesday" : 1,
+            "wednesday" : 2,
+            "thursday" : 3,
+            "friday" : 4,
+            "saturday" : 5,
+            "sunday" : 6
+            
+        ]
+        
+        
         //Using Alamofire to make a getRequest
         Alamofire.request(.GET, "http://anumat.com/hours")
             .responseJSON {
@@ -132,6 +145,7 @@ class LibraryListTableViewController: UITableViewController {
                     //do not think this is superfluous, without it the app could easily crash
                     //do not think that you can just force unwrap with as!
                     if let response = JSON as? NSArray {
+                        print(response)
                         for lib in response {
                             if let curr = lib as? NSDictionary {
                                 var currentLibrary = Library()
@@ -164,7 +178,7 @@ class LibraryListTableViewController: UITableViewController {
                                                     if let close = dayOfWeek["close"] as? String {
                                                         
                                                         let day = dayInWeek(name: tempKey, open: open, close: close)
-                                                        currentLibrary.week.append(day)
+                                                        currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
                                                     
                                                     }
                                                 }
