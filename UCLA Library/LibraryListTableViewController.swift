@@ -152,6 +152,8 @@ class LibraryListTableViewController: UITableViewController {
                                 
                                 //pattern matching, like ocaml/ML
                                 for (key, value) in curr {
+                                    
+                                    //tempKey will be either be the day of the week, the ID of the library, or name of library
                                     if let tempKey = key as? String {
                                         
                                         //get the ID of the library
