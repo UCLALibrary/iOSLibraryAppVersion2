@@ -128,6 +128,7 @@ class LibraryListTableViewController: UITableViewController {
     ////////////////////////////////////////////////////////////////////////////////////
     
     
+    
     func getLibraryData() {
         
         let sortDictionary: [String:Int] = [
@@ -138,7 +139,6 @@ class LibraryListTableViewController: UITableViewController {
             "friday" : 4,
             "saturday" : 5,
             "sunday" : 6
-            
         ]
         
         
@@ -159,7 +159,7 @@ class LibraryListTableViewController: UITableViewController {
                             if let curr = lib as? NSDictionary {
                                 var currentLibrary = Library()
                                 
-                                //pattern matching, like ocaml/ML
+                                //iterating thru JSON response via pattern matching, like ocaml/ML
                                 for (key, value) in curr {
                                     
                                     //tempKey will be either be the day of the week, the ID of the library, or name of library
@@ -176,6 +176,7 @@ class LibraryListTableViewController: UITableViewController {
                                         else if tempKey == "name" {
                                             if let libraryName = value as? String {
                                                 currentLibrary.name = libraryName as String!
+                                                currentLibrary.getCoordinates()
                                             }
                                         }
                                         
@@ -188,7 +189,11 @@ class LibraryListTableViewController: UITableViewController {
                                                 if let open = dayOfWeek["open"] as? String {
                                                     if let close = dayOfWeek["close"] as? String {
                                                         
+                                                        //create a day struct storing open and close of M T W Th F S Sn
                                                         let day = dayInWeek(name: tempKey, open: open, close: close)
+                                                        
+                                                        //store that into the library's day array
+                                                        //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
                                                         currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
                                                     
                                                     }
@@ -207,7 +212,7 @@ class LibraryListTableViewController: UITableViewController {
                         }
                         
                         
-                        //refresh Table since this GET request is ASYNCHRONOUS
+                        //refresh Table in the TableView since this GET request is ASYNCHRONOUS
                         self.refreshTable()
                         
                     }
