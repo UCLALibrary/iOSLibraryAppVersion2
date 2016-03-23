@@ -26,7 +26,7 @@ class Library: NSObject {
     var name: String!
     var id: Int!
     var week:[dayInWeek]!
-    var coordinates:(Float, Float)!
+    var coordinates:(Double, Double)!
     
     
     init(name: String? = nil) {
@@ -47,7 +47,7 @@ class Library: NSObject {
     
     
     func getCoordinates() {
-        let sortDictionary: [String:(Float, Float)] = [
+        let sortDictionary: [String:(Double, Double)] = [
             "Arts Library" : (34.074079, -118.439218),
             "Biomedical Library" : (34.066639, -118.442408),
             "East Asian Library" : (34.074759, -118.441832),

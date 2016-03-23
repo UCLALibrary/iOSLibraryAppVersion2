@@ -59,10 +59,19 @@ class DetailViewController: UIViewController {
 
         //googleMaps
         
-        let camera = GMSCameraPosition.cameraWithLatitude(30.1924699,
-            longitude:-97.9016920, zoom:10)
+        
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
+            longitude:library.coordinates.1, zoom:15)
        
         let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
+        
+        let marker = GMSMarker()
+        marker.position = camera.target
+        marker.snippet = "Hello World"
+        //marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = location
+        
         
 
         self.mapView.addSubview(location)
