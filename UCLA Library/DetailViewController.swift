@@ -13,8 +13,9 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
+ 
+    @IBOutlet var mapView: UIView!
     
-    @IBOutlet var libraryMap: UIView!
     
     var library: Library!
     
@@ -59,20 +60,12 @@ class DetailViewController: UIViewController {
         //googleMaps
         
         let camera = GMSCameraPosition.cameraWithLatitude(30.1924699,
-            longitude:-97.9016920, zoom:2)
+            longitude:-97.9016920, zoom:10)
        
-        let mapView = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: 200, height: 200), camera:camera)
-//        
-//
-//        
-//        let marker = GMSMarker()
-//        marker.position = camera.target
-//        marker.snippet = "Hello World"
-//        marker.appearAnimation = kGMSMarkerAnimationPop
-//        marker.map = mapView
+        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
+        
 
-      //  libraryMap.addSubview(mapView)
-
+        self.mapView.addSubview(location)
         
 
     }
