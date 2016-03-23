@@ -63,7 +63,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
-                                    <constraint firstAttribute="width" constant="600" id="LI6-Gq-CAK"/>
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
@@ -72,6 +71,10 @@
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-T5-tqq" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="408" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -80,12 +83,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7wP-3x-CPp" secondAttribute="trailing" constant="-20" id="O1E-qB-rzT"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="P4u-kH-lhN"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" id="j55-mO-Crb"/>
+                            <constraint firstItem="kY3-T5-tqq" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="weC-NO-DzF"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="7wP-3x-CPp" id="kaq-nm-7ua"/>
+                        <outlet property="libraryMap" destination="kY3-T5-tqq" id="T2c-gy-rq2"/>
                         <outlet property="scrollView" destination="D6G-6Q-h49" id="5G0-2L-cZg"/>
                     </connections>
                 </viewController>

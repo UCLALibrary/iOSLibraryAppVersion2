@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet var libraryMap: UIView!
+    
     var library: Library!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
         
         if let library = self.library {
             if let name = library.name {
@@ -48,8 +53,28 @@ class DetailViewController: UIViewController {
             self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: 100, height: 100)), dayOfweek:name ,open:open, close:close))
 
         }
+        
+        
 
-        // Do any additional setup after loading the view.
+        //googleMaps
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(30.1924699,
+            longitude:-97.9016920, zoom:2)
+       
+        let mapView = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: 200, height: 200), camera:camera)
+//        
+//
+//        
+//        let marker = GMSMarker()
+//        marker.position = camera.target
+//        marker.snippet = "Hello World"
+//        marker.appearAnimation = kGMSMarkerAnimationPop
+//        marker.map = mapView
+
+      //  libraryMap.addSubview(mapView)
+
+        
+
     }
 
     override func didReceiveMemoryWarning() {
