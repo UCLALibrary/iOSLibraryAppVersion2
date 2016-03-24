@@ -28,6 +28,8 @@ class Library: NSObject {
     var id: Int!
     var week:[dayInWeek]!
     var coordinates:(Double, Double)!
+    var availableLaptops: Int!
+    var maximumLaptops: Int!
     
     
     init(name: String? = nil) {
@@ -78,9 +80,26 @@ class Library: NSObject {
             "Research Library" : "ResearchLibrary.png",
             "Science and Engineering Library" : "ScienceandEngineeringLibrary.png",
             "Southern Regional Library Facility" : "SouthernRegionalLibraryFacility.jpg"
-
         ]
         return mydictionary[self.name]!
+    }
+    
+    func getMaxLaptops() {
+        let mydictionary: [String:Int] = [
+            "Arts Library" : 11,
+            "Biomedical Library" : 26,
+            "East Asian Library" : 0,
+            "Law Library" : 0,
+            "Library Special Collections" : 0,
+            "Management Library" : 0,
+            "Music Library" : 11,
+            "Powell Library" : 41,
+            "Research Library" : 78,
+            "Science and Engineering Library" : 44,
+            "Southern Regional Library Facility" : 0
+        ]
+        self.maximumLaptops = mydictionary[self.name]
+
     }
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
 		73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */; };
 		73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73771B311C9E629F00DDF5ED /* Main.storyboard */; };
 		73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73771B341C9E629F00DDF5ED /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		39E15F2233010F57126F6745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		73771B2A1C9E629F00DDF5ED /* UCLA Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCLA Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73771B321C9E629F00DDF5ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
+				73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */,
 				739E4DDA1C9FBBF7007AAA1D /* powell.jpg */,
 				739E4DD81C9FB5B7007AAA1D /* logo.png */,
 				73771B311C9E629F00DDF5ED /* Main.storyboard */,
@@ -423,6 +426,7 @@
 				73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */,
 				73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */,
 				73924E791CA25C4C00E44855 /* test.m in Sources */,
+				73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

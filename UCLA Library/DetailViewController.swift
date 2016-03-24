@@ -13,10 +13,9 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
- 
     @IBOutlet var mapView: UIView!
     
-    
+    var progress: KDCircularProgress!
     var library: Library!
     
     override func viewDidLoad() {
@@ -63,8 +62,10 @@ class DetailViewController: UIViewController {
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
         
-
-        //googleMaps
+        
+/////////////////////////
+//googleMaps
+/////////////////////////
         let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
             longitude:library.coordinates.1, zoom:15)
        
@@ -75,9 +76,39 @@ class DetailViewController: UIViewController {
         marker.snippet = "Hello World"
         //marker.appearAnimation = kGMSMarkerAnimationPop
         marker.map = location
-        
-        
         self.mapView.addSubview(location)
+        
+        
+        
+/////////////////////////
+//Circular Progress Circle
+/////////////////////////
+        progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        progress.startAngle = -90
+        progress.progressThickness = 0.1
+        
+        progress.trackThickness = 0.1
+        progress.clockwise = true
+        progress.gradientRotateSpeed = 2
+        progress.roundedCorners = false
+        progress.glowMode = .Forward
+        progress.glowAmount = 0.9
+        progress.setColors(UIColor.whiteColor())
+        //progress.backgroundColor = UIColor.whiteColor()
+        //progress.setColors(UIColor.cyanColor() ,UIColor.whiteColor(), UIColor.magentaColor(), UIColor.whiteColor(), UIColor.orangeColor())
+        progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
+        if self.library.maximumLaptops != 0 {
+            print(self.library.availableLaptops)
+            print(self.library.maximumLaptops)
+            let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
+            print(percentOfLaptopsAvailable)
+            progress.angle = Int(360*percentOfLaptopsAvailable)
+        } else {
+            progress.angle = 0
+        }
+        self.imageView.addSubview(progress)
+        
+        
         
 
     }

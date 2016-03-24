@@ -176,6 +176,14 @@ class LibraryListTableViewController: UITableViewController {
                                             if let libraryName = value as? String {
                                                 currentLibrary.name = libraryName as String!
                                                 currentLibrary.getCoordinates()
+                                                currentLibrary.getMaxLaptops()
+                                            }
+                                        }
+                                            
+                                        //get the NUMBER of laptops available
+                                        else if tempKey == "laptops" {
+                                            if let nLaptops = value as? Int {
+                                                currentLibrary.availableLaptops = nLaptops as Int!
                                             }
                                         }
                                         
