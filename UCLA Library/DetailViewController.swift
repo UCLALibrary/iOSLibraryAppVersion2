@@ -34,18 +34,16 @@ class DetailViewController: UIViewController {
             }
         }
 
-        //set image of the library
-        let imagePath = self.library.getImagePath()
-        self.imageView.image = UIImage(named: "powell.jpg")
+
         self.scrollView.backgroundColor = UIColor.redColor()
 
         
         //1010 specifies the overall width of the scroll view (which extends beyond the screen)
         self.scrollView.contentSize = CGSizeMake(800, self.scrollView.frame.size.height)
+        
+        //disable vertical scrolling
         self.automaticallyAdjustsScrollViewInsets = false;
-
-        //scrollView.contentSize = CGSizeMake(scrollView.contentSize.width,scrollView.frame.size.height);
-
+        
         //7 days in week
         //POPULATE the scrollview with tiles showing the day and hours open
         for i in 0..<7 {
@@ -58,12 +56,15 @@ class DetailViewController: UIViewController {
         }
         
 
+        //set image of the library
+        let imagePath = self.library.getImagePath()
+        self.imageView.image = UIImage(named: imagePath)
+        
+        //crop image instead of scaling
+        self.imageView.clipsToBounds = true;
         
 
         //googleMaps
-        
-        
-        
         let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
             longitude:library.coordinates.1, zoom:15)
        
@@ -76,7 +77,6 @@ class DetailViewController: UIViewController {
         marker.map = location
         
         
-
         self.mapView.addSubview(location)
         
 
