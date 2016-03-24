@@ -34,13 +34,16 @@ class DetailViewController: UIViewController {
             }
         }
 
-        
         //set image of the library
+        let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: "powell.jpg")
-        self.imageView.backgroundColor = UIColor.yellowColor()
+        self.scrollView.backgroundColor = UIColor.redColor()
+
         
         //1010 specifies the overall width of the scroll view (which extends beyond the screen)
-        self.scrollView.contentSize = CGSizeMake(1010, self.scrollView.frame.size.height)
+        self.scrollView.contentSize = CGSizeMake(800, self.scrollView.frame.size.height)
+        self.automaticallyAdjustsScrollViewInsets = false;
+
         //scrollView.contentSize = CGSizeMake(scrollView.contentSize.width,scrollView.frame.size.height);
 
         //7 days in week
@@ -50,11 +53,11 @@ class DetailViewController: UIViewController {
             let name = day.name
             let open = day.open
             let close = day.close
-            print(name)
-            self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: 100, height: 100)), dayOfweek:name ,open:open, close:close))
+            self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name ,open:open, close:close))
 
         }
         
+
         
 
         //googleMaps

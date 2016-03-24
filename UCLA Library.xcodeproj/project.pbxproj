@@ -20,6 +20,20 @@
 		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
 		739E4DD91C9FB5B7007AAA1D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 739E4DD81C9FB5B7007AAA1D /* logo.png */; };
 		739E4DDB1C9FBBF7007AAA1D /* powell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 739E4DDA1C9FBBF7007AAA1D /* powell.jpg */; };
+		73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */; };
+		73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */; };
+		73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */; };
+		73DC7D951CA360D100F0CE12 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D871CA360D100F0CE12 /* Icon.png */; };
+		73DC7D961CA360D100F0CE12 /* LawLibrary.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D881CA360D100F0CE12 /* LawLibrary.jpg */; };
+		73DC7D971CA360D100F0CE12 /* ManagementLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D891CA360D100F0CE12 /* ManagementLibrary.png */; };
+		73DC7D981CA360D100F0CE12 /* MusicLibrary.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8A1CA360D100F0CE12 /* MusicLibrary.jpg */; };
+		73DC7D991CA360D100F0CE12 /* PowellLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8B1CA360D100F0CE12 /* PowellLibrary.png */; };
+		73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */; };
+		73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */; };
+		73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */; };
+		73DC7D9D1CA360D100F0CE12 /* title.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8F1CA360D100F0CE12 /* title.gif */; };
+		73DC7D9E1CA360D100F0CE12 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D901CA360D100F0CE12 /* title.jpg */; };
+		73DC7D9F1CA360D100F0CE12 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D911CA360D100F0CE12 /* title.png */; };
 		EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD22D2C0361120A338CDD9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +76,20 @@
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
 		739E4DD81C9FB5B7007AAA1D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		739E4DDA1C9FBBF7007AAA1D /* powell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = powell.jpg; sourceTree = "<group>"; };
+		73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArtsLibrary.png; sourceTree = "<group>"; };
+		73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BiomedicalLibrary.png; sourceTree = "<group>"; };
+		73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EastAsianLibrary.png; sourceTree = "<group>"; };
+		73DC7D871CA360D100F0CE12 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		73DC7D881CA360D100F0CE12 /* LawLibrary.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LawLibrary.jpg; sourceTree = "<group>"; };
+		73DC7D891CA360D100F0CE12 /* ManagementLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ManagementLibrary.png; sourceTree = "<group>"; };
+		73DC7D8A1CA360D100F0CE12 /* MusicLibrary.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MusicLibrary.jpg; sourceTree = "<group>"; };
+		73DC7D8B1CA360D100F0CE12 /* PowellLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PowellLibrary.png; sourceTree = "<group>"; };
+		73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResearchLibrary.png; sourceTree = "<group>"; };
+		73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScienceandEngineeringLibrary.png; sourceTree = "<group>"; };
+		73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SouthernRegionalLibraryFacility.jpg; sourceTree = "<group>"; };
+		73DC7D8F1CA360D100F0CE12 /* title.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = title.gif; sourceTree = "<group>"; };
+		73DC7D901CA360D100F0CE12 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
+		73DC7D911CA360D100F0CE12 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B9FD22D2C0361120A338CDD9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +153,7 @@
 		73771B2C1C9E629F00DDF5ED /* UCLA Library */ = {
 			isa = PBXGroup;
 			children = (
+				73DC7D831CA360D100F0CE12 /* Images */,
 				73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */,
 				73771B691C9E87F000DDF5ED /* DetailViewController.swift */,
 				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
@@ -158,6 +187,27 @@
 				73771B4F1C9E62A000DDF5ED /* Info.plist */,
 			);
 			path = "UCLA LibraryUITests";
+			sourceTree = "<group>";
+		};
+		73DC7D831CA360D100F0CE12 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */,
+				73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */,
+				73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */,
+				73DC7D871CA360D100F0CE12 /* Icon.png */,
+				73DC7D881CA360D100F0CE12 /* LawLibrary.jpg */,
+				73DC7D891CA360D100F0CE12 /* ManagementLibrary.png */,
+				73DC7D8A1CA360D100F0CE12 /* MusicLibrary.jpg */,
+				73DC7D8B1CA360D100F0CE12 /* PowellLibrary.png */,
+				73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */,
+				73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */,
+				73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */,
+				73DC7D8F1CA360D100F0CE12 /* title.gif */,
+				73DC7D901CA360D100F0CE12 /* title.jpg */,
+				73DC7D911CA360D100F0CE12 /* title.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		843A9A7DBDB0B4966DD599A9 /* Pods */ = {
@@ -276,11 +326,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73DC7D971CA360D100F0CE12 /* ManagementLibrary.png in Resources */,
+				73DC7D991CA360D100F0CE12 /* PowellLibrary.png in Resources */,
+				73DC7D951CA360D100F0CE12 /* Icon.png in Resources */,
+				73DC7D9F1CA360D100F0CE12 /* title.png in Resources */,
+				73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */,
 				739E4DDB1C9FBBF7007AAA1D /* powell.jpg in Resources */,
 				739E4DD91C9FB5B7007AAA1D /* logo.png in Resources */,
+				73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */,
+				73DC7D981CA360D100F0CE12 /* MusicLibrary.jpg in Resources */,
+				73DC7D9E1CA360D100F0CE12 /* title.jpg in Resources */,
 				73771B381C9E629F00DDF5ED /* LaunchScreen.storyboard in Resources */,
+				73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */,
 				73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */,
+				73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */,
 				73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */,
+				73DC7D9D1CA360D100F0CE12 /* title.gif in Resources */,
+				73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */,
+				73DC7D961CA360D100F0CE12 /* LawLibrary.jpg in Resources */,
+				73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

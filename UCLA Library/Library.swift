@@ -12,6 +12,7 @@ struct dayInWeek {
     var name: String!
     var open: String!
     var close: String!
+    var imagePath: String!
 
     
     init(name: String, open:String, close: String) {
@@ -47,7 +48,7 @@ class Library: NSObject {
     
     
     func getCoordinates() {
-        let sortDictionary: [String:(Double, Double)] = [
+        let mydictionary: [String:(Double, Double)] = [
             "Arts Library" : (34.074079, -118.439218),
             "Biomedical Library" : (34.066639, -118.442408),
             "East Asian Library" : (34.074759, -118.441832),
@@ -60,7 +61,26 @@ class Library: NSObject {
             "Science and Engineering Library" : (34.068826, -118.442706),
             "Southern Regional Library Facility" : (34.070864, -118.454188)
         ]
-        self.coordinates = sortDictionary[self.name]
+        self.coordinates = mydictionary[self.name]
+    }
+    
+    
+    func getImagePath() -> String {
+        let mydictionary: [String:String] = [
+            "Arts Library" : "ArtsLibrary.png",
+            "Biomedical Library" : "BiomedicalLibrary.png",
+            "East Asian Library" : "EastAsianLibrary.png",
+            "Law Library" : "LawLibrary.jpg",
+            "Library Special Collections" : "ManagementLibrary.jpg",
+            "Management Library" : "ManagementLibrary.png",
+            "Music Library" : "MusicLibrary.jpg",
+            "Powell Library" : "PowellLibrary.png",
+            "Research Library" : "ResearchLibrary.png",
+            "Science and Engineering Library" : "ScienceandEngineeringLibrary.png",
+            "Southern Regional Library Facility" : "SouthernRegionalLibraryFacility.jpg"
+
+        ]
+        return mydictionary[self.name]!
     }
     
 }

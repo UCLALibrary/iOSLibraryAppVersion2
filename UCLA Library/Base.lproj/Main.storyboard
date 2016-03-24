@@ -59,22 +59,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
-                                </constraints>
-                            </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
                                 <rect key="frame" x="0.0" y="310" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
-                                <rect key="frame" x="0.0" y="400" width="600" height="156"/>
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -83,23 +83,12 @@
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" constant="10" id="BPe-pO-gea"/>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="top" secondItem="miE-Y2-fMC" secondAttribute="topMargin" id="KdP-kS-cYf"/>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="NVm-eX-ozU"/>
+                            <constraint firstItem="BAz-Q5-YMC" firstAttribute="bottom" secondItem="miE-Y2-fMC" secondAttribute="bottomMargin" id="O1B-LD-shY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7wP-3x-CPp" secondAttribute="trailing" constant="-20" id="O1E-qB-rzT"/>
                             <constraint firstItem="BAz-Q5-YMC" firstAttribute="top" secondItem="D6G-6Q-h49" secondAttribute="bottom" constant="10" id="Rlj-7P-E6s"/>
-                            <constraint firstItem="BAz-Q5-YMC" firstAttribute="top" secondItem="D6G-6Q-h49" secondAttribute="bottom" id="dmj-js-kVD"/>
                             <constraint firstItem="BAz-Q5-YMC" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="iH9-PH-bkm"/>
-                            <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" id="j55-mO-Crb"/>
-                            <constraint firstItem="BAz-Q5-YMC" firstAttribute="top" secondItem="D6G-6Q-h49" secondAttribute="bottom" id="ja0-Rm-U6Y"/>
-                            <constraint firstItem="7It-E8-iSO" firstAttribute="top" secondItem="BAz-Q5-YMC" secondAttribute="bottom" id="rfu-Ef-lEG"/>
-                            <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" constant="10" id="wZ0-34-bu3"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="yam-2t-sgN"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="j55-mO-Crb"/>
-                                <exclude reference="dmj-js-kVD"/>
-                                <exclude reference="ja0-Rm-U6Y"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

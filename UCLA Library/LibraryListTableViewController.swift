@@ -154,7 +154,6 @@ class LibraryListTableViewController: UITableViewController {
                     //do not think this is superfluous, without it the app could easily crash
                     //do not think that you can just force unwrap with as!
                     if let response = JSON as? NSArray {
-                        print(response)
                         for lib in response {
                             if let curr = lib as? NSDictionary {
                                 var currentLibrary = Library()
