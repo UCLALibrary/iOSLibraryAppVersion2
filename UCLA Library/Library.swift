@@ -12,7 +12,6 @@ struct dayInWeek {
     var name: String!
     var open: String!
     var close: String!
-    var imagePath: String!
 
     
     init(name: String, open:String, close: String) {
@@ -30,6 +29,8 @@ class Library: NSObject {
     var coordinates:(Double, Double)!
     var availableLaptops: Int!
     var maximumLaptops: Int!
+    var email:String!
+    var phoneNumber:String!
     
     
     init(name: String? = nil) {
@@ -87,18 +88,40 @@ class Library: NSObject {
     func getMaxLaptops() {
         let mydictionary: [String:Int] = [
             "Arts Library" : 11,
-            "Biomedical Library" : 26,
+            "Biomedical Library" : 28,
             "East Asian Library" : 0,
             "Law Library" : 0,
             "Library Special Collections" : 0,
             "Management Library" : 0,
-            "Music Library" : 11,
-            "Powell Library" : 41,
-            "Research Library" : 78,
+            "Music Library" : 12,
+            "Powell Library" : 43,
+            "Research Library" : 89,
             "Science and Engineering Library" : 44,
             "Southern Regional Library Facility" : 0
         ]
         self.maximumLaptops = mydictionary[self.name]
+
+    }
+    
+    func getContactDetails() {
+        let mydictionary: [String:(String, String)] = [
+            "Arts Library" : ("(310) 206-5425","arts-ref@library.ucla.edu"),
+            "Biomedical Library" : ("(310) 825-4904","biomed-ref@library.ucla.edu"),
+            "East Asian Library" : ("(310) 825-4836",""),
+            "Law Library" : ("(310) 825-4743",""),
+            "Library Special Collections" : ("(310) 825-4988","spec-coll@library.ucla.edu"),
+            "Management Library" : ("(310) 825-3138",""),
+            "Music Library" : ("(310) 825-4882","music-ref@library.ucla.edu"),
+            "Powell Library" : ("(310) 825-1938","ask.powell@library.ucla.edu"),
+            "Research Library" : ("(310) 825-4732"," yrl-circ@library.ucla.edu"),
+            "Science and Engineering Library" : ("(310) 825-4951","sel-ref@library.ucla.edu"),
+            "Southern Regional Library Facility" : ("(310) 206-5425","srlf-request@library.ucla.edu")
+        ]
+        
+        self.phoneNumber = mydictionary[self.name]!.0
+        self.email = mydictionary[self.phoneNumber]!.1
+        
+        
 
     }
     

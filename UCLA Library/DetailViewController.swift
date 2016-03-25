@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
+    //@IBOutlet var contactView: UIView!
+    @IBOutlet var contactLabel: UILabel!
     
     var progress: KDCircularProgress!
     var library: Library!
@@ -63,6 +65,8 @@ class DetailViewController: UIViewController {
         self.imageView.clipsToBounds = true;
         
         
+        self.contactLabel.backgroundColor = UIColor.redColor()
+        
 /////////////////////////
 //googleMaps
 /////////////////////////
@@ -73,9 +77,10 @@ class DetailViewController: UIViewController {
         
         let marker = GMSMarker()
         marker.position = camera.target
-        marker.snippet = "Hello World"
-        //marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.snippet = self.library.name
         marker.map = location
+        
+        
         self.mapView.addSubview(location)
         
         
@@ -97,20 +102,37 @@ class DetailViewController: UIViewController {
         //progress.backgroundColor = UIColor.whiteColor()
         //progress.setColors(UIColor.cyanColor() ,UIColor.whiteColor(), UIColor.magentaColor(), UIColor.whiteColor(), UIColor.orangeColor())
         progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
-        if self.library.maximumLaptops != 0 {
-            print(self.library.availableLaptops)
-            print(self.library.maximumLaptops)
-            let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
-            print(percentOfLaptopsAvailable)
-            progress.angle = Int(360*percentOfLaptopsAvailable)
-        } else {
-            progress.angle = 0
-        }
-        self.imageView.addSubview(progress)
-        
-        
-        
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        //library has laptops for lending
+        if self.library.maximumLaptops != 0 {
+            let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
+            let angle = Int(360*percentOfLaptopsAvailable)
+            self.imageView.addSubview(progress)
+        
+            //adding uilabel
+            var nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            nLaptops.center = CGPoint(x: self.progress.center.x, y: self.progress.center.y)
+            nLaptops.text = "\(self.library.availableLaptops)"
+            nLaptops.backgroundColor = UIColor.purpleColor()
+            //nLaptops.textAlignment = UITextAlignmentLeft
+            
+            self.imageView.addSubview(nLaptops)
+            
+            progress.animateFromAngle(0, toAngle: angle, duration: 3) { completed in
+                if completed {
+                    print("animation stopped, completed")
+                } else {
+                    print("animation stopped, was interrupted")
+                }
+            }
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
