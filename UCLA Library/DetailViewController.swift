@@ -19,12 +19,23 @@ class DetailViewController: UIViewController {
     var progress: KDCircularProgress!
     var library: Library!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //make font color white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         // Do any additional setup after loading the view.
         if let library = self.library {
             if let name = library.name {
+                
+                //change the back button color
+                self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+                
+                //cange the title color
+                navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+                
                 self.navigationItem.title = name
                 self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
                 self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -155,6 +166,15 @@ class DetailViewController: UIViewController {
         }
         
         
+        
+    }
+    
+    
+    //make status bar change font color back to black
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
     }
 
