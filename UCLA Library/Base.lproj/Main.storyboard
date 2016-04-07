@@ -89,37 +89,35 @@
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BLAH BLAH BLAH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkq-f7-13W" userLabel="Contact Label">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cwm-WU-1FG" userLabel="Phone and Email View">
                                 <rect key="frame" x="0.0" y="300" width="600" height="40"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.90580944549999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="0Su-Y2-czE"/>
+                            <constraint firstItem="Cwm-WU-1FG" firstAttribute="bottom" secondItem="D6G-6Q-h49" secondAttribute="top" constant="-10" id="0wq-v2-ckp"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="2p2-y4-ccD"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leading" id="8LT-jN-oHk"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="bottom" secondItem="BAz-Q5-YMC" secondAttribute="top" constant="-10" id="9ye-2N-Br0"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="BAz-Q5-YMC" secondAttribute="leading" id="FHt-zF-qz8"/>
+                            <constraint firstItem="Cwm-WU-1FG" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="KRQ-6a-HGC"/>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="top" secondItem="miE-Y2-fMC" secondAttribute="topMargin" id="KdP-kS-cYf"/>
-                            <constraint firstItem="fkq-f7-13W" firstAttribute="bottom" secondItem="D6G-6Q-h49" secondAttribute="top" constant="-10" id="LdP-R1-q12"/>
                             <constraint firstItem="BAz-Q5-YMC" firstAttribute="bottom" secondItem="miE-Y2-fMC" secondAttribute="bottomMargin" id="O1B-LD-shY"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" constant="50" id="PKD-Oa-8lr"/>
+                            <constraint firstItem="Cwm-WU-1FG" firstAttribute="leading" secondItem="D6G-6Q-h49" secondAttribute="leading" id="Sj7-ac-zsK"/>
                             <constraint firstItem="BAz-Q5-YMC" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="iH9-PH-bkm"/>
-                            <constraint firstItem="7wP-3x-CPp" firstAttribute="bottom" secondItem="fkq-f7-13W" secondAttribute="top" id="kf3-Pf-bps"/>
+                            <constraint firstItem="7wP-3x-CPp" firstAttribute="bottom" secondItem="Cwm-WU-1FG" secondAttribute="top" id="qIN-Ix-djR"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="7wP-3x-CPp" secondAttribute="leading" id="tJY-zH-KbU"/>
-                            <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="fkq-f7-13W" secondAttribute="leading" id="ubO-bB-Nxj"/>
-                            <constraint firstItem="fkq-f7-13W" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="utk-8L-ewf"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="contactLabel" destination="fkq-f7-13W" id="fRx-E0-lMM"/>
                         <outlet property="imageView" destination="7wP-3x-CPp" id="kaq-nm-7ua"/>
                         <outlet property="mapView" destination="BAz-Q5-YMC" id="TvH-RA-oRF"/>
+                        <outlet property="phoneAndEmailView" destination="Cwm-WU-1FG" id="Ufw-vQ-mhN"/>
                         <outlet property="scrollView" destination="D6G-6Q-h49" id="5G0-2L-cZg"/>
                     </connections>
                 </viewController>
