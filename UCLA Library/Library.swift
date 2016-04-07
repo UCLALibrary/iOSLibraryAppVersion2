@@ -12,12 +12,13 @@ struct dayInWeek {
     var name: String!
     var open: String!
     var close: String!
-
+    var dayOfMonth: Int!
     
-    init(name: String, open:String, close: String) {
+    init(name: String, open:String, close: String, dayOfMonth: Int) {
         self.name = name
         self.open = open
         self.close = close
+        self.dayOfMonth = dayOfMonth
     }
 }
 
@@ -42,7 +43,7 @@ class Library: NSObject {
         //i.e {tuesday:"...", monday:"...", friday:"...",} etc.
         //this way we can directly hash into the array i.e if(monday) library.week[0] = "monday's value"
         //sorting is another option, but we would like to avoid the cpu of that
-        var temp = dayInWeek(name:"",open:"",close:"")
+        var temp = dayInWeek(name:"",open:"",close:"", dayOfMonth: 0)
         self.week = Array<dayInWeek>(count: 7, repeatedValue: temp)
         
         super.init()
@@ -94,7 +95,7 @@ class Library: NSObject {
             "Library Special Collections" : 0,
             "Management Library" : 0,
             "Music Library" : 12,
-            "Powell Library" : 43,
+            "Powell Library" : 80,
             "Research Library" : 89,
             "Science and Engineering Library" : 44,
             "Southern Regional Library Facility" : 0
@@ -118,8 +119,8 @@ class Library: NSObject {
             "Southern Regional Library Facility" : ("(310) 206-5425","srlf-request@library.ucla.edu")
         ]
         
-        self.phoneNumber = mydictionary[self.name]!.0
-        self.email = mydictionary[self.phoneNumber]!.1
+        self.phoneNumber = mydictionary[self.name]?.0
+        self.email = mydictionary[self.name]?.1
         
         
 

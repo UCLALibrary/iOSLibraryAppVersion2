@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
-    //@IBOutlet var contactView: UIView!
     @IBOutlet var contactLabel: UILabel!
     
     var progress: KDCircularProgress!
@@ -24,7 +23,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         if let library = self.library {
             if let name = library.name {
                 self.navigationItem.title = name
@@ -36,8 +34,11 @@ class DetailViewController: UIViewController {
         }
 
 
+        
+/////////////////////////
+//Days of week and corresponding hours
+/////////////////////////
         self.scrollView.backgroundColor = UIColor.redColor()
-
         
         //1010 specifies the overall width of the scroll view (which extends beyond the screen)
         self.scrollView.contentSize = CGSizeMake(800, self.scrollView.frame.size.height)
@@ -52,20 +53,40 @@ class DetailViewController: UIViewController {
             let name = day.name
             let open = day.open
             let close = day.close
-            self.scrollView.addSubview(dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name ,open:open, close:close))
+            let dayOfMonth = day.dayOfMonth
+            
+            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
+            
+            self.scrollView.addSubview(tileInScroll)
+            
 
         }
         
-
+        
+/////////////////////////
+//Image of library
+/////////////////////////
         //set image of the library
         let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: imagePath)
         
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
+
         
         
+/////////////////////////
+//Contact email and phone Number
+/////////////////////////
+        //set the contact details backgroundcolor 
         self.contactLabel.backgroundColor = UIColor.redColor()
+        
+        //if there is an email
+        if(self.library.email != "") {
+            self.contactLabel.text = "\(self.library.phoneNumber) | \(self.library.email)"
+        } else {
+            self.contactLabel.text = "\(self.library.phoneNumber)"
+        }
         
 /////////////////////////
 //googleMaps
@@ -91,7 +112,6 @@ class DetailViewController: UIViewController {
         progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
         progress.startAngle = -90
         progress.progressThickness = 0.1
-        
         progress.trackThickness = 0.1
         progress.clockwise = true
         progress.gradientRotateSpeed = 2
@@ -99,8 +119,6 @@ class DetailViewController: UIViewController {
         progress.glowMode = .Forward
         progress.glowAmount = 0.9
         progress.setColors(UIColor.whiteColor())
-        //progress.backgroundColor = UIColor.whiteColor()
-        //progress.setColors(UIColor.cyanColor() ,UIColor.whiteColor(), UIColor.magentaColor(), UIColor.whiteColor(), UIColor.orangeColor())
         progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
 
     }
@@ -116,8 +134,13 @@ class DetailViewController: UIViewController {
             //adding uilabel
             var nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             nLaptops.center = CGPoint(x: self.progress.center.x, y: self.progress.center.y)
-            nLaptops.text = "\(self.library.availableLaptops)"
-            nLaptops.backgroundColor = UIColor.purpleColor()
+            nLaptops.numberOfLines = 2
+            nLaptops.text = "\(self.library.availableLaptops) \n" + "Laptops"
+            nLaptops.textColor = UIColor.whiteColor()
+            //nLaptops.backgroundColor = UIColor.purpleColor()
+            nLaptops.textAlignment = NSTextAlignment.Center
+            
+            
             //nLaptops.textAlignment = UITextAlignmentLeft
             
             self.imageView.addSubview(nLaptops)

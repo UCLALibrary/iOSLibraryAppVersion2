@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73399A321CB4CFB000124550 /* Alamofire.framework */; };
 		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
+		73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */; };
 		73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */; };
 		73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73771B311C9E629F00DDF5ED /* Main.storyboard */; };
 		73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73771B341C9E629F00DDF5ED /* Assets.xcassets */; };
@@ -57,7 +59,9 @@
 
 /* Begin PBXFileReference section */
 		39E15F2233010F57126F6745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		73399A321CB4CFB000124550 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableCell.swift; sourceTree = "<group>"; };
 		73771B2A1C9E629F00DDF5ED /* UCLA Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCLA Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73771B321C9E629F00DDF5ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */,
 				EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +130,7 @@
 		0D87B6F3B5A5E55B25149BAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73399A321CB4CFB000124550 /* Alamofire.framework */,
 				B9FD22D2C0361120A338CDD9 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -165,6 +171,7 @@
 				739E4DDA1C9FBBF7007AAA1D /* powell.jpg */,
 				739E4DD81C9FB5B7007AAA1D /* logo.png */,
 				73771B311C9E629F00DDF5ED /* Main.storyboard */,
+				73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */,
 				73771B341C9E629F00DDF5ED /* Assets.xcassets */,
 				73771B361C9E629F00DDF5ED /* LaunchScreen.storyboard */,
 				73771B391C9E629F00DDF5ED /* Info.plist */,
@@ -426,6 +433,7 @@
 				73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */,
 				73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */,
 				73924E791CA25C4C00E44855 /* test.m in Sources */,
+				73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */,
 				73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +576,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";
@@ -583,6 +595,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";

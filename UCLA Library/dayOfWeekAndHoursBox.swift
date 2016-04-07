@@ -10,32 +10,42 @@ import UIKit
 
 class dayOfWeekAndHoursBox: UIView {
     
-    init(frame: CGRect, dayOfweek:String, open:String, close:String) {
+    init(frame: CGRect, dayOfweek:String, open:String, close:String, dayOfMonth:Int) {
         super.init(frame: frame);
-        self.customInit(dayOfweek, open: open, close: close);
+        self.customInit(dayOfweek, open: open, close: close, dayInMonth: dayOfMonth);
     }
     
+    
+    //probably not needed but Stack Overflow said it was
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
-        self.customInit("50", open: "50", close: "50");
+        self.customInit("-", open: "-", close: "-", dayInMonth: 0);
     }
     
-    func customInit(day:String, open:String, close:String) {
+    func customInit(day:String, open:String, close:String, dayInMonth:Int) {
         self.layer.cornerRadius = 10;
 
         self.backgroundColor = UIColor.blueColor()
         
         //create a LABEL for day, opening time, closing time
         let dayOfweek = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        let openTime = UILabel(frame: CGRect(x: 0, y: 20, width: 100, height: 20))
-        let closeTime = UILabel(frame: CGRect(x: 0, y: 40, width: 100, height: 20))
+        let dayOfMonth = UILabel(frame: CGRect(x: 0, y: 20, width: 100, height: 40))
+        let openTime = UILabel(frame: CGRect(x: 0, y: 60, width: 100, height: 20))
+        let closeTime = UILabel(frame: CGRect(x: 0, y: 80, width: 100, height: 20))
+        
 
         //CENTER day of week, open time, close time
+        dayOfMonth.textAlignment = NSTextAlignment.Center
         dayOfweek.textAlignment = NSTextAlignment.Center
         openTime.textAlignment = NSTextAlignment.Center
         closeTime.textAlignment = NSTextAlignment.Center
+        
+        //make day of month font size larger
+        dayOfMonth.font = dayOfMonth.font.fontWithSize(40)
+        
 
         //insert text
+        dayOfMonth.text = "\(dayInMonth)"
         dayOfweek.text = "\(day)"
         openTime.text = "\(open)"
         closeTime.text = "\(close)"
@@ -43,6 +53,7 @@ class dayOfWeekAndHoursBox: UIView {
         dayOfweek.backgroundColor = UIColor.yellowColor()
         
         self.addSubview(dayOfweek)
+        self.addSubview(dayOfMonth)
         self.addSubview(openTime)
         self.addSubview(closeTime)
     

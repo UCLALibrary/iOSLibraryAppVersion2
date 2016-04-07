@@ -16,6 +16,8 @@ class LibraryListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.blueColor()
+        
         //library logo
         let image = UIImage(named: "logo.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
@@ -55,11 +57,21 @@ class LibraryListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        // Configure the cell's look
         let library = self.libraries[indexPath.row]
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.contentView.backgroundColor = UIColor.greenColor()
+
         
+        //label the cell's details
         if let name = library.name {
             cell.textLabel?.text = name
+            if let open = library.week[0].open {
+                if let close = library.week[0].close {
+                    cell.detailTextLabel?.text = open + " - " + close
+                    //cell.OpenIndicator
+                }
+            }
         } else {
             cell.textLabel?.text = "No name"
         }
@@ -152,7 +164,7 @@ class LibraryListTableViewController: UITableViewController {
                     //if let chain is to ensure SECURE unwraping
                     //Don't believe me? look @ apple docs
                     //do not think this is superfluous, without it the app could easily crash
-                    //do not think that you can just force unwrap with as!
+                    //do not think that you can just force unwrap with 'as!'
                     if let response = JSON as? NSArray {
                         for lib in response {
                             if let curr = lib as? NSDictionary {
@@ -164,23 +176,24 @@ class LibraryListTableViewController: UITableViewController {
                                     //tempKey will be either be the day of the week, the ID of the library, or name of library
                                     if let tempKey = key as? String {
                                         
-                                        //get the ID of the library
+                                        //if the key is the ID of the library
                                         if tempKey == "id" {
                                             if let idValue = value as? String {
                                                 currentLibrary.id = Int(idValue) as Int!
                                             }
                                         }
                                             
-                                        //get the NAME of the library
+                                        //if the key is the NAME of the library
                                         else if tempKey == "name" {
                                             if let libraryName = value as? String {
                                                 currentLibrary.name = libraryName as String!
                                                 currentLibrary.getCoordinates()
                                                 currentLibrary.getMaxLaptops()
+                                                currentLibrary.getContactDetails()
                                             }
                                         }
                                             
-                                        //get the NUMBER of laptops available
+                                        //if the key is the NUMBER of laptops available
                                         else if tempKey == "laptops" {
                                             if let nLaptops = value as? Int {
                                                 currentLibrary.availableLaptops = nLaptops as Int!
@@ -189,19 +202,23 @@ class LibraryListTableViewController: UITableViewController {
                                         
                                         else {
                                             
-                                            //get the DAY of the week
+                                            //if the key is the DAY of the week
                                             if let dayOfWeek = value as? NSDictionary {
                                                 
-                                                //get the opening & closing time
+                                                //get the opening & closing times
                                                 if let open = dayOfWeek["open"] as? String {
                                                     if let close = dayOfWeek["close"] as? String {
                                                         
-                                                        //create a day struct storing open and close of M T W Th F S Sn
-                                                        let day = dayInWeek(name: tempKey, open: open, close: close)
-                                                        
-                                                        //store that into the library's day array
-                                                        //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
-                                                        currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
+                                                        //get day of month
+                                                        if let dayOfMonth = dayOfWeek["date"] as? Int {
+
+                                                            //create a day struct storing open and close of M T W Th F S Sn
+                                                            let day = dayInWeek(name: tempKey, open: open, close: close, dayOfMonth: dayOfMonth)
+                                                            
+                                                            //store that into the library's day array
+                                                            //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
+                                                            currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
+                                                        }
                                                     
                                                     }
                                                 }
