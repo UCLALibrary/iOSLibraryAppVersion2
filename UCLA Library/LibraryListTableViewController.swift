@@ -35,6 +35,10 @@ class LibraryListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.getLibraryData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -160,6 +164,7 @@ class LibraryListTableViewController: UITableViewController {
                 response in switch response.result {
                 case .Success(let JSON):
                     
+                    var localLibraries:[Library] = []
                     
                     //if let chain is to ensure SECURE unwraping
                     //Don't believe me? look @ apple docs
@@ -230,10 +235,12 @@ class LibraryListTableViewController: UITableViewController {
                                 }
                                 
                                 //append the library to currentLibrary
-                                self.libraries.append(currentLibrary)
+                                localLibraries.append(currentLibrary)
                             }
                             
                         }
+                        
+                        self.libraries = localLibraries
                         
                         
                         //refresh Table in the TableView since this GET request is ASYNCHRONOUS

@@ -14,16 +14,28 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
-    @IBOutlet var phoneAndEmailView: UIView!
     //@IBOutlet var phoneView: UIView!
     //@IBOutlet var emailView: UIView!
     var progress: KDCircularProgress!
     var library: Library!
 
+    @IBAction func callLibrary(sender: AnyObject) {
+    }
+    @IBAction func emailLibrary(sender: AnyObject) {
+    }
+   // @IBOutlet var phoneButton: UIButton!
+   // @IBOutlet var emailButton: UIButton!
 
+    @IBOutlet var phoneButton: UIButton!
+    
+    @IBOutlet var emailButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //make buttons colorful
+        self.phoneButton.backgroundColor = UIColor.greenColor()
+        self.emailButton.backgroundColor = UIColor.cyanColor()
         
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
