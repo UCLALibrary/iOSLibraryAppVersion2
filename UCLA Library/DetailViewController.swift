@@ -15,10 +15,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
     @IBOutlet var phoneAndEmailView: UIView!
-    
+    //@IBOutlet var phoneView: UIView!
+    //@IBOutlet var emailView: UIView!
     var progress: KDCircularProgress!
     var library: Library!
-    
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,30 +91,34 @@ class DetailViewController: UIViewController {
 /////////////////////////
 //Contact email and phone Number
 /////////////////////////
+        
         //set the contact details backgroundcolor 
         //self.contactLabel.backgroundColor = UIColor.redColor()
-        let phoneNumberView = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
+        //let phoneNumberView = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
         
-        phoneNumberView.backgroundColor = UIColor.yellowColor()
-        phoneNumberView.textAlignment =  NSTextAlignment.Center
-        phoneNumberView.text = self.library.phoneNumber
-        phoneNumberView.backgroundColor = UIColor.yellowColor()
-        self.phoneAndEmailView.addSubview(phoneNumberView)
+        //phoneNumberView.backgroundColor = UIColor.yellowColor()
+        //phoneNumberView.textAlignment =  NSTextAlignment.Center
+        //phoneNumberView.text = UIApplication.sharedApplication().openURL(NSURL(string:"telprompt:0123456789"))
+
+            //self.library.phoneNumber
+        //phoneNumberView.backgroundColor = UIColor.yellowColor()
+        //self.phoneAndEmailView.addSubview(phoneNumberView)
 
 //        self.phoneAndEmailView.backgroundColor = UIColor.blackColor()
         
         //if there is an email
-        if(self.library.email != "") {
-            let emailView = UILabel(frame: CGRect(origin: CGPoint(x: self.view.bounds.width/2, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
-            
-            emailView.backgroundColor = UIColor.yellowColor()
-            emailView.textAlignment =  NSTextAlignment.Center
-            emailView.text = self.library.email
-            emailView.backgroundColor = UIColor.grayColor()
-            self.phoneAndEmailView.addSubview(emailView)
-            self.phoneAndEmailView.addSubview(emailView)
-            //self.contactLabel.text = "\(self.library.phoneNumber) | \(self.library.email)"
-        }
+//        if(self.library.email != "") {
+//            let emailView = UILabel(frame: CGRect(origin: CGPoint(x: self.view.bounds.width/2, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
+//            
+//            emailView.backgroundColor = UIColor.yellowColor()
+//            emailView.textAlignment =  NSTextAlignment.Center
+//            emailView.text = self.library.email
+//            emailView.backgroundColor = UIColor.grayColor()
+//            self.phoneAndEmailView.addSubview(emailView)
+//            self.phoneAndEmailView.addSubview(emailView)
+//            //self.contactLabel.text = "\(self.library.phoneNumber) | \(self.library.email)"
+//        }
+// 
 /////////////////////////
 //googleMaps
 /////////////////////////

@@ -89,15 +89,15 @@ class Library: NSObject {
     func getMaxLaptops() {
         let mydictionary: [String:Int] = [
             "Arts Library" : 11,
-            "Biomedical Library" : 28,
+            "Biomedical Library" : 32,
             "East Asian Library" : 0,
             "Law Library" : 0,
             "Library Special Collections" : 0,
             "Management Library" : 0,
             "Music Library" : 12,
-            "Powell Library" : 80,
-            "Research Library" : 89,
-            "Science and Engineering Library" : 44,
+            "Powell Library" : 92,
+            "Research Library" : 90,
+            "Science and Engineering Library" : 45,
             "Southern Regional Library Facility" : 0
         ]
         self.maximumLaptops = mydictionary[self.name]
