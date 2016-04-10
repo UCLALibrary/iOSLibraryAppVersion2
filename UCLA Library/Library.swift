@@ -106,17 +106,17 @@ class Library: NSObject {
     
     func getContactDetails() {
         let mydictionary: [String:(String, String)] = [
-            "Arts Library" : ("(310) 206-5425","arts-ref@library.ucla.edu"),
-            "Biomedical Library" : ("(310) 825-4904","biomed-ref@library.ucla.edu"),
-            "East Asian Library" : ("(310) 825-4836",""),
-            "Law Library" : ("(310) 825-4743",""),
-            "Library Special Collections" : ("(310) 825-4988","spec-coll@library.ucla.edu"),
-            "Management Library" : ("(310) 825-3138",""),
-            "Music Library" : ("(310) 825-4882","music-ref@library.ucla.edu"),
-            "Powell Library" : ("(310) 825-1938","ask.powell@library.ucla.edu"),
-            "Research Library" : ("(310) 825-4732"," yrl-circ@library.ucla.edu"),
-            "Science and Engineering Library" : ("(310) 825-4951","sel-ref@library.ucla.edu"),
-            "Southern Regional Library Facility" : ("(310) 206-5425","srlf-request@library.ucla.edu")
+            "Arts Library" : ("3102065425","arts-ref@library.ucla.edu"),
+            "Biomedical Library" : ("3108254904","biomed-ref@library.ucla.edu"),
+            "East Asian Library" : ("3108254836",""),
+            "Law Library" : ("3108254743",""),
+            "Library Special Collections" : ("3108254988","spec-coll@library.ucla.edu"),
+            "Management Library" : ("3108253138",""),
+            "Music Library" : ("3108254882","music-ref@library.ucla.edu"),
+            "Powell Library" : ("3108251938","ask.powell@library.ucla.edu"),
+            "Research Library" : ("3108254732"," yrl-circ@library.ucla.edu"),
+            "Science and Engineering Library" : ("3108254951","sel-ref@library.ucla.edu"),
+            "Southern Regional Library Facility" : ("3102065425","srlf-request@library.ucla.edu")
         ]
         
         self.phoneNumber = mydictionary[self.name]?.0

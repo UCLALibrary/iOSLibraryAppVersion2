@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MessageUI
 import GoogleMaps
 
-class DetailViewController: UIViewController {
+
+class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
@@ -18,10 +20,26 @@ class DetailViewController: UIViewController {
     //@IBOutlet var emailView: UIView!
     var progress: KDCircularProgress!
     var library: Library!
-
-    @IBAction func callLibrary(sender: AnyObject) {
+    
+    // Delegate requirement
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
+
+    //Button to call phone
+    @IBAction func callLibrary(sender: AnyObject) {
+        callNumber(self.library.phoneNumber)
+    }
+    
+    //Button to send email
     @IBAction func emailLibrary(sender: AnyObject) {
+        // Create email message
+        var email = MFMailComposeViewController()
+        email.mailComposeDelegate = self
+        email.setToRecipients([self.library.email])
+        email.setSubject("Library Inquiry")
+        //email.setMessageBody("Some example text", isHTML: false) // or true, if you prefer
+        presentViewController(email, animated: true, completion: nil)
     }
    // @IBOutlet var phoneButton: UIButton!
    // @IBOutlet var emailButton: UIButton!
@@ -157,7 +175,7 @@ class DetailViewController: UIViewController {
         progress.progressThickness = 0.1
         progress.trackThickness = 0.1
         progress.clockwise = true
-        progress.gradientRotateSpeed = 2
+        progress.gradientRotateSpeed = 3
         progress.roundedCorners = false
         progress.glowMode = .Forward
         progress.glowAmount = 0.9
@@ -197,10 +215,11 @@ class DetailViewController: UIViewController {
             }
         }
         
-        
-        
     }
     
+/////////////////////////
+//Other housekeeping
+/////////////////////////
     
     //make status bar change font color back to black
     override func viewWillDisappear(animated: Bool) {
@@ -216,7 +235,17 @@ class DetailViewController: UIViewController {
     }
     
     
+    //call phone number
+    private func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
+    }
     
+    //send email
     
 
     /*
