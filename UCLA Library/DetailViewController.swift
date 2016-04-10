@@ -17,11 +17,12 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
-    //@IBOutlet var phoneView: UIView!
-    //@IBOutlet var emailView: UIView!
     var progress: KDCircularProgress!
     var library: Library!
-    
+    @IBOutlet var GmapView: UIView!
+    @IBOutlet var phoneButton: UIButton!
+    @IBOutlet var emailButton: UIButton!
+        
     // Delegate requirement
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -42,15 +43,15 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //email.setMessageBody("Some example text", isHTML: false) // or true, if you prefer
         presentViewController(email, animated: true, completion: nil)
     }
-   // @IBOutlet var phoneButton: UIButton!
-   // @IBOutlet var emailButton: UIButton!
 
-    @IBOutlet var phoneButton: UIButton!
-    
-    @IBOutlet var emailButton: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
+        
+        
         
         //make buttons colorful
         self.phoneButton.backgroundColor = UIColor.greenColor()
@@ -99,12 +100,13 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             let close = day.close
             let dayOfMonth = day.dayOfMonth
             
-            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:20+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
+            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
             
             self.scrollView.addSubview(tileInScroll)
-            
-
         }
+
+        //automatically scroll to the current day
+        //self.scrollView.contentOffset = CGPoint(x: 50, y: 0)
         
         
 /////////////////////////

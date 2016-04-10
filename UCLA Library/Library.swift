@@ -61,6 +61,7 @@ class Library: NSObject {
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
         let close = week[indexIntoDayArray].close
+        let open = week[indexIntoDayArray].open
         
         //if closed today, simply return closed
         if (close == "closed") {
@@ -69,17 +70,23 @@ class Library: NSObject {
         
     //algo to isolate the number from the string format that is returned from server
         //split the string into an array
-        let components = close.componentsSeparatedByString(" ")
+        let componentsOpen = open.componentsSeparatedByString(" ")
+        let componentsClose = close.componentsSeparatedByString(" ")
         
-        //first element is the closing time in HH:MM
-        var closingHour = Int(components[0].componentsSeparatedByString(":")[0])
+        //first element is the componentsClose time in HH:MM
+        var openingHour = Int(componentsOpen[0].componentsSeparatedByString(":")[0])
+        var closingHour = Int(componentsClose[0].componentsSeparatedByString(":")[0])
         
         //if its PM make sure to add 12
-        if(components[1] == "PM") {
+        if(componentsClose[1] == "PM") {
             closingHour = closingHour! + 12
         }
         
-        if(dateComponents.hour > closingHour) {
+        if(componentsOpen[1] == "PM") {
+            openingHour = openingHour! + 12
+        }
+        
+        if(dateComponents.hour > closingHour || dateComponents.hour < openingHour) {
             return "closed"
         } else if (dateComponents.hour == closingHour! - 1) {
             return "closing soon"

@@ -82,8 +82,8 @@
                                     <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
-                                <rect key="frame" x="0.0" y="460" width="600" height="140"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
+                                <rect key="frame" x="0.0" y="460" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
@@ -107,7 +107,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90580944549999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="0Su-Y2-czE"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="2p2-y4-ccD"/>
@@ -132,6 +132,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="GmapView" destination="BAz-Q5-YMC" id="ete-LW-pM2"/>
                         <outlet property="emailButton" destination="5fC-Jq-RZz" id="Pre-de-8Bp"/>
                         <outlet property="imageView" destination="7wP-3x-CPp" id="kaq-nm-7ua"/>
                         <outlet property="mapView" destination="BAz-Q5-YMC" id="TvH-RA-oRF"/>
