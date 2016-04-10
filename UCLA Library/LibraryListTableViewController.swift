@@ -28,6 +28,8 @@ class LibraryListTableViewController: UITableViewController {
         //get data from Anumat's server
         self.getLibraryData()
         
+        //get date
+        self.openClosingOrSoon()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,18 +69,10 @@ class LibraryListTableViewController: UITableViewController {
         cell.contentView.backgroundColor = UIColor.greenColor()
 
         
-        //label the cell's details
-        if let name = library.name {
-            cell.textLabel?.text = name
-            if let open = library.week[0].open {
-                if let close = library.week[0].close {
-                    cell.detailTextLabel?.text = open + " - " + close
-                    //cell.OpenIndicator
-                }
-            }
-        } else {
-            cell.textLabel?.text = "No name"
-        }
+        //label the library's name, open to closing time
+        cell.textLabel?.text = library.name
+        let hours = library.getHoursToday()
+        cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
 
         return cell
     }
@@ -255,7 +249,6 @@ class LibraryListTableViewController: UITableViewController {
         
     }
     
-    
     //function to refresh Table since the GET request used is ASYNCHRONOUS
     func refreshTable()
     {
@@ -264,6 +257,34 @@ class LibraryListTableViewController: UITableViewController {
             return
         })
     }
+    
+    
+//////////////////////////////////////
+//
+//////////////////////////////////////
+    
+    enum LibraryState {
+        case ClosingSoon
+        case Open
+        case Close
+    }
+    
+    //library:Library
+    func openClosingOrSoon() -> LibraryState {
+        var state = LibraryState.Open
+
+        
+        let calendar = NSCalendar.currentCalendar()
+        
+        //print("the day is \(day), the month is \(month)")
+        let currentDate = NSDate()
+        let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: currentDate)
+        
+        print("day = \(dateComponents.day)", "month = \(dateComponents.month)", "year = \(dateComponents.year)", "week of year = \(dateComponents.weekOfYear)", "hour = \(dateComponents.hour)", "minute = \(dateComponents.minute)", "second = \(dateComponents.second)", "nanosecond = \(dateComponents.nanosecond)" , separator: ", ", terminator: "")
+        
+        return state
+    }
+    
     
 
 }

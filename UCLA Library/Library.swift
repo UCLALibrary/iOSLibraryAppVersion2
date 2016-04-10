@@ -49,6 +49,17 @@ class Library: NSObject {
         super.init()
     }
     
+    func getHoursToday() -> (String, String) {
+        let calendar = NSCalendar.currentCalendar()
+        let currentDate = NSDate()
+        let dateComponents = calendar.components([NSCalendarUnit.Day], fromDate: currentDate)
+        
+        //access day in week array
+        let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
+        let open = week[indexIntoDayArray].open
+        let close = week[indexIntoDayArray].close
+        return (open, close)
+    }
     
     
     func getCoordinates() {
@@ -122,8 +133,6 @@ class Library: NSObject {
         self.phoneNumber = mydictionary[self.name]?.0
         self.email = mydictionary[self.name]?.1
         
-        
-
     }
     
 }
