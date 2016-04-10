@@ -92,16 +92,16 @@
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button">
-                                <rect key="frame" x="305" y="300" width="305" height="40"/>
-                                <state key="normal" title="Email Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button">
+                                <rect key="frame" x="391" y="304" width="97" height="32"/>
+                                <state key="normal" image="Mail"/>
                                 <connections>
                                     <action selector="emailLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="kgP-Pc-Igp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button">
                                 <rect key="frame" x="0.0" y="300" width="305" height="40"/>
-                                <state key="normal" title="Phone Button"/>
+                                <state key="normal" image="Phone"/>
                                 <connections>
                                     <action selector="callLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="j2g-LN-r81"/>
                                 </connections>
@@ -162,5 +162,9 @@
             <point key="canvasLocation" x="-433" y="110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Mail" width="32" height="32"/>
+        <image name="Phone" width="32" height="32"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

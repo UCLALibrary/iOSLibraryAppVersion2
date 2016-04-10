@@ -70,7 +70,8 @@ class LibraryListTableViewController: UITableViewController {
 
         
         //label the library's name, open to closing time
-        cell.textLabel?.text = library.name
+        cell.textLabel?.text = library.getName()
+        
         let hours = library.getHoursToday()
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
         

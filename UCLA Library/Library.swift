@@ -50,6 +50,7 @@ class Library: NSObject {
     }
     
     
+    
     //return the state of the phone: open, closed, or about to close in string form.
     //future developers: maybe use enums instead?
     func getState() -> String {
@@ -66,7 +67,7 @@ class Library: NSObject {
             return "closed"
         }
         
-        //algo to isolate the number from the string format that is returned from server
+    //algo to isolate the number from the string format that is returned from server
         //split the string into an array
         let components = close.componentsSeparatedByString(" ")
         
@@ -95,12 +96,32 @@ class Library: NSObject {
         let calendar = NSCalendar.currentCalendar()
         let currentDate = NSDate()
         let dateComponents = calendar.components([NSCalendarUnit.Day], fromDate: currentDate)
+        print("current day \(dateComponents.day)")
+        print("first day of week \(week[0].dayOfMonth)")
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
         let open = week[indexIntoDayArray].open
         let close = week[indexIntoDayArray].close
         return (open, close)
+    }
+    
+    
+    func getName() -> String {
+        let mydictionary: [String:String] = [
+            "Arts Library" : "Arts",
+            "Biomedical Library" : "Biomedical",
+            "East Asian Library" : "East Asian",
+            "Law Library" : "Law",
+            "Library Special Collections" : "Special Collections",
+            "Management Library" : "Management",
+            "Music Library" : "Music",
+            "Powell Library" : "Powell",
+            "Research Library" : "YRL",
+            "Science and Engineering Library" : "Science & Engineering",
+            "Southern Regional Library Facility" : "Southern Regional"
+        ]
+        return mydictionary[self.name]!
     }
     
     
