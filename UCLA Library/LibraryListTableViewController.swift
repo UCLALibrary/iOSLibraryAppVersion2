@@ -73,6 +73,10 @@ class LibraryListTableViewController: UITableViewController {
         cell.textLabel?.text = library.name
         let hours = library.getHoursToday()
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
+        
+        if(library.getState() == "closed") {
+            cell.backgroundColor = UIColor.yellowColor()
+        }
 
         return cell
     }
@@ -136,8 +140,6 @@ class LibraryListTableViewController: UITableViewController {
     ////////////////////////////////////////////////////////////////////////////////////
     //Regan's Functions
     ////////////////////////////////////////////////////////////////////////////////////
-    
-    
     
     func getLibraryData() {
         

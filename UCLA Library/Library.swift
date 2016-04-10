@@ -49,6 +49,48 @@ class Library: NSObject {
         super.init()
     }
     
+    
+    //return the state of the phone: open, closed, or about to close in string form.
+    //future developers: maybe use enums instead?
+    func getState() -> String {
+        let calendar = NSCalendar.currentCalendar()
+        let currentDate = NSDate()
+        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Day], fromDate: currentDate)
+        
+        //access day in week array
+        let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
+        let close = week[indexIntoDayArray].close
+        
+        //if closed today, simply return closed
+        if (close == "closed") {
+            return "closed"
+        }
+        
+        //algo to isolate the number from the string format that is returned from server
+        //split the string into an array
+        let components = close.componentsSeparatedByString(" ")
+        
+        //first element is the closing time in HH:MM
+        var closingHour = Int(components[0].componentsSeparatedByString(":")[0])
+        
+        //if its PM make sure to add 12
+        if(components[1] == "PM") {
+            closingHour = closingHour! + 12
+        }
+        
+        if(dateComponents.hour > closingHour) {
+            return "closed"
+        } else if (dateComponents.hour == closingHour! - 1) {
+            return "closing soon"
+        } else {
+            return "open"
+        }
+        
+        
+    }
+    
+    
+    //return a tuple where first is open time, second is closing time
     func getHoursToday() -> (String, String) {
         let calendar = NSCalendar.currentCalendar()
         let currentDate = NSDate()
