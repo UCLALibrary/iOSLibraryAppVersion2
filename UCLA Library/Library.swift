@@ -108,8 +108,8 @@ class Library: NSObject {
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
-        let open = week[indexIntoDayArray].open
-        let close = week[indexIntoDayArray].close
+        let open = indexIntoDayArray < 0 ? week[0].open : week[indexIntoDayArray].open
+        let close = indexIntoDayArray < 0 ? week[0].close : week[indexIntoDayArray].close
         return (open, close)
     }
     
