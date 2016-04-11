@@ -15,8 +15,10 @@ class LibraryListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        self.view.backgroundColor = UIColor.blueColor()
+        
+       // self.navigationController!.navigationBar.translucent = false;
         
         //library logo
         let image = UIImage(named: "logo.png")!
@@ -26,10 +28,10 @@ class LibraryListTableViewController: UITableViewController {
         self.navigationItem.titleView = imageView
         
         //get data from Anumat's server
-        self.getLibraryData()
+        //self.getLibraryData()
         
         //get date
-        self.openClosingOrSoon()
+        //self.openClosingOrSoon()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,6 +42,11 @@ class LibraryListTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         self.getLibraryData()
+        self.openClosingOrSoon()
+        navigationController!.navigationBar.barTintColor = UIColor.init(red: 10, green: 63, blue: 93, alpha: 1)
+        UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,22 +73,42 @@ class LibraryListTableViewController: UITableViewController {
         // Configure the cell's look
         let library = self.libraries[indexPath.row]
         cell.backgroundColor = UIColor.whiteColor()
-        cell.contentView.backgroundColor = UIColor.greenColor()
+        cell.contentView.backgroundColor = UIColor.whiteColor()
 
         
         //label the library's name, open to closing time
         cell.textLabel?.text = library.getName()
-        var ugh = UIView(frame:CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY, width: 50, height: cell.frame.height))
-        ugh.backgroundColor = UIColor.purpleColor()
+        var stateIcon = UIView(frame:CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY, width: 30, height:30))
         
-        cell.addSubview(ugh)
+        let state = library.getState()
+        
+        
+        //let imagePath = self.library.getImagePath()
+        //self.imageView.image = UIImage(named: imagePath)
+        let libState = library.getState()
+        print("\(library.name) has state \(libState)")
+        if(libState == "open") {
+            var icon = UIImageView(image: UIImage(named: "open.png"))
+            icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
+            cell.addSubview(icon)
+           // icon.image =
+        } else if(libState == "closing soon") {
+            var icon = UIImageView(image: UIImage(named: "soon.png"))
+            icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
+            cell.addSubview(icon)
+        } else if(libState == "closed") {
+            var icon = UIImageView(image: UIImage(named: "close.png"))
+            icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
+            cell.addSubview(icon)
+        }
+        
+        //cell.addSubview(stateIcon)
+        
         
         let hours = library.getHoursToday()
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
         
-        if(library.getState() == "closed") {
-            cell.backgroundColor = UIColor.yellowColor()
-        }
+
 
         return cell
     }

@@ -15,6 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.90580944549999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="fQy-ob-46J" detailTextLabel="uH5-dT-Gmy" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="SwV-5V-w0c" customClass="LibraryTableCell" customModule="UCLA_Library" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>

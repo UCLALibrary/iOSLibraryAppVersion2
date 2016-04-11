@@ -10,5 +10,4 @@ import Foundation
 
 class LibraryTableCell: UITableViewCell {
     
-    @IBOutlet var OpenIndicator: UILabel!
 }
