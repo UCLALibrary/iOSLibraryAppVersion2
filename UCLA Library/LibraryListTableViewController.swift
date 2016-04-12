@@ -15,13 +15,15 @@ class LibraryListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        //make font color white
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
 
         
-        
-       // self.navigationController!.navigationBar.translucent = false;
-        
         //library logo
-        let image = UIImage(named: "logo.png")!
+        let image = UIImage(named: "title.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
         imageView.contentMode = .ScaleAspectFit
         imageView.image = image
@@ -31,14 +33,6 @@ class LibraryListTableViewController: UITableViewController {
         self.navigationController!.navigationBar.barTintColor = fancySwiftColor
         self.navigationController!.navigationBar.translucent = false
 
-        //UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {

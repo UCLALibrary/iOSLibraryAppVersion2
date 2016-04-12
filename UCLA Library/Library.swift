@@ -124,7 +124,7 @@ class Library: NSObject {
             "Management Library" : "Management",
             "Music Library" : "Music",
             "Powell Library" : "Powell",
-            "Research Library" : "YRL",
+            "Research Library" : "Young Research",
             "Science and Engineering Library" : "Science & Engineering",
             "Southern Regional Library Facility" : "Southern Regional"
         ]

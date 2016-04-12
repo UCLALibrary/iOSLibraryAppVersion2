@@ -67,7 +67,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
                 //change the back button color
                 self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
                 
-                //cange the title color
+                //change the title color
                 navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
                 
                 self.navigationItem.title = name
@@ -225,13 +225,12 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 //Other housekeeping
 /////////////////////////
     
-    //make status bar change font color back to black
+    //make status bar change font color back to white
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         self.navigationController?.navigationBar.translucent = false
 
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
     }
 
