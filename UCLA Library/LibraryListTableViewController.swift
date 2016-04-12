@@ -27,7 +27,6 @@ class LibraryListTableViewController: UITableViewController {
         imageView.image = image
         self.navigationItem.titleView = imageView
         let fancySwiftColor = UIColor.init(red: 0x1B/255, green: 0x8F/255, blue: 0xE8/255, alpha: 1)
-        self.tableView.backgroundView?.backgroundColor = UIColor.redColor()
         self.navigationController!.navigationBar.barTintColor = fancySwiftColor
         self.navigationController!.navigationBar.translucent = false
 
@@ -58,6 +57,7 @@ class LibraryListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //mke cell reusable
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         // Configure the cell's look

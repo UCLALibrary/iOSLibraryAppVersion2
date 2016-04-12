@@ -47,20 +47,19 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
+        //google maps
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
         
-        
-        
-        //make buttons colorful
+        //make phone and email buttons colorful
         self.phoneButton.backgroundColor = UIColor.greenColor()
         self.emailButton.backgroundColor = UIColor.cyanColor()
         
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        // Do any additional setup after loading the view.
         if let library = self.library {
             if let name = library.name {
                 
@@ -70,9 +69,10 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
                 //change the title color
                 navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
                 
+                //add library name to view
                 self.navigationItem.title = name
                 
-                
+                //add image to view and make changes to image
                 self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
                 self.navigationController?.navigationBar.shadowImage = UIImage()
                 self.navigationController?.navigationBar.translucent = true
@@ -84,7 +84,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 /////////////////////////
 //Days of week and corresponding hours
 /////////////////////////
-        self.scrollView.backgroundColor = UIColor.redColor()
         
         //1010 specifies the overall width of the scroll view (which extends beyond the screen)
         self.scrollView.contentSize = CGSizeMake(800, self.scrollView.frame.size.height)
@@ -108,7 +107,9 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 
         //automatically scroll to the current day
         //self.scrollView.contentOffset = CGPoint(x: 50, y: 0)
+    
         
+
         
 /////////////////////////
 //Image of library
@@ -120,39 +121,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
 
-        
-        
-/////////////////////////
-//Contact email and phone Number
-/////////////////////////
-        
-        //set the contact details backgroundcolor 
-        //self.contactLabel.backgroundColor = UIColor.redColor()
-        //let phoneNumberView = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
-        
-        //phoneNumberView.backgroundColor = UIColor.yellowColor()
-        //phoneNumberView.textAlignment =  NSTextAlignment.Center
-        //phoneNumberView.text = UIApplication.sharedApplication().openURL(NSURL(string:"telprompt:0123456789"))
 
-            //self.library.phoneNumber
-        //phoneNumberView.backgroundColor = UIColor.yellowColor()
-        //self.phoneAndEmailView.addSubview(phoneNumberView)
-
-//        self.phoneAndEmailView.backgroundColor = UIColor.blackColor()
-        
-        //if there is an email
-//        if(self.library.email != "") {
-//            let emailView = UILabel(frame: CGRect(origin: CGPoint(x: self.view.bounds.width/2, y: 0), size: CGSize(width: self.view.bounds.width/2, height: self.phoneAndEmailView.bounds.height)))
-//            
-//            emailView.backgroundColor = UIColor.yellowColor()
-//            emailView.textAlignment =  NSTextAlignment.Center
-//            emailView.text = self.library.email
-//            emailView.backgroundColor = UIColor.grayColor()
-//            self.phoneAndEmailView.addSubview(emailView)
-//            self.phoneAndEmailView.addSubview(emailView)
-//            //self.contactLabel.text = "\(self.library.phoneNumber) | \(self.library.email)"
-//        }
-// 
 /////////////////////////
 //googleMaps
 /////////////////////////
@@ -202,7 +171,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             nLaptops.numberOfLines = 2
             nLaptops.text = "\(self.library.availableLaptops) \n" + "Laptops"
             nLaptops.textColor = UIColor.whiteColor()
-            //nLaptops.backgroundColor = UIColor.purpleColor()
             nLaptops.textAlignment = NSTextAlignment.Center
             
             

@@ -23,9 +23,9 @@ class dayOfWeekAndHoursBox: UIView {
     }
     
     func customInit(day:String, open:String, close:String, dayInMonth:Int) {
-        self.layer.cornerRadius = 10;
+        self.layer.cornerRadius = 5;
 
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor.init(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
         
         //create a LABEL for day, opening time, closing time
         let dayOfweek = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
@@ -50,8 +50,13 @@ class dayOfWeekAndHoursBox: UIView {
         openTime.text = "\(open)"
         closeTime.text = "\(close)"
         
-        dayOfweek.backgroundColor = UIColor.yellowColor()
+        //color of text
+        dayOfMonth.textColor = UIColor.init(red: 0x1B/255, green: 0x8F/255, blue: 0xE8/255, alpha: 1)
+        dayOfweek.textColor = UIColor.blackColor()
+        openTime.textColor = UIColor.blackColor()
+        closeTime.textColor = UIColor.blackColor()
         
+        //add the components to the square
         self.addSubview(dayOfweek)
         self.addSubview(dayOfMonth)
         self.addSubview(openTime)
