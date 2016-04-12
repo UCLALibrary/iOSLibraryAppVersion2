@@ -20,8 +20,6 @@ class LibraryListTableViewController: UITableViewController {
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-
-        
         //library logo
         let image = UIImage(named: "title.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
@@ -70,8 +68,13 @@ class LibraryListTableViewController: UITableViewController {
 
         //let imagePath = self.library.getImagePath()
         //self.imageView.image = UIImage(named: imagePath)
+        
         let libState = library.getState()
+        
+        
         print("\(library.name) has state \(libState)")
+        
+        //depending on the state of the library, a certain 'close', 'open', or 'closing soon' icon will appear on the right of each row of the table
         if(libState == "open") {
             var icon = UIImageView(image: UIImage(named: "open.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
@@ -206,6 +209,7 @@ class LibraryListTableViewController: UITableViewController {
                                                 currentLibrary.getCoordinates()
                                                 currentLibrary.getMaxLaptops()
                                                 currentLibrary.getContactDetails()
+                                                
                                             }
                                         }
                                             

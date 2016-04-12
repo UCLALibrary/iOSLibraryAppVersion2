@@ -60,8 +60,14 @@ class Library: NSObject {
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
-        let close = week[indexIntoDayArray].close
-        let open = week[indexIntoDayArray].open
+        print("today \(dateComponents.day)")
+        print("listed day of month \(week[0].dayOfMonth)")
+        print("indexintodayarray \(indexIntoDayArray)")
+
+        
+        let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
+        let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
+        
         
         //if closed today, simply return closed
         if (close == "closed") {
@@ -108,6 +114,7 @@ class Library: NSObject {
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
+        print("the index is \(indexIntoDayArray)")
         let open = indexIntoDayArray < 0 ? week[0].open : week[indexIntoDayArray].open
         let close = indexIntoDayArray < 0 ? week[0].close : week[indexIntoDayArray].close
         return (open, close)
@@ -175,7 +182,7 @@ class Library: NSObject {
             "Law Library" : 0,
             "Library Special Collections" : 0,
             "Management Library" : 0,
-            "Music Library" : 12,
+            "Music Library" : 13,
             "Powell Library" : 92,
             "Research Library" : 90,
             "Science and Engineering Library" : 45,
