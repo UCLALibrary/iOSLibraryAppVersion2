@@ -26,12 +26,13 @@ class LibraryListTableViewController: UITableViewController {
         imageView.contentMode = .ScaleAspectFit
         imageView.image = image
         self.navigationItem.titleView = imageView
+        let fancySwiftColor = UIColor.init(red: 0x1B/255, green: 0x8F/255, blue: 0xE8/255, alpha: 1)
+        self.tableView.backgroundView?.backgroundColor = UIColor.redColor()
+        self.navigationController!.navigationBar.barTintColor = fancySwiftColor
+        self.navigationController!.navigationBar.translucent = false
+
+        //UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
         
-        //get data from Anumat's server
-        //self.getLibraryData()
-        
-        //get date
-        //self.openClosingOrSoon()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,12 +44,9 @@ class LibraryListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         self.getLibraryData()
         self.openClosingOrSoon()
-        navigationController!.navigationBar.barTintColor = UIColor.init(red: 10, green: 63, blue: 93, alpha: 1)
-        UINavigationBar.appearance().backgroundColor = UIColor.greenColor()
-
-
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,17 +70,10 @@ class LibraryListTableViewController: UITableViewController {
 
         // Configure the cell's look
         let library = self.libraries[indexPath.row]
-        cell.backgroundColor = UIColor.whiteColor()
-        cell.contentView.backgroundColor = UIColor.whiteColor()
-
         
         //label the library's name, open to closing time
         cell.textLabel?.text = library.getName()
-        var stateIcon = UIView(frame:CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY, width: 30, height:30))
-        
-        let state = library.getState()
-        
-        
+
         //let imagePath = self.library.getImagePath()
         //self.imageView.image = UIImage(named: imagePath)
         let libState = library.getState()
@@ -90,25 +81,23 @@ class LibraryListTableViewController: UITableViewController {
         if(libState == "open") {
             var icon = UIImageView(image: UIImage(named: "open.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
-            cell.addSubview(icon)
+            cell.accessoryView = icon
+            //cell.addSubview(icon)
            // icon.image =
         } else if(libState == "closing soon") {
             var icon = UIImageView(image: UIImage(named: "soon.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
-            cell.addSubview(icon)
+            cell.accessoryView = icon
         } else if(libState == "closed") {
             var icon = UIImageView(image: UIImage(named: "close.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
-            cell.addSubview(icon)
+            cell.accessoryView = icon
         }
         
         //cell.addSubview(stateIcon)
         
-        
         let hours = library.getHoursToday()
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
-        
-
 
         return cell
     }
@@ -162,8 +151,8 @@ class LibraryListTableViewController: UITableViewController {
         let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
         let library = self.libraries[indexPath.row]
         let destination = segue.destinationViewController as! DetailViewController
-        
         destination.library = library
+        
     }
     
     

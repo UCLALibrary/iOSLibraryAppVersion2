@@ -8,6 +8,7 @@
 
 import Foundation
 
-class LibraryTableCell: UITableViewCell {
+class LibraryTableCell:UITableViewCell {
+    
     
 }

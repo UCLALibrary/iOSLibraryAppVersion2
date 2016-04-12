@@ -71,13 +71,14 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
                 navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
                 
                 self.navigationItem.title = name
+                
+                
                 self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
                 self.navigationController?.navigationBar.shadowImage = UIImage()
                 self.navigationController?.navigationBar.translucent = true
                 self.navigationController?.view.backgroundColor = UIColor.clearColor()
             }
         }
-
 
         
 /////////////////////////
@@ -178,7 +179,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         progress.progressThickness = 0.1
         progress.trackThickness = 0.1
         progress.clockwise = true
-        progress.gradientRotateSpeed = 3
+        progress.gradientRotateSpeed = 2
         progress.roundedCorners = false
         progress.glowMode = .Forward
         progress.glowAmount = 0.9
@@ -209,7 +210,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             
             self.imageView.addSubview(nLaptops)
             
-            progress.animateFromAngle(0, toAngle: angle, duration: 3) { completed in
+            progress.animateFromAngle(0, toAngle: angle, duration: 1.5) { completed in
                 if completed {
                     print("animation stopped, completed")
                 } else {
@@ -228,6 +229,8 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        self.navigationController?.navigationBar.translucent = false
+
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
     }
