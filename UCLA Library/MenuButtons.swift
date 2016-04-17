@@ -14,16 +14,31 @@ class MenuButtons: UIButton {
         super.init(coder: aDecoder)
         layer.borderWidth = 1.5
         layer.borderColor = UIColor.whiteColor().CGColor//tintColor.CGColor
-        layer.cornerRadius = 20.0
+        layer.cornerRadius = 30.0
         clipsToBounds = true
-        contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        contentEdgeInsets = UIEdgeInsets(top: 15, left: 8, bottom: 15, right: 8)
+
+        setTitleColor(UIColor.init(red: 27/255, green: 143/255, blue: 232/255, alpha: 1), forState: .Normal)
+
         setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+        
+        setBackgroundColor(UIColor.whiteColor(), forState: .Normal)
+
         
         
         //setBackgroundImage(UIImage(contentsOfFile: tintColor), forState: .Highlighted)
     }
 
+        func setBackgroundColor(color: UIColor, forState: UIControlState) {
+            UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+            CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
+            CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
+            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            self.setBackgroundImage(colorImage, forState: forState)
+        }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
