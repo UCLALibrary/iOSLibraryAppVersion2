@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="LJ8-kR-R0R" kind="show" id="2py-OW-zcK"/>
+                                    <segue destination="LJ8-kR-R0R" kind="show" identifier="ToDetailView" id="2py-OW-zcK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,11 +51,22 @@
                             <outlet property="delegate" destination="HFQ-h8-W7h" id="f77-Sm-AEs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KWi-g5-DPM"/>
+                    <navigationItem key="navigationItem" id="KWi-g5-DPM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="C4f-TE-Wl4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lrn-Cd-M1G">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="WiV-Ya-3Gn" kind="presentation" identifier="ToMenu" modalPresentationStyle="overCurrentContext" id="3Yb-3e-e3P"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKH-FO-VrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="-162"/>
+            <point key="canvasLocation" x="237" y="-34"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Pd4-BI-2zu">
@@ -138,6 +149,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047" y="127"/>
+        </scene>
+        <!--Menu Controller-->
+        <scene sceneID="OpP-rz-XfH">
+            <objects>
+                <viewController id="WiV-Ya-3Gn" customClass="MenuController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="peL-Sy-Zx2"/>
+                        <viewControllerLayoutGuide type="bottom" id="tzh-Mc-7w2"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="jpm-fx-0HW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coP-va-hoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="-1030"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF0-gp-Siu">

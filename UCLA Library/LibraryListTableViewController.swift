@@ -26,7 +26,7 @@ class LibraryListTableViewController: UITableViewController {
         imageView.contentMode = .ScaleAspectFit
         imageView.image = image
         self.navigationItem.titleView = imageView
-        let fancySwiftColor = UIColor.init(red: 0x1B/255, green: 0x8F/255, blue: 0xE8/255, alpha: 1)
+        let fancySwiftColor = UIColor.init(red: 27/255, green: 143/255, blue: 232/255, alpha: 1)
         self.navigationController!.navigationBar.barTintColor = fancySwiftColor
         self.navigationController!.navigationBar.translucent = false
 
@@ -42,6 +42,7 @@ class LibraryListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
     // MARK: - Table view data source
 
@@ -145,10 +146,18 @@ class LibraryListTableViewController: UITableViewController {
         
         //retrieve indexPath of selected cell
         //bc our segue is triggered only when a user taps on a cell, we kno that sendder object is always going to be a UITableViewCell, so we force downcast it w/ as!
-        let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
-        let library = self.libraries[indexPath.row]
-        let destination = segue.destinationViewController as! DetailViewController
-        destination.library = library
+        
+        //transfer data from one controller to the other
+        if(segue.identifier == "ToDetailView") {
+            let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
+            let library = self.libraries[indexPath.row]
+            let destination = segue.destinationViewController as! DetailViewController
+            destination.library = library
+        }
+        else if(segue.identifier == "ToMenu") {
+            print("ugh")
+        }
+
         
     }
     
