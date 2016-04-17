@@ -155,7 +155,7 @@ class LibraryListTableViewController: UITableViewController {
             destination.library = library
         }
         else if(segue.identifier == "ToMenu") {
-            print("ugh")
+            //to menu
         }
 
         

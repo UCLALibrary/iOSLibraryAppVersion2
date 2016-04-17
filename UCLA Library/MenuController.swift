@@ -24,6 +24,11 @@ class MenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func dismissMenu(sender: AnyObject) {
+    
+        self.dismissViewControllerAnimated(true, completion: {});
+    
+    }
 
     /*
     // MARK: - Navigation
