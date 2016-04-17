@@ -22,19 +22,26 @@ class LibraryListTableViewController: UITableViewController {
         
         //library logo
         let image = UIImage(named: "title.png")!
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
+        var imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
+        imageView.center.x = self.view.center.x
         imageView.contentMode = .ScaleAspectFit
         imageView.image = image
         self.navigationItem.titleView = imageView
+        
+        //color the navbar
         let fancySwiftColor = UIColor.init(red: 27/255, green: 143/255, blue: 232/255, alpha: 1)
         self.navigationController!.navigationBar.barTintColor = fancySwiftColor
         self.navigationController!.navigationBar.translucent = false
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+//    override func viewWillAppear(animated: Bool) {
+//        self.navigationController?.navigationBar.translucent = false
+//    }
+    
+    override func viewDidAppear(animated: Bool) {
         self.getLibraryData()
-        self.openClosingOrSoon()
+        //self.openClosingOrSoon()
     }
 
     

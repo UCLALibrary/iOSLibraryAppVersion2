@@ -60,25 +60,22 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        if let library = self.library {
-            if let name = library.name {
-                
-                //change the back button color
-                self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
-                
-                //change the title color
-                navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-                
-                //add library name to view
-                self.navigationItem.title = name
-                
-                //add image to view and make changes to image
-                self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-                self.navigationController?.navigationBar.shadowImage = UIImage()
-                self.navigationController?.navigationBar.translucent = true
-                self.navigationController?.view.backgroundColor = UIColor.clearColor()
-            }
-        }
+        //change the back button color
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        
+        //change the title color
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        //add image to view and make changes to image
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        
+        
+        //add library name to title
+        self.navigationItem.title = self.library.name
+        
 
         
 /////////////////////////
@@ -157,7 +154,12 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.translucent = true
+    }
+    
     override func viewDidAppear(animated: Bool) {
+
         
         //library has laptops for lending
         if self.library.maximumLaptops != 0 {
@@ -196,7 +198,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     //make status bar change font color back to white
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
         self.navigationController?.navigationBar.translucent = false
 
         

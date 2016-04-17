@@ -163,7 +163,7 @@ class Library: NSObject {
             "Biomedical Library" : "BiomedicalLibrary.png",
             "East Asian Library" : "EastAsianLibrary.png",
             "Law Library" : "LawLibrary.jpg",
-            "Library Special Collections" : "ManagementLibrary.jpg",
+            "Library Special Collections" : "ResearchLibrary.png",
             "Management Library" : "ManagementLibrary.png",
             "Music Library" : "MusicLibrary.jpg",
             "Powell Library" : "PowellLibrary.png",

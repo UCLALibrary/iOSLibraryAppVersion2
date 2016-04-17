@@ -29,15 +29,15 @@ class MenuButtons: UIButton {
         //setBackgroundImage(UIImage(contentsOfFile: tintColor), forState: .Highlighted)
     }
 
-        func setBackgroundColor(color: UIColor, forState: UIControlState) {
-            UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-            CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
-            CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
-            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            self.setBackgroundImage(colorImage, forState: forState)
-        }
+    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
+        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        self.setBackgroundImage(colorImage, forState: forState)
+    }
     
     /*
     // Only override drawRect: if you perform custom drawing.

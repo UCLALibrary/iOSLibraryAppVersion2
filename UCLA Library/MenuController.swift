@@ -30,6 +30,10 @@ class MenuController: UIViewController {
     
     }
 
+    @IBAction func dismissMenu1(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: {});
+
+    }
     /*
     // MARK: - Navigation
 

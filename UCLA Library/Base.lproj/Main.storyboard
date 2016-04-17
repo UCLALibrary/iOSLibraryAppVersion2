@@ -11,14 +11,14 @@
         <scene sceneID="Z1Y-3a-RAU">
             <objects>
                 <tableViewController id="HFQ-h8-W7h" customClass="LibraryListTableViewController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFO-sf-WiD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFO-sf-WiD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.90580944549999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="fQy-ob-46J" detailTextLabel="uH5-dT-Gmy" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="SwV-5V-w0c" customClass="LibraryTableCell" customModule="UCLA_Library" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="cell" textLabel="fQy-ob-46J" detailTextLabel="uH5-dT-Gmy" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="SwV-5V-w0c" customClass="LibraryTableCell" customModule="UCLA_Library" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SwV-5V-w0c" id="GZ7-TD-fhz">
@@ -52,11 +52,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="KWi-g5-DPM">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="C4f-TE-Wl4">
+                        <barButtonItem key="rightBarButtonItem" width="50" style="plain" id="C4f-TE-Wl4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lrn-Cd-M1G">
-                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <rect key="frame" x="550" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" backgroundImage="menu.png"/>
+                                <state key="highlighted">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="WiV-Ya-3Gn" kind="presentation" identifier="ToMenu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3Yb-3e-e3P"/>
                                 </connections>
@@ -88,8 +91,8 @@
                                     <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
-                                <rect key="frame" x="0.0" y="460" width="600" height="500"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
+                                <rect key="frame" x="0.0" y="460" width="600" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
@@ -98,9 +101,10 @@
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button">
-                                <rect key="frame" x="391" y="304" width="97" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button">
+                                <rect key="frame" x="305" y="300" width="305" height="40"/>
                                 <state key="normal" image="Mail"/>
+                                <state key="highlighted" image="MailDown"/>
                                 <connections>
                                     <action selector="emailLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="kgP-Pc-Igp"/>
                                 </connections>
@@ -108,9 +112,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button">
                                 <rect key="frame" x="0.0" y="300" width="305" height="40"/>
                                 <state key="normal" image="Phone"/>
-                                <state key="highlighted" image="x.png">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <state key="highlighted" image="PhoneDown"/>
                                 <connections>
                                     <action selector="callLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="j2g-LN-r81"/>
                                 </connections>
@@ -165,6 +167,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-lt-1hE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dismissMenu1:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="rZq-3x-SjE"/>
+                                    <action selector="dismissMenu:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="AT6-Us-z58"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ght-yp-Oub">
                                 <rect key="frame" x="530" y="40" width="30" height="30"/>
                                 <constraints>
@@ -176,36 +186,36 @@
                                     <action selector="dismissMenu:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="l2U-dU-anl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-rC-Z4y" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="70" y="120" width="460" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-rC-Z4y" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="120" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Ask A Librarian">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="70" y="176" width="460" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="182" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="My Account">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="70" y="232" width="460" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="244" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Research Guides">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-P3-jca" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="70" y="288" width="460" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-P3-jca" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="306" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Search Catalogues">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-ed-t5s" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="70" y="344" width="460" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-ed-t5s" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="368" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Go To Full Site">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,8 +233,10 @@
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="BZo-ak-wVM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bth-ed-t5s" secondAttribute="trailing" constant="50" id="Fhn-nv-5jw"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="Gtj-RW-6Jn"/>
+                            <constraint firstItem="9dB-rC-Z4y" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="100" id="Gzb-Pl-Zot"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="IMy-P3-jca" secondAttribute="trailing" id="LuX-AT-Bj9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="10" id="O6c-R5-oo4"/>
+                            <constraint firstItem="Ght-yp-Oub" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="20" id="OP5-nw-G5v"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="10" id="OmR-cU-zGl"/>
                             <constraint firstItem="9dB-rC-Z4y" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="PAa-ZH-Q1R"/>
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="QJd-R7-VIY"/>
@@ -239,7 +251,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Bth-ed-t5s" secondAttribute="trailing" constant="30" id="eWJ-gW-YPM"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Aau-2y-Eip" secondAttribute="leading" id="fp0-9c-MG7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="20" id="fpt-MS-dB1"/>
-                            <constraint firstItem="9dB-rC-Z4y" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="100" id="hO1-51-mhT"/>
                             <constraint firstItem="9dB-rC-Z4y" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="iVj-zK-SjZ"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="top" secondItem="9dB-rC-Z4y" secondAttribute="bottom" constant="21" id="ibp-oj-cAp"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Bth-ed-t5s" secondAttribute="leading" id="klO-yd-76z"/>
@@ -251,7 +262,6 @@
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="qgU-yV-reY"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="r5K-Na-3z4"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="roZ-7I-A4L"/>
-                            <constraint firstItem="Ght-yp-Oub" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="20" id="rsc-gx-bji"/>
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="5p4-gw-FoJ" secondAttribute="bottom" constant="20" id="stq-SY-SKv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5p4-gw-FoJ" secondAttribute="trailing" constant="50" id="xXw-P8-nMO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aau-2y-Eip" secondAttribute="trailing" constant="50" id="xhx-7T-agi"/>
@@ -302,7 +312,10 @@
     </scenes>
     <resources>
         <image name="Mail" width="32" height="32"/>
+        <image name="MailDown" width="64" height="64"/>
         <image name="Phone" width="32" height="32"/>
+        <image name="PhoneDown" width="64" height="64"/>
+        <image name="menu.png" width="64" height="64"/>
         <image name="x.png" width="64" height="64"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
