@@ -249,7 +249,7 @@ class LibraryListTableViewController: UITableViewController {
                                                         if let dayOfMonth = dayOfWeek["date"] as? Int {
 
                                                             //create a day struct storing open and close of M T W Th F S Sn
-                                                            let day = dayInWeek(name: tempKey, open: open, close: close, dayOfMonth: dayOfMonth)
+                                                            let day = dayInWeek(name: tempKey.capitalizedString, open: open, close: close, dayOfMonth: dayOfMonth)
                                                             
                                                             //store that into the library's day array
                                                             //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)

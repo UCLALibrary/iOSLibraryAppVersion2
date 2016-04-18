@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7332067D1CC305F100C82876 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332067C1CC305F100C82876 /* MenuController.swift */; };
+		7332067F1CC30EE700C82876 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7332067E1CC30EE700C82876 /* x.png */; };
+		733206811CC3272800C82876 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733206801CC3272800C82876 /* MenuButtons.swift */; };
+		733206831CC33FC900C82876 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 733206821CC33FC900C82876 /* menu.png */; };
 		73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73399A321CB4CFB000124550 /* Alamofire.framework */; };
 		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
 		73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */; };
+		735B6EB81CBCA6A100300192 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 735B6EB71CBCA6A100300192 /* title.png */; };
+		735B6EBE1CBCA76C00300192 /* open.png in Resources */ = {isa = PBXBuildFile; fileRef = 735B6EBD1CBCA76C00300192 /* open.png */; };
 		73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */; };
 		73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73771B311C9E629F00DDF5ED /* Main.storyboard */; };
 		73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73771B341C9E629F00DDF5ED /* Assets.xcassets */; };
@@ -19,10 +25,10 @@
 		73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */; };
 		73771B601C9E6B1700DDF5ED /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5F1C9E6B1700DDF5ED /* Library.swift */; };
 		73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B691C9E87F000DDF5ED /* DetailViewController.swift */; };
-		73924E791CA25C4C00E44855 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 73924E781CA25C4C00E44855 /* test.m */; };
 		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
-		739E4DD91C9FB5B7007AAA1D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 739E4DD81C9FB5B7007AAA1D /* logo.png */; };
-		739E4DDB1C9FBBF7007AAA1D /* powell.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 739E4DDA1C9FBBF7007AAA1D /* powell.jpg */; };
+		73D207601CBA187A00B2EE35 /* technology.svg in Resources */ = {isa = PBXBuildFile; fileRef = 73D2075F1CBA187A00B2EE35 /* technology.svg */; };
+		73D207641CBB453600B2EE35 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D207611CBB453600B2EE35 /* soon.png */; };
+		73D207651CBB453600B2EE35 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D207621CBB453600B2EE35 /* close.png */; };
 		73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */; };
 		73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */; };
 		73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */; };
@@ -34,9 +40,6 @@
 		73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */; };
 		73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */; };
 		73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */; };
-		73DC7D9D1CA360D100F0CE12 /* title.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8F1CA360D100F0CE12 /* title.gif */; };
-		73DC7D9E1CA360D100F0CE12 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D901CA360D100F0CE12 /* title.jpg */; };
-		73DC7D9F1CA360D100F0CE12 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D911CA360D100F0CE12 /* title.png */; };
 		EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD22D2C0361120A338CDD9 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +62,17 @@
 
 /* Begin PBXFileReference section */
 		39E15F2233010F57126F6745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7332067C1CC305F100C82876 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		7332067E1CC30EE700C82876 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x.png; path = ../x.png; sourceTree = "<group>"; };
+		733206801CC3272800C82876 /* MenuButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtons.swift; path = "UCLA Library/MenuButtons.swift"; sourceTree = SOURCE_ROOT; };
+		733206821CC33FC900C82876 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
+		733206891CC4995F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		73399A321CB4CFB000124550 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableCell.swift; sourceTree = "<group>"; };
+		735B6EB71CBCA6A100300192 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		735B6EBD1CBCA76C00300192 /* open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open.png; sourceTree = "<group>"; };
 		73771B2A1C9E629F00DDF5ED /* UCLA Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCLA Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73771B321C9E629F00DDF5ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,11 +88,10 @@
 		73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListTableViewController.swift; sourceTree = "<group>"; };
 		73771B5F1C9E6B1700DDF5ED /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		73924E771CA25C4C00E44855 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
-		73924E781CA25C4C00E44855 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
-		739E4DD81C9FB5B7007AAA1D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		739E4DDA1C9FBBF7007AAA1D /* powell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = powell.jpg; sourceTree = "<group>"; };
+		73D2075F1CBA187A00B2EE35 /* technology.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = technology.svg; path = ../../../../Downloads/technology.svg; sourceTree = "<group>"; };
+		73D207611CBB453600B2EE35 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soon.png; path = ../../../../Downloads/soon.png; sourceTree = "<group>"; };
+		73D207621CBB453600B2EE35 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../Downloads/close.png; sourceTree = "<group>"; };
 		73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArtsLibrary.png; sourceTree = "<group>"; };
 		73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BiomedicalLibrary.png; sourceTree = "<group>"; };
 		73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EastAsianLibrary.png; sourceTree = "<group>"; };
@@ -93,9 +103,6 @@
 		73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResearchLibrary.png; sourceTree = "<group>"; };
 		73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScienceandEngineeringLibrary.png; sourceTree = "<group>"; };
 		73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SouthernRegionalLibraryFacility.jpg; sourceTree = "<group>"; };
-		73DC7D8F1CA360D100F0CE12 /* title.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = title.gif; sourceTree = "<group>"; };
-		73DC7D901CA360D100F0CE12 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
-		73DC7D911CA360D100F0CE12 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B9FD22D2C0361120A338CDD9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,15 +175,14 @@
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
 				73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */,
-				739E4DDA1C9FBBF7007AAA1D /* powell.jpg */,
-				739E4DD81C9FB5B7007AAA1D /* logo.png */,
+				7332067C1CC305F100C82876 /* MenuController.swift */,
+				733206801CC3272800C82876 /* MenuButtons.swift */,
+				733206891CC4995F00C82876 /* UCLA Library-Bridging-Header.h */,
 				73771B311C9E629F00DDF5ED /* Main.storyboard */,
 				73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */,
 				73771B341C9E629F00DDF5ED /* Assets.xcassets */,
 				73771B361C9E629F00DDF5ED /* LaunchScreen.storyboard */,
 				73771B391C9E629F00DDF5ED /* Info.plist */,
-				73924E781CA25C4C00E44855 /* test.m */,
-				73924E771CA25C4C00E44855 /* UCLA Library-Bridging-Header.h */,
 			);
 			path = "UCLA Library";
 			sourceTree = "<group>";
@@ -202,8 +208,14 @@
 		73DC7D831CA360D100F0CE12 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */,
+				733206821CC33FC900C82876 /* menu.png */,
+				73D207611CBB453600B2EE35 /* soon.png */,
+				73D207621CBB453600B2EE35 /* close.png */,
+				73D2075F1CBA187A00B2EE35 /* technology.svg */,
 				73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */,
 				73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */,
+				735B6EBD1CBCA76C00300192 /* open.png */,
 				73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */,
 				73DC7D871CA360D100F0CE12 /* Icon.png */,
 				73DC7D881CA360D100F0CE12 /* LawLibrary.jpg */,
@@ -213,9 +225,8 @@
 				73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */,
 				73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */,
 				73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */,
-				73DC7D8F1CA360D100F0CE12 /* title.gif */,
-				73DC7D901CA360D100F0CE12 /* title.jpg */,
-				73DC7D911CA360D100F0CE12 /* title.png */,
+				7332067E1CC30EE700C82876 /* x.png */,
+				735B6EB71CBCA6A100300192 /* title.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -300,6 +311,7 @@
 				TargetAttributes = {
 					73771B291C9E629F00DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = XC5CC7LAWJ;
 					};
 					73771B3D1C9E629F00DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -339,22 +351,24 @@
 				73DC7D971CA360D100F0CE12 /* ManagementLibrary.png in Resources */,
 				73DC7D991CA360D100F0CE12 /* PowellLibrary.png in Resources */,
 				73DC7D951CA360D100F0CE12 /* Icon.png in Resources */,
-				73DC7D9F1CA360D100F0CE12 /* title.png in Resources */,
+				73D207601CBA187A00B2EE35 /* technology.svg in Resources */,
 				73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */,
-				739E4DDB1C9FBBF7007AAA1D /* powell.jpg in Resources */,
-				739E4DD91C9FB5B7007AAA1D /* logo.png in Resources */,
 				73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */,
 				73DC7D981CA360D100F0CE12 /* MusicLibrary.jpg in Resources */,
-				73DC7D9E1CA360D100F0CE12 /* title.jpg in Resources */,
 				73771B381C9E629F00DDF5ED /* LaunchScreen.storyboard in Resources */,
+				73D207641CBB453600B2EE35 /* soon.png in Resources */,
 				73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */,
 				73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */,
+				733206831CC33FC900C82876 /* menu.png in Resources */,
 				73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */,
+				73D207651CBB453600B2EE35 /* close.png in Resources */,
 				73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */,
-				73DC7D9D1CA360D100F0CE12 /* title.gif in Resources */,
+				735B6EB81CBCA6A100300192 /* title.png in Resources */,
 				73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */,
 				73DC7D961CA360D100F0CE12 /* LawLibrary.jpg in Resources */,
+				7332067F1CC30EE700C82876 /* x.png in Resources */,
 				73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */,
+				735B6EBE1CBCA76C00300192 /* open.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +442,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73771B601C9E6B1700DDF5ED /* Library.swift in Sources */,
+				7332067D1CC305F100C82876 /* MenuController.swift in Sources */,
 				739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */,
 				73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */,
 				73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */,
 				73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */,
-				73924E791CA25C4C00E44855 /* test.m in Sources */,
+				733206811CC3272800C82876 /* MenuButtons.swift in Sources */,
 				73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */,
 				73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */,
 			);
@@ -576,6 +591,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -584,6 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -595,6 +613,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -603,6 +623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
 			};
 			name = Release;
