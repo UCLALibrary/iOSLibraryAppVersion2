@@ -16,7 +16,7 @@ class ContactButtons: UIButton {
         clipsToBounds = true
 
 
-        setBackgroundColor(UIColor.whiteColor(), forState: .Highlighted)
+        setBackgroundColor(UIColor.yellowColor(), forState: .Highlighted)
         
         
         
