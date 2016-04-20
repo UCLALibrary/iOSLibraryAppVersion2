@@ -114,10 +114,14 @@ class Library: NSObject {
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
+        
+        if(indexIntoDayArray < 0 || indexIntoDayArray > 6) {
+            return (week[0].open, week[0].close)
+        }
+
         print("the index is \(indexIntoDayArray)")
-        let open = indexIntoDayArray < 0 ? week[0].open : week[indexIntoDayArray].open
-        let close = indexIntoDayArray < 0 ? week[0].close : week[indexIntoDayArray].close
-        return (open, close)
+
+        return (week[indexIntoDayArray].open, week[indexIntoDayArray].close)
     }
     
     

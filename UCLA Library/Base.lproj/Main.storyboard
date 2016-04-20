@@ -83,60 +83,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24963466726618705" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
-                                </constraints>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
-                                <rect key="frame" x="0.0" y="460" width="600" height="140"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
-                                <rect key="frame" x="0.0" y="350" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="330" width="600" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button">
-                                <rect key="frame" x="305" y="300" width="305" height="40"/>
-                                <state key="normal" image="Mail"/>
-                                <state key="highlighted" image="MailDown"/>
-                                <connections>
-                                    <action selector="emailLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="kgP-Pc-Igp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button">
-                                <rect key="frame" x="0.0" y="300" width="305" height="40"/>
-                                <state key="normal" image="Phone"/>
-                                <state key="highlighted" image="PhoneDown"/>
-                                <connections>
-                                    <action selector="callLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="j2g-LN-r81"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
+                                <rect key="frame" x="0.0" y="440" width="600" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0j7-Ub-oaE"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24963466726618705" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-0T-cxQ" userLabel="backgroundEmailPhone">
+                                <rect key="frame" x="0.0" y="280" width="600" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="0.0" width="276" height="40"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="PhoneDown"/>
+                                        <state key="highlighted" image="Phone">
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="callLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="j2g-LN-r81"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                        <rect key="frame" x="314" y="0.0" width="276" height="40"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="MailDown"/>
+                                        <state key="highlighted" image="Mail"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="emailLibrary:" destination="LJ8-kR-R0R" eventType="touchUpInside" id="kgP-Pc-Igp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5fC-Jq-RZz" secondAttribute="trailing" constant="10" id="3b4-oV-6wG"/>
+                                    <constraint firstItem="5fC-Jq-RZz" firstAttribute="centerY" secondItem="Yqu-yg-Bws" secondAttribute="centerY" id="BIP-hf-W9E"/>
+                                    <constraint firstAttribute="bottom" secondItem="5fC-Jq-RZz" secondAttribute="bottom" id="JjV-Kt-Uvt"/>
+                                    <constraint firstItem="5fC-Jq-RZz" firstAttribute="width" secondItem="xQi-0T-cxQ" secondAttribute="width" multiplier="0.46" id="PiK-Be-fVr"/>
+                                    <constraint firstItem="Yqu-yg-Bws" firstAttribute="centerY" secondItem="xQi-0T-cxQ" secondAttribute="centerY" id="UIq-Td-Znr"/>
+                                    <constraint firstItem="Yqu-yg-Bws" firstAttribute="leading" secondItem="xQi-0T-cxQ" secondAttribute="leading" constant="10" id="YWh-AW-MCH"/>
+                                    <constraint firstItem="Yqu-yg-Bws" firstAttribute="width" secondItem="xQi-0T-cxQ" secondAttribute="width" multiplier="0.46" id="mMg-3O-JaY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yqu-yg-Bws" secondAttribute="bottom" id="vjl-UJ-UpT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="0Su-Y2-czE"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="2p2-y4-ccD"/>
-                            <constraint firstItem="5fC-Jq-RZz" firstAttribute="bottom" secondItem="D6G-6Q-h49" secondAttribute="top" constant="-10" id="6V6-y4-Ybg"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leading" id="8LT-jN-oHk"/>
-                            <constraint firstItem="5fC-Jq-RZz" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" id="9Jx-9i-AZR"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="bottom" secondItem="BAz-Q5-YMC" secondAttribute="top" constant="-10" id="9ye-2N-Br0"/>
+                            <constraint firstItem="xQi-0T-cxQ" firstAttribute="width" secondItem="7wP-3x-CPp" secondAttribute="width" id="Cd7-Bf-XaM"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="BAz-Q5-YMC" secondAttribute="leading" id="FHt-zF-qz8"/>
+                            <constraint firstItem="xQi-0T-cxQ" firstAttribute="bottom" secondItem="D6G-6Q-h49" secondAttribute="top" constant="-10" id="GA7-qA-eAB"/>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="top" secondItem="miE-Y2-fMC" secondAttribute="topMargin" id="KdP-kS-cYf"/>
-                            <constraint firstItem="Yqu-yg-Bws" firstAttribute="width" secondItem="7wP-3x-CPp" secondAttribute="width" multiplier="0.5" constant="5" id="Kna-XJ-ri1"/>
-                            <constraint firstItem="Yqu-yg-Bws" firstAttribute="trailing" secondItem="5fC-Jq-RZz" secondAttribute="leading" id="LAT-S0-fz9"/>
-                            <constraint firstItem="Yqu-yg-Bws" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" id="M4T-8l-dlZ"/>
-                            <constraint firstItem="5fC-Jq-RZz" firstAttribute="width" secondItem="7wP-3x-CPp" secondAttribute="width" multiplier="0.5" constant="5" id="NKQ-oJ-hZg"/>
-                            <constraint firstItem="BAz-Q5-YMC" firstAttribute="bottom" secondItem="miE-Y2-fMC" secondAttribute="bottomMargin" id="O1B-LD-shY"/>
-                            <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" constant="50" id="PKD-Oa-8lr"/>
-                            <constraint firstItem="Yqu-yg-Bws" firstAttribute="leading" secondItem="miE-Y2-fMC" secondAttribute="leadingMargin" constant="-20" id="YjT-DS-rHD"/>
+                            <constraint firstItem="7wP-3x-CPp" firstAttribute="bottom" secondItem="xQi-0T-cxQ" secondAttribute="top" constant="20" id="MH5-Au-Azs"/>
+                            <constraint firstItem="D6G-6Q-h49" firstAttribute="top" secondItem="7wP-3x-CPp" secondAttribute="bottom" constant="30" id="PKD-Oa-8lr"/>
+                            <constraint firstItem="xQi-0T-cxQ" firstAttribute="leading" secondItem="D6G-6Q-h49" secondAttribute="leading" id="ZjS-vI-ofc"/>
                             <constraint firstItem="BAz-Q5-YMC" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="iH9-PH-bkm"/>
-                            <constraint firstItem="Yqu-yg-Bws" firstAttribute="bottom" secondItem="D6G-6Q-h49" secondAttribute="top" constant="-10" id="st2-lI-ooS"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="leading" secondItem="7wP-3x-CPp" secondAttribute="leading" id="tJY-zH-KbU"/>
                         </constraints>
                     </view>
