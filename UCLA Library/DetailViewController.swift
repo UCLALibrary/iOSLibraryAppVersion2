@@ -54,8 +54,8 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
         
         //make phone and email buttons colorful
-        self.phoneButton.backgroundColor = UIColor.greenColor()
-        self.emailButton.backgroundColor = UIColor.cyanColor()
+        self.phoneButton.backgroundColor = themeColor
+        self.emailButton.backgroundColor = themeColor
         
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent

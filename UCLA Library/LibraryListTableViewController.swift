@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 class LibraryListTableViewController: UITableViewController {
     
     var libraries:[Library] = []
@@ -29,8 +30,7 @@ class LibraryListTableViewController: UITableViewController {
         self.navigationItem.titleView = imageView
         
         //color the navbar
-        let fancySwiftColor = UIColor.init(red: 27/255, green: 143/255, blue: 232/255, alpha: 1)
-        self.navigationController!.navigationBar.barTintColor = fancySwiftColor
+        self.navigationController!.navigationBar.barTintColor = themeColor
         self.navigationController!.navigationBar.translucent = false
 
     }

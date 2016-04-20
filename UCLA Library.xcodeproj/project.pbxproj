@@ -11,6 +11,7 @@
 		7332067F1CC30EE700C82876 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7332067E1CC30EE700C82876 /* x.png */; };
 		733206811CC3272800C82876 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733206801CC3272800C82876 /* MenuButtons.swift */; };
 		733206831CC33FC900C82876 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 733206821CC33FC900C82876 /* menu.png */; };
+		7332068B1CC725FE00C82876 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332068A1CC725FE00C82876 /* globals.swift */; };
 		73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73399A321CB4CFB000124550 /* Alamofire.framework */; };
 		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
 		73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */; };
@@ -68,6 +69,7 @@
 		733206821CC33FC900C82876 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		733206891CC4995F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
+		7332068A1CC725FE00C82876 /* globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 		73399A321CB4CFB000124550 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableCell.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				73DC7D831CA360D100F0CE12 /* Images */,
 				73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */,
 				73771B691C9E87F000DDF5ED /* DetailViewController.swift */,
+				7332068A1CC725FE00C82876 /* globals.swift */,
 				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7332068B1CC725FE00C82876 /* globals.swift in Sources */,
 				73771B601C9E6B1700DDF5ED /* Library.swift in Sources */,
 				7332067D1CC305F100C82876 /* MenuController.swift in Sources */,
 				739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */,
