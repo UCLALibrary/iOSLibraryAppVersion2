@@ -10,6 +10,12 @@ import UIKit
 
 class dayOfWeekAndHoursBox: UIView {
     
+    //create a LABEL for day, opening time, closing time
+    let dayOfweek = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
+    let dayOfMonth = UILabel(frame: CGRect(x: 0, y: 20, width: 100, height: 40))
+    let openTime = UILabel(frame: CGRect(x: 0, y: 60, width: 100, height: 20))
+    let closeTime = UILabel(frame: CGRect(x: 0, y: 80, width: 100, height: 20))
+    
     init(frame: CGRect, dayOfweek:String, open:String, close:String, dayOfMonth:Int) {
         super.init(frame: frame);
         self.customInit(dayOfweek, open: open, close: close, dayInMonth: dayOfMonth);
@@ -26,13 +32,6 @@ class dayOfWeekAndHoursBox: UIView {
         self.layer.cornerRadius = 5;
 
         self.backgroundColor = UIColor.init(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
-        
-        //create a LABEL for day, opening time, closing time
-        let dayOfweek = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 20))
-        let dayOfMonth = UILabel(frame: CGRect(x: 0, y: 20, width: 100, height: 40))
-        let openTime = UILabel(frame: CGRect(x: 0, y: 60, width: 100, height: 20))
-        let closeTime = UILabel(frame: CGRect(x: 0, y: 80, width: 100, height: 20))
-        
 
         //CENTER day of week, open time, close time
         dayOfMonth.textAlignment = NSTextAlignment.Center

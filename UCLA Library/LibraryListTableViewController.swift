@@ -35,9 +35,6 @@ class LibraryListTableViewController: UITableViewController {
 
     }
     
-//    override func viewWillAppear(animated: Bool) {
-//        self.navigationController?.navigationBar.translucent = false
-//    }
     
     override func viewDidAppear(animated: Bool) {
         self.getLibraryData()
@@ -99,11 +96,8 @@ class LibraryListTableViewController: UITableViewController {
             cell.accessoryView = icon
         }
         
-        //cell.addSubview(stateIcon)
-        
         let hours = library.getHoursToday()
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
-
         return cell
     }
 
@@ -158,8 +152,9 @@ class LibraryListTableViewController: UITableViewController {
         if(segue.identifier == "ToDetailView") {
             let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
             let library = self.libraries[indexPath.row]
-            let destination = segue.destinationViewController as! DetailViewController
-            destination.library = library
+            let detailViewOfLibrary = segue.destinationViewController as! DetailViewController
+            detailViewOfLibrary.library = library
+            
         }
         else if(segue.identifier == "ToMenu") {
             //to menu

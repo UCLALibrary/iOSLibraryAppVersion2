@@ -53,16 +53,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
         
-
-        
-        //make phone and email buttons colorful
-        //self.phoneButton.backgroundColor = UIColor.whiteColor()
-        //self.phoneButton.layer.borderWidth = 2.0
-        //self.phoneButton.layer.borderColor = UIColor.whiteColor().CGColor
-        //self.phoneButton.
-        //self.emailButton.layer.borderWidth = 2.0
-        //self.emailButton.layer.borderColor = UIColor.whiteColor().CGColor
-        
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
@@ -78,18 +68,15 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.navigationController?.navigationBar.translucent = true
         self.navigationController?.view.backgroundColor = UIColor.clearColor()
         
-        
         //add library name to title
         self.navigationItem.title = self.library.name
-        
-
         
 /////////////////////////
 //Days of week and corresponding hours
 /////////////////////////
         
         //1010 specifies the overall width of the scroll view (which extends beyond the screen)
-        self.scrollView.contentSize = CGSizeMake(800, self.scrollView.frame.size.height)
+        self.scrollView.contentSize = CGSizeMake(780, self.scrollView.frame.size.height)
         
         //disable vertical scrolling
         self.automaticallyAdjustsScrollViewInsets = false;
@@ -102,16 +89,22 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             let open = day.open
             let close = day.close
             let dayOfMonth = day.dayOfMonth
-            
             let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
+            
+            //scroll to current Day
+            if(i == self.library.todayElement) {
+                tileInScroll.dayOfMonth.textColor = UIColor.whiteColor()
+                tileInScroll.backgroundColor = themeColor
+            }
+            
             
             self.scrollView.addSubview(tileInScroll)
         }
-
-        //automatically scroll to the current day
-        //self.scrollView.contentOffset = CGPoint(x: 50, y: 0)
-    
         
+        //scroll to today
+        if(self.library.todayElement != -1) {
+            self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
+        }
 
         
 /////////////////////////
@@ -124,24 +117,17 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
 
-
 /////////////////////////
 //googleMaps
 /////////////////////////
         let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
             longitude:library.coordinates.1, zoom:15)
-       
         let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
-        
         let marker = GMSMarker()
         marker.position = camera.target
         marker.snippet = self.library.name
         marker.map = location
-        
-        
         self.mapView.addSubview(location)
-        
-        
         
 /////////////////////////
 //Circular Progress Circle

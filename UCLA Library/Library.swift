@@ -23,15 +23,17 @@ struct dayInWeek {
 }
 
 
+
 class Library: NSObject {
-    var name: String!
-    var id: Int!
-    var week:[dayInWeek]!
-    var coordinates:(Double, Double)!
-    var availableLaptops: Int!
-    var maximumLaptops: Int!
-    var email:String!
-    var phoneNumber:String!
+    var name: String! //name of library
+    var id: Int! //id of library
+    var week:[dayInWeek]! //contains seven days
+    var todayElement:Int! //today's day (filled when getState() is called
+    var coordinates:(Double, Double)! //for googleMaps
+    var availableLaptops: Int! //number of available laptops
+    var maximumLaptops: Int! //maximum number of laptops
+    var email:String! //email of the library
+    var phoneNumber:String! //phone Number of the library
     
     
     init(name: String? = nil) {
@@ -52,11 +54,12 @@ class Library: NSObject {
     
     
     //return the state of the phone: open, closed, or about to close in string form.
+    //also populates todayElement
     //future developers: maybe use enums instead?
     func getState() -> String {
         let calendar = NSCalendar.currentCalendar()
         let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Day], fromDate: currentDate)
+        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Day], fromDate: currentDate)
         
         //access day in week array
         let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
@@ -67,6 +70,7 @@ class Library: NSObject {
         
         let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
         let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
+        self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //this means that anumat's API is broken
         
         
         //if closed today, simply return closed
@@ -80,21 +84,30 @@ class Library: NSObject {
         let componentsClose = close.componentsSeparatedByString(" ")
         
         //first element is the componentsClose time in HH:MM
-        var openingHour = Int(componentsOpen[0].componentsSeparatedByString(":")[0])
-        var closingHour = Int(componentsClose[0].componentsSeparatedByString(":")[0])
+        var openTime = Double(componentsOpen[0].componentsSeparatedByString(":")[0])! + Double(componentsOpen[0].componentsSeparatedByString(":")[1])!/60
+        
+        var closeTime = Double(componentsClose[0].componentsSeparatedByString(":")[0])! + Double(componentsClose[0].componentsSeparatedByString(":")[1])!/60
+        
         
         //if its PM make sure to add 12
-        if(componentsClose[1] == "PM") {
-            closingHour = closingHour! + 12
+        if(componentsClose[1] == "PM" || (componentsClose[1] == "AM" && closeTime - 12 < 1)) {
+            closeTime = closeTime + 12
         }
         
         if(componentsOpen[1] == "PM") {
-            openingHour = openingHour! + 12
+            openTime = openTime + 12
         }
         
-        if(dateComponents.hour > closingHour || dateComponents.hour < openingHour) {
+        //what if library closes at 2AM ? 
+        if(componentsClose[1] == "AM") {
+            
+        }
+
+        
+        var currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
+        if(currentTime > closeTime || currentTime < openTime) {
             return "closed"
-        } else if (dateComponents.hour == closingHour! - 1) {
+        } else if (currentTime > closeTime - 1) {
             return "closing soon"
         } else {
             return "open"
