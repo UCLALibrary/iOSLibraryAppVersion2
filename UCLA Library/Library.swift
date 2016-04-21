@@ -97,11 +97,11 @@ class Library: NSObject {
         if(componentsOpen[1] == "PM") {
             openTime = openTime + 12
         }
-        
-        //what if library closes at 2AM ? 
-        if(componentsClose[1] == "AM") {
-            
-        }
+//        
+//        //what if library closes at 2AM ? 
+//        if(componentsClose[1] == "AM") {
+//            
+//        }
 
         
         var currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
