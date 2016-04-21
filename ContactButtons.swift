@@ -17,6 +17,8 @@ class ContactButtons: UIButton {
 
 
         setBackgroundColor(UIColor.yellowColor(), forState: .Highlighted)
+        setBackgroundColor(UIColor.yellowColor(), forState: .Focused)
+        setBackgroundColor(UIColor.yellowColor(), forState: .Selected)
         
         
         
