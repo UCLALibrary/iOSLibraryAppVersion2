@@ -171,11 +171,14 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="GmapView" destination="BAz-Q5-YMC" id="ete-LW-pM2"/>
+                        <outlet property="backgroundEmailPhone" destination="xQi-0T-cxQ" id="Gt1-Jj-Yt5"/>
                         <outlet property="emailButton" destination="5fC-Jq-RZz" id="Pre-de-8Bp"/>
                         <outlet property="imageView" destination="7wP-3x-CPp" id="kaq-nm-7ua"/>
+                        <outlet property="leadingContraint" destination="YWh-AW-MCH" id="sB1-hr-Ahi"/>
                         <outlet property="mapView" destination="BAz-Q5-YMC" id="TvH-RA-oRF"/>
                         <outlet property="phoneButton" destination="Yqu-yg-Bws" id="R6B-pn-7Fx"/>
                         <outlet property="scrollView" destination="D6G-6Q-h49" id="5G0-2L-cZg"/>
+                        <outlet property="widthOfButtonContainer" destination="Cd7-Bf-XaM" id="6YW-uJ-ZZy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>

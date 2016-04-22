@@ -23,6 +23,10 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet var phoneButton: UIButton!
     @IBOutlet var emailButton: UIButton!
         
+    @IBOutlet var backgroundEmailPhone: UIView!
+    @IBOutlet var leadingContraint: NSLayoutConstraint!
+    
+    @IBOutlet var widthOfButtonContainer: NSLayoutConstraint!
     // Delegate requirement
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -122,7 +126,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 /////////////////////////
         let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
             longitude:library.coordinates.1, zoom:15)
-        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
+        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width/1.5, height: self.mapView.frame.height), camera:camera)
         let marker = GMSMarker()
         marker.position = camera.target
         marker.snippet = self.library.name
@@ -143,6 +147,19 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         progress.glowAmount = 0.9
         progress.setColors(UIColor.whiteColor())
         progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
+        
+        
+        //remove email button for those without emails
+        if(self.library.email == "") {
+            self.emailButton.removeFromSuperview()
+            self.leadingContraint.constant = UIScreen.mainScreen().bounds.width/4 + 10 //- self.emailButton.frame.width/2
+            self.backgroundEmailPhone.removeConstraint(widthOfButtonContainer)
+            //self.backgroundEmailPhone.backgroundColor = UIColor.yellowColor()
+            self.backgroundEmailPhone.frame.insetInPlace(dx: 100, dy: 0)
+            
+            
+        }
+        
 
     }
     
