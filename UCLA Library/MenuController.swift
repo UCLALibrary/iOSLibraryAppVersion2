@@ -24,6 +24,8 @@ class MenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //theese IBActions 'dismiss' the menu (translucent light blue modal) from the screen either from the x button of anywhere on the screen aside from the menu buttons
     @IBAction func dismissMenu(sender: AnyObject) {
     
         self.dismissViewControllerAnimated(true, completion: {});
