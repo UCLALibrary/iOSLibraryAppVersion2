@@ -234,7 +234,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tin-FC-1Ju" kind="showDetail" identifier="AskALibrarian" action="showViewController:sender:" id="mKp-YT-xD8"/>
+                                    <action selector="AskALibrarian:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="Mi7-to-hDL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
@@ -244,7 +244,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tin-FC-1Ju" kind="show" identifier="MyAccount" id="bmV-Po-4BL"/>
+                                    <action selector="MyAccount:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="xia-I1-l6p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
@@ -254,7 +254,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tin-FC-1Ju" kind="show" identifier="ResearchGuides" id="Jye-95-xdy"/>
+                                    <action selector="ResearchGuides:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="jyc-xY-bLu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-P3-jca" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
@@ -264,7 +264,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tin-FC-1Ju" kind="show" identifier="SearchCatalogues" id="oye-I9-rWz"/>
+                                    <action selector="SearchCatalogues:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="SNS-pm-KnH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-ed-t5s" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
@@ -274,7 +274,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Tin-FC-1Ju" kind="show" identifier="GoToFullSite" id="kzG-K9-xAb"/>
+                                    <action selector="GoToFullSite:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="CgD-yV-iQF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -347,33 +347,6 @@
             </objects>
             <point key="canvasLocation" x="762" y="-1030"/>
         </scene>
-        <!--Web View Controller-->
-        <scene sceneID="rwU-gk-Edk">
-            <objects>
-                <viewController id="Tin-FC-1Ju" customClass="WebViewController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oLj-ao-XYt"/>
-                        <viewControllerLayoutGuide type="bottom" id="GIf-Vr-PhV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fsf-3S-XRu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-VF-sKo" customClass="We">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="WebView" destination="3a6-VF-sKo" id="mPT-On-75F"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PY2-b5-QAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1473" y="-1425"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF0-gp-Siu">
             <objects>
@@ -401,8 +374,5 @@
         <image name="menu.png" width="64" height="64"/>
         <image name="x.png" width="64" height="64"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="mKp-YT-xD8"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
