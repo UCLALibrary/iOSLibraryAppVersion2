@@ -160,6 +160,8 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             
         }
         
+        
+        
 
     }
     

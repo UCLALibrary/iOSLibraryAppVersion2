@@ -10,7 +10,6 @@
 		7332067D1CC305F100C82876 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332067C1CC305F100C82876 /* MenuController.swift */; };
 		7332067F1CC30EE700C82876 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7332067E1CC30EE700C82876 /* x.png */; };
 		733206811CC3272800C82876 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733206801CC3272800C82876 /* MenuButtons.swift */; };
-		733206831CC33FC900C82876 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 733206821CC33FC900C82876 /* menu.png */; };
 		7332068B1CC725FE00C82876 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332068A1CC725FE00C82876 /* globals.swift */; };
 		73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73399A321CB4CFB000124550 /* Alamofire.framework */; };
 		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
@@ -18,6 +17,8 @@
 		735B6EB81CBCA6A100300192 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 735B6EB71CBCA6A100300192 /* title.png */; };
 		735B6EBE1CBCA76C00300192 /* open.png in Resources */ = {isa = PBXBuildFile; fileRef = 735B6EBD1CBCA76C00300192 /* open.png */; };
 		7370BB161CC76F120087D7AD /* ContactButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7370BB151CC76F120087D7AD /* ContactButtons.swift */; };
+		7370BB181CCCC4C00087D7AD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7370BB171CCCC4C00087D7AD /* menu.png */; };
+		7370BB1A1CCD6FB40087D7AD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7370BB191CCD6FB30087D7AD /* WebViewController.swift */; };
 		73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */; };
 		73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73771B311C9E629F00DDF5ED /* Main.storyboard */; };
 		73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73771B341C9E629F00DDF5ED /* Assets.xcassets */; };
@@ -67,7 +68,6 @@
 		7332067C1CC305F100C82876 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7332067E1CC30EE700C82876 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x.png; path = ../x.png; sourceTree = "<group>"; };
 		733206801CC3272800C82876 /* MenuButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtons.swift; path = "UCLA Library/MenuButtons.swift"; sourceTree = SOURCE_ROOT; };
-		733206821CC33FC900C82876 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		733206891CC4995F00C82876 /* UCLA Library-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UCLA Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		7332068A1CC725FE00C82876 /* globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		735B6EB71CBCA6A100300192 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		735B6EBD1CBCA76C00300192 /* open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = open.png; sourceTree = "<group>"; };
 		7370BB151CC76F120087D7AD /* ContactButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactButtons.swift; path = ../ContactButtons.swift; sourceTree = "<group>"; };
+		7370BB171CCCC4C00087D7AD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		7370BB191CCD6FB30087D7AD /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		73771B2A1C9E629F00DDF5ED /* UCLA Library.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UCLA Library.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73771B2D1C9E629F00DDF5ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73771B321C9E629F00DDF5ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
 				73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */,
 				7332067C1CC305F100C82876 /* MenuController.swift */,
+				7370BB191CCD6FB30087D7AD /* WebViewController.swift */,
 				733206801CC3272800C82876 /* MenuButtons.swift */,
 				733206891CC4995F00C82876 /* UCLA Library-Bridging-Header.h */,
 				73771B311C9E629F00DDF5ED /* Main.storyboard */,
@@ -215,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */,
-				733206821CC33FC900C82876 /* menu.png */,
 				73D207611CBB453600B2EE35 /* soon.png */,
+				7370BB171CCCC4C00087D7AD /* menu.png */,
 				73D207621CBB453600B2EE35 /* close.png */,
 				73D2075F1CBA187A00B2EE35 /* technology.svg */,
 				73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */,
@@ -365,7 +368,7 @@
 				73D207641CBB453600B2EE35 /* soon.png in Resources */,
 				73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */,
 				73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */,
-				733206831CC33FC900C82876 /* menu.png in Resources */,
+				7370BB181CCCC4C00087D7AD /* menu.png in Resources */,
 				73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */,
 				73D207651CBB453600B2EE35 /* close.png in Resources */,
 				73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */,
@@ -454,6 +457,7 @@
 				73771B2E1C9E629F00DDF5ED /* AppDelegate.swift in Sources */,
 				73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */,
 				73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */,
+				7370BB1A1CCD6FB40087D7AD /* WebViewController.swift in Sources */,
 				733206811CC3272800C82876 /* MenuButtons.swift in Sources */,
 				73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */,
 				73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */,
