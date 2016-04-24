@@ -56,6 +56,7 @@ class Library: NSObject {
     //return the state of the phone: open, closed, or about to close in string form.
     //also populates todayElement
     //future developers: maybe use enums instead?
+    //adjust time scale to 0 - 24 instead of 12am 12pm etc
     func getState() -> String {
         let calendar = NSCalendar.currentCalendar()
         let currentDate = NSDate()
@@ -89,22 +90,38 @@ class Library: NSObject {
         var closeTime = Double(componentsClose[0].componentsSeparatedByString(":")[0])! + Double(componentsClose[0].componentsSeparatedByString(":")[1])!/60
         
         
+        /****
+         11am - 9pm check
+         6am - 11am check
+         5pm - 2am -> 17 , 2 -> closed [2, 17] -> closed [close, open]
+         11am - 2am -> 11 , 2 -> closed [2, 11]
+         6am - 3am -> 6, 3 -> closed [3, 6]
+         9am - 12am -> 9, 0 -> closed [9, 12]
+        *****/
+        
         //if its PM make sure to add 12
-        if(componentsClose[1] == "PM" || (componentsClose[1] == "AM" && closeTime - 12 < 1)) {
+        if(componentsClose[1] == "PM") { //|| (componentsClose[1] == "AM" && closeTime - 12 < 1)) { - no longer needed bc of closes in the AM case
             closeTime = closeTime + 12
         }
         
         if(componentsOpen[1] == "PM") {
             openTime = openTime + 12
         }
-//        
-//        //what if library closes at 2AM ? 
-//        if(componentsClose[1] == "AM") {
-//            
-//        }
-
         
         var currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
+        
+        //library closes in the AM
+        if(componentsClose[1] == "AM") {
+            //closing case
+            if(closeTime < currentTime && currentTime < openTime) {
+                return "closed"
+            } else if(closeTime - 1 < currentTime && currentTime < openTime) {
+                return "closing soon"
+            } else {
+                return "open"
+            }
+        }
+        
         if(currentTime > closeTime || currentTime < openTime) {
             return "closed"
         } else if (currentTime > closeTime - 1) {
