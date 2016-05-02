@@ -13,6 +13,7 @@
 		7332068B1CC725FE00C82876 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332068A1CC725FE00C82876 /* globals.swift */; };
 		7337F73F1CCD99ED009E8283 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7337F73E1CCD99ED009E8283 /* CreditsViewController.swift */; };
 		7337F7411CD1E15C009E8283 /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7337F7401CD1E15C009E8283 /* CreditsController.swift */; };
+		7337F7431CD71FA6009E8283 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7337F7421CD71FA6009E8283 /* soon.png */; };
 		73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73399A321CB4CFB000124550 /* Alamofire.framework */; };
 		73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */; };
 		73549A1D1CAA0FB000A7DA01 /* LibraryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */; };
@@ -32,7 +33,6 @@
 		73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B691C9E87F000DDF5ED /* DetailViewController.swift */; };
 		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
 		73D207601CBA187A00B2EE35 /* technology.svg in Resources */ = {isa = PBXBuildFile; fileRef = 73D2075F1CBA187A00B2EE35 /* technology.svg */; };
-		73D207641CBB453600B2EE35 /* soon.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D207611CBB453600B2EE35 /* soon.png */; };
 		73D207651CBB453600B2EE35 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D207621CBB453600B2EE35 /* close.png */; };
 		73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */; };
 		73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */; };
@@ -75,6 +75,7 @@
 		7332068A1CC725FE00C82876 /* globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 		7337F73E1CCD99ED009E8283 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		7337F7401CD1E15C009E8283 /* CreditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
+		7337F7421CD71FA6009E8283 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soon.png; sourceTree = "<group>"; };
 		73399A321CB4CFB000124550 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		73549A1C1CAA0FB000A7DA01 /* LibraryTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableCell.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
 		73D2075F1CBA187A00B2EE35 /* technology.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = technology.svg; path = ../../../../Downloads/technology.svg; sourceTree = "<group>"; };
-		73D207611CBB453600B2EE35 /* soon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = soon.png; path = ../../../../Downloads/soon.png; sourceTree = "<group>"; };
 		73D207621CBB453600B2EE35 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../Downloads/close.png; sourceTree = "<group>"; };
 		73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArtsLibrary.png; sourceTree = "<group>"; };
 		73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BiomedicalLibrary.png; sourceTree = "<group>"; };
@@ -224,8 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */,
-				73D207611CBB453600B2EE35 /* soon.png */,
 				7370BB171CCCC4C00087D7AD /* menu.png */,
+				7337F7421CD71FA6009E8283 /* soon.png */,
 				73D207621CBB453600B2EE35 /* close.png */,
 				73D2075F1CBA187A00B2EE35 /* technology.svg */,
 				73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */,
@@ -371,7 +371,6 @@
 				73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */,
 				73DC7D981CA360D100F0CE12 /* MusicLibrary.jpg in Resources */,
 				73771B381C9E629F00DDF5ED /* LaunchScreen.storyboard in Resources */,
-				73D207641CBB453600B2EE35 /* soon.png in Resources */,
 				73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */,
 				73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */,
 				7370BB181CCCC4C00087D7AD /* menu.png in Resources */,
@@ -381,6 +380,7 @@
 				735B6EB81CBCA6A100300192 /* title.png in Resources */,
 				73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */,
 				73DC7D961CA360D100F0CE12 /* LawLibrary.jpg in Resources */,
+				7337F7431CD71FA6009E8283 /* soon.png in Resources */,
 				7332067F1CC30EE700C82876 /* x.png in Resources */,
 				73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */,
 				735B6EBE1CBCA76C00300192 /* open.png in Resources */,

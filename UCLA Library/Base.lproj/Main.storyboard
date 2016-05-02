@@ -344,7 +344,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l30-6N-F3B">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l30-6N-F3B">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuT-kJ-SLU">
@@ -367,13 +367,50 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R8w-k1-C2n">
+                                <rect key="frame" x="174" y="195" width="252" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Close" translatesAutoresizingMaskIntoConstraints="NO" id="Vse-e6-ch4">
+                                        <rect key="frame" x="12" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="open.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EW-oZ-YcA">
+                                        <rect key="frame" x="50" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="PV6-tW-8Gx">
+                                        <rect key="frame" x="122" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mail" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-Nw-1RP">
+                                        <rect key="frame" x="160" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="3sd-mQ-Xza">
+                                        <rect key="frame" x="198" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soon.png" translatesAutoresizingMaskIntoConstraints="NO" id="RbR-XS-v5h">
+                                        <rect key="frame" x="88" y="22" width="30" height="30"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OpC-xu-3u5">
+                                        <rect key="frame" x="8" y="60" width="224" height="67"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="252" id="2eG-fW-Mtr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R8w-k1-C2n" firstAttribute="centerX" secondItem="va9-TD-hg9" secondAttribute="centerX" id="Cd1-w8-Bbk"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="centerY" secondItem="va9-TD-hg9" secondAttribute="centerY" id="Fqm-FW-lOj"/>
+                            <constraint firstItem="R8w-k1-C2n" firstAttribute="top" secondItem="XtT-4K-jjy" secondAttribute="bottom" constant="175" id="d8g-6d-8hi"/>
+                            <constraint firstItem="urs-T8-jeZ" firstAttribute="top" secondItem="R8w-k1-C2n" secondAttribute="bottom" constant="277" id="fgw-b6-8wE"/>
+                            <constraint firstItem="R8w-k1-C2n" firstAttribute="centerX" secondItem="l30-6N-F3B" secondAttribute="centerX" id="gP0-ed-yeF"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="height" secondItem="va9-TD-hg9" secondAttribute="height" id="iWj-Sv-OrJ"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="width" secondItem="va9-TD-hg9" secondAttribute="width" id="sDM-7o-WoP"/>
-                            <constraint firstItem="fuT-kJ-SLU" firstAttribute="centerX" secondItem="va9-TD-hg9" secondAttribute="centerX" id="tFb-Z2-eZp"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -401,11 +438,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Close" width="32" height="32"/>
         <image name="Mail" width="32" height="32"/>
         <image name="MailDown" width="64" height="64"/>
         <image name="Phone" width="32" height="32"/>
         <image name="PhoneDown" width="64" height="64"/>
         <image name="menu.png" width="64" height="64"/>
+        <image name="open.png" width="64" height="64"/>
+        <image name="soon.png" width="64" height="64"/>
         <image name="x.png" width="64" height="64"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>

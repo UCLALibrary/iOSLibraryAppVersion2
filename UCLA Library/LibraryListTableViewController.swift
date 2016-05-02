@@ -71,14 +71,9 @@ class LibraryListTableViewController: UITableViewController {
         //label the library's name, open to closing time
         cell.textLabel?.text = library.getName()
 
-        //let imagePath = self.library.getImagePath()
-        //self.imageView.image = UIImage(named: imagePath)
-        
+        //for each row, we need to know if the library is closing soon (< 1 hr left), closed, or open
         let libState = library.getState()
-        
-        
-        print("\(library.name) has state \(libState)")
-        
+                
         //depending on the state of the library, a certain 'close', 'open', or 'closing soon' icon will appear on the right of each row of the table
         if(libState == "open") {
             var icon = UIImageView(image: UIImage(named: "open.png"))
