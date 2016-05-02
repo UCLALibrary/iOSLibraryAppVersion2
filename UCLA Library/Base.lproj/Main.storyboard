@@ -69,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKH-FO-VrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="-34"/>
+            <point key="canvasLocation" x="21" y="-578"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Pd4-BI-2zu">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047" y="127"/>
+            <point key="canvasLocation" x="831" y="-329"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="OpP-rz-XfH">
@@ -208,7 +208,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-lt-1hE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-lt-1hE" userLabel="BackgroundClose">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -216,7 +216,7 @@
                                     <action selector="dismissMenu:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="AT6-Us-z58"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ght-yp-Oub">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ght-yp-Oub" userLabel="Close">
                                 <rect key="frame" x="530" y="40" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="VVY-s1-6jw"/>
@@ -235,16 +235,6 @@
                                 </state>
                                 <connections>
                                     <action selector="AskALibrarian:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="Mi7-to-hDL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="182" width="500" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="My Account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="MyAccount:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="xia-I1-l6p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
@@ -277,75 +267,119 @@
                                     <action selector="GoToFullSite:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="CgD-yV-iQF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-Yd-sg3" userLabel="Credits" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="430" width="500" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Credits">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5F8-op-0v2" kind="popoverPresentation" popoverAnchorView="MM6-Yd-sg3" id="9tC-vr-ASu">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                <rect key="frame" x="50" y="182" width="500" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="My Account">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="MyAccount:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="xia-I1-l6p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="0.5" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="IMy-P3-jca" secondAttribute="trailing" constant="30" id="1vp-Hu-3hG"/>
+                            <constraint firstItem="MM6-Yd-sg3" firstAttribute="leading" secondItem="Bth-ed-t5s" secondAttribute="leading" id="2Ng-OQ-kKG"/>
                             <constraint firstItem="IMy-P3-jca" firstAttribute="top" secondItem="Aau-2y-Eip" secondAttribute="bottom" constant="20" id="3DH-hP-UrD"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="3lC-Pu-H7e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9dB-rC-Z4y" secondAttribute="trailing" constant="30" id="4M7-4o-5aS"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="Bth-ed-t5s" secondAttribute="trailing" id="5nv-Z6-kHM"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="BZo-ak-wVM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Bth-ed-t5s" secondAttribute="trailing" constant="50" id="Fhn-nv-5jw"/>
+                            <constraint firstItem="MM6-Yd-sg3" firstAttribute="top" secondItem="Bth-ed-t5s" secondAttribute="bottom" constant="20" id="FDx-Ct-vuq"/>
+                            <constraint firstItem="9dL-lt-1hE" firstAttribute="top" secondItem="jpm-fx-0HW" secondAttribute="top" id="GKP-1d-LaP"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="Gtj-RW-6Jn"/>
                             <constraint firstItem="9dB-rC-Z4y" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="100" id="Gzb-Pl-Zot"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="IMy-P3-jca" secondAttribute="trailing" id="LuX-AT-Bj9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="10" id="O6c-R5-oo4"/>
                             <constraint firstItem="Ght-yp-Oub" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="20" id="OP5-nw-G5v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="10" id="OmR-cU-zGl"/>
                             <constraint firstItem="9dB-rC-Z4y" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="PAa-ZH-Q1R"/>
-                            <constraint firstItem="Aau-2y-Eip" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="QJd-R7-VIY"/>
+                            <constraint firstItem="9dL-lt-1hE" firstAttribute="bottom" secondItem="tzh-Mc-7w2" secondAttribute="top" id="R8D-6A-Xf1"/>
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="5p4-gw-FoJ" secondAttribute="bottom" constant="20" id="RXN-CL-lci"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9dB-rC-Z4y" secondAttribute="trailing" constant="50" id="UHf-31-phB"/>
-                            <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="5p4-gw-FoJ" secondAttribute="bottom" constant="19" id="UHp-qK-9lo"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="top" secondItem="9dB-rC-Z4y" secondAttribute="bottom" constant="20" id="WEF-Y7-MNz"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="IMy-P3-jca" secondAttribute="leading" id="XUP-e9-58R"/>
                             <constraint firstItem="IMy-P3-jca" firstAttribute="top" secondItem="Aau-2y-Eip" secondAttribute="bottom" constant="20" id="Y3P-Pa-En2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IMy-P3-jca" secondAttribute="trailing" constant="50" id="Zou-iy-0yU"/>
-                            <constraint firstItem="IMy-P3-jca" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="cno-6c-eKU"/>
+                            <constraint firstItem="MM6-Yd-sg3" firstAttribute="centerX" secondItem="9dL-lt-1hE" secondAttribute="centerX" id="bFW-G6-xB2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bth-ed-t5s" secondAttribute="trailing" constant="30" id="eWJ-gW-YPM"/>
+                            <constraint firstItem="MM6-Yd-sg3" firstAttribute="trailing" secondItem="Bth-ed-t5s" secondAttribute="trailing" id="fKu-C3-mil"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Aau-2y-Eip" secondAttribute="leading" id="fp0-9c-MG7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="20" id="fpt-MS-dB1"/>
-                            <constraint firstItem="9dB-rC-Z4y" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="iVj-zK-SjZ"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="top" secondItem="9dB-rC-Z4y" secondAttribute="bottom" constant="21" id="ibp-oj-cAp"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Bth-ed-t5s" secondAttribute="leading" id="klO-yd-76z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5p4-gw-FoJ" secondAttribute="trailing" constant="30" id="m8A-Ns-ZqS"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="Aau-2y-Eip" secondAttribute="trailing" id="o4w-pl-mpv"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="pNN-fZ-Gsw"/>
                             <constraint firstItem="IMy-P3-jca" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="poy-QF-jaU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aau-2y-Eip" secondAttribute="trailing" constant="30" id="ptO-TX-MA6"/>
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="qgU-yV-reY"/>
-                            <constraint firstItem="Bth-ed-t5s" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="50" id="r5K-Na-3z4"/>
                             <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="roZ-7I-A4L"/>
-                            <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="5p4-gw-FoJ" secondAttribute="bottom" constant="20" id="stq-SY-SKv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5p4-gw-FoJ" secondAttribute="trailing" constant="50" id="xXw-P8-nMO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aau-2y-Eip" secondAttribute="trailing" constant="50" id="xhx-7T-agi"/>
+                            <constraint firstItem="9dL-lt-1hE" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leading" id="tpE-x5-rN2"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="UHf-31-phB"/>
-                                <exclude reference="iVj-zK-SjZ"/>
-                                <exclude reference="ibp-oj-cAp"/>
-                                <exclude reference="pNN-fZ-Gsw"/>
-                                <exclude reference="xXw-P8-nMO"/>
-                                <exclude reference="QJd-R7-VIY"/>
-                                <exclude reference="UHp-qK-9lo"/>
-                                <exclude reference="stq-SY-SKv"/>
-                                <exclude reference="xhx-7T-agi"/>
-                                <exclude reference="Zou-iy-0yU"/>
-                                <exclude reference="cno-6c-eKU"/>
-                                <exclude reference="Fhn-nv-5jw"/>
-                                <exclude reference="r5K-Na-3z4"/>
-                                <exclude reference="O6c-R5-oo4"/>
-                                <exclude reference="OmR-cU-zGl"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coP-va-hoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-1030"/>
+            <point key="canvasLocation" x="682" y="-1102"/>
+        </scene>
+        <!--Credits Controller-->
+        <scene sceneID="ptm-Hb-L3V">
+            <objects>
+                <viewController id="5F8-op-0v2" customClass="CreditsController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XtT-4K-jjy"/>
+                        <viewControllerLayoutGuide type="bottom" id="urs-T8-jeZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="va9-TD-hg9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="l30-6N-F3B">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuT-kJ-SLU">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vK-Je-9W9" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
+                                                <rect key="frame" x="238" y="102" width="124" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="  Go Back  "/>
+                                                <connections>
+                                                    <action selector="CloseCredits:" destination="5F8-op-0v2" eventType="touchUpInside" id="fwU-1q-LCl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.23529411759999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="9vK-Je-9W9" firstAttribute="top" secondItem="fuT-kJ-SLU" secondAttribute="top" constant="102" id="91b-Hg-hl0"/>
+                                            <constraint firstItem="9vK-Je-9W9" firstAttribute="centerX" secondItem="fuT-kJ-SLU" secondAttribute="centerX" id="Pxk-gQ-YAV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fuT-kJ-SLU" firstAttribute="centerY" secondItem="va9-TD-hg9" secondAttribute="centerY" id="Fqm-FW-lOj"/>
+                            <constraint firstItem="fuT-kJ-SLU" firstAttribute="height" secondItem="va9-TD-hg9" secondAttribute="height" id="iWj-Sv-OrJ"/>
+                            <constraint firstItem="fuT-kJ-SLU" firstAttribute="width" secondItem="va9-TD-hg9" secondAttribute="width" id="sDM-7o-WoP"/>
+                            <constraint firstItem="fuT-kJ-SLU" firstAttribute="centerX" secondItem="va9-TD-hg9" secondAttribute="centerX" id="tFb-Z2-eZp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y3r-KW-K96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-334" y="-1352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF0-gp-Siu">
@@ -363,7 +397,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHP-I4-RVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="110"/>
+            <point key="canvasLocation" x="-777" y="-570"/>
         </scene>
     </scenes>
     <resources>
