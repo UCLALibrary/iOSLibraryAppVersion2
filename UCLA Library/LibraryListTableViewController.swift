@@ -35,10 +35,8 @@ class LibraryListTableViewController: UITableViewController {
 
     }
     
-    
     override func viewDidAppear(animated: Bool) {
         self.getLibraryData()
-        //self.openClosingOrSoon()
     }
 
     

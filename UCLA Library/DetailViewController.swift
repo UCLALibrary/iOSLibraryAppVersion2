@@ -22,10 +22,8 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet var GmapView: UIView!
     @IBOutlet var phoneButton: UIButton!
     @IBOutlet var emailButton: UIButton!
-        
     @IBOutlet var backgroundEmailPhone: UIView!
     @IBOutlet var leadingContraint: NSLayoutConstraint!
-    
     @IBOutlet var widthOfButtonContainer: NSLayoutConstraint!
     // Delegate requirement
     func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
@@ -117,7 +115,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //set image of the library
         let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: imagePath)
-        
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
 
@@ -148,7 +145,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         progress.setColors(UIColor.whiteColor())
         progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
         
-        
         //remove email button for those without emails
         if(self.library.email == "") {
             self.emailButton.removeFromSuperview()
@@ -156,28 +152,17 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             self.backgroundEmailPhone.removeConstraint(widthOfButtonContainer)
             //self.backgroundEmailPhone.backgroundColor = UIColor.yellowColor()
             self.backgroundEmailPhone.frame.insetInPlace(dx: 100, dy: 0)
-            
-            
         }
-        
-        
-        
 
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.translucent = true
     }
     
     override func viewDidAppear(animated: Bool) {
-
-        
         //library has laptops for lending
         if self.library.maximumLaptops != 0 {
             let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
             let angle = Int(360*percentOfLaptopsAvailable)
             self.imageView.addSubview(progress)
-        
+            
             //adding uilabel
             var nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             nLaptops.center = CGPoint(x: self.progress.center.x, y: self.progress.center.y)
@@ -185,10 +170,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             nLaptops.text = "\(self.library.availableLaptops) \n" + "Laptops"
             nLaptops.textColor = UIColor.whiteColor()
             nLaptops.textAlignment = NSTextAlignment.Center
-            
-            
-            //nLaptops.textAlignment = UITextAlignmentLeft
-            
             self.imageView.addSubview(nLaptops)
             
             progress.animateFromAngle(0, toAngle: angle, duration: 1.5) { completed in
@@ -199,8 +180,13 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
                 }
             }
         }
-        
     }
+    
+    override func transitionFromViewController(fromViewController: UIViewController, toViewController: UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
+        self.navigationController?.navigationBar.translucent = false
+
+    }
+    
     
 /////////////////////////
 //Other housekeeping
@@ -210,10 +196,10 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.translucent = false
-
+        
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
