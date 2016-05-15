@@ -13,7 +13,12 @@ import Alamofire
 class LibraryListTableViewController: UITableViewController {
     
     var libraries:[Library] = []
-
+    
+    //instantiate a gray Activity Indicator View
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +37,17 @@ class LibraryListTableViewController: UITableViewController {
         //color the navbar
         self.navigationController!.navigationBar.barTintColor = themeColor
         self.navigationController!.navigationBar.translucent = false
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView.backgroundColor = UIColor.whiteColor()
+
+        
+        //progress indicator
+        //add the activity to the ViewController's view
+        view.addSubview(activityIndicatorView)
+        //position the Activity Indicator View in the center of the view
+        activityIndicatorView.center = view.center
+        //tell the Activity Indicator View to begin animating
+        activityIndicatorView.startAnimating()
 
     }
     
@@ -62,6 +78,8 @@ class LibraryListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //mke cell reusable
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        
+        //cell.hidden = true
 
         // Configure the cell's look
         let library = self.libraries[indexPath.row]
@@ -261,6 +279,8 @@ class LibraryListTableViewController: UITableViewController {
                         
                         self.libraries = localLibraries
                         
+                        //remove activity indicator view
+                        self.activityIndicatorView.removeFromSuperview()
                         
                         //refresh Table in the TableView since this GET request is ASYNCHRONOUS
                         self.refreshTable()

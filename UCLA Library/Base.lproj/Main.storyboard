@@ -10,7 +10,7 @@
         <!--Library List Table View Controller-->
         <scene sceneID="Z1Y-3a-RAU">
             <objects>
-                <tableViewController id="HFQ-h8-W7h" customClass="LibraryListTableViewController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalTransitionStyle="partialCurl" id="HFQ-h8-W7h" customClass="LibraryListTableViewController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFO-sf-WiD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,7 +413,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icons made by Freepik from www.flaticon.com is licensed by CC 3.0 BY" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzY-Gj-KVZ">
-                                <rect key="frame" x="0.0" y="270" width="600" height="52"/>
+                                <rect key="frame" x="20" y="270" width="560" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="2uZ-S9-oSE"/>
                                 </constraints>
@@ -425,12 +425,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JzY-Gj-KVZ" firstAttribute="top" secondItem="XtT-4K-jjy" secondAttribute="bottom" constant="250" id="7YK-cy-Ag8"/>
+                            <constraint firstItem="JzY-Gj-KVZ" firstAttribute="leading" secondItem="va9-TD-hg9" secondAttribute="leading" constant="20" id="FVk-zK-9ie"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="centerY" secondItem="va9-TD-hg9" secondAttribute="centerY" id="Fqm-FW-lOj"/>
+                            <constraint firstItem="JzY-Gj-KVZ" firstAttribute="leading" secondItem="l30-6N-F3B" secondAttribute="leading" constant="20" id="HpC-xM-Rnp"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="height" secondItem="va9-TD-hg9" secondAttribute="height" id="iWj-Sv-OrJ"/>
-                            <constraint firstItem="JzY-Gj-KVZ" firstAttribute="leading" secondItem="va9-TD-hg9" secondAttribute="leading" id="lIB-bq-D1I"/>
                             <constraint firstItem="JzY-Gj-KVZ" firstAttribute="centerX" secondItem="R8w-k1-C2n" secondAttribute="centerX" id="oA6-Hp-MRg"/>
                             <constraint firstItem="fuT-kJ-SLU" firstAttribute="width" secondItem="va9-TD-hg9" secondAttribute="width" id="sDM-7o-WoP"/>
-                            <constraint firstItem="JzY-Gj-KVZ" firstAttribute="leading" secondItem="l30-6N-F3B" secondAttribute="leading" id="y8R-Mx-2mi"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -469,7 +469,7 @@
         <image name="x.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YaQ-0A-TTj"/>
+        <segue reference="3Yb-3e-e3P"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
