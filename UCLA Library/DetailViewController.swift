@@ -51,10 +51,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //google maps
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
-        
         //make font color white
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
@@ -77,75 +73,27 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 //Days of week and corresponding hours
 /////////////////////////
         
-        //1010 specifies the overall width of the scroll view (which extends beyond the screen)
+//780 specifies the overall width of the scroll view (which extends beyond the screen)
         self.scrollView.contentSize = CGSizeMake(780, self.scrollView.frame.size.height)
         
-        //disable vertical scrolling
+//disable vertical scrolling
         self.automaticallyAdjustsScrollViewInsets = false;
         
-        //7 days in week
-        //POPULATE the scrollview with tiles showing the day and hours open
-        for i in 0..<7 {
-            let day = self.library?.week[i] as dayInWeek!
-            let name = day.name
-            let open = day.open
-            let close = day.close
-            let dayOfMonth = day.dayOfMonth
-            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
-            
-            //scroll to current Day
-            if(i == self.library.todayElement) {
-                tileInScroll.dayOfMonth.textColor = UIColor.whiteColor()
-                tileInScroll.backgroundColor = themeColor
-            }
-            
-            
-            self.scrollView.addSubview(tileInScroll)
-        }
-        
-        //scroll to today
-        if(self.library.todayElement != -1) {
-            self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
-        }
+//POPULATE the scrollview with tiles showing the day and hours open and scroll to day
+        populateDaysOfWeek()
 
-        
-/////////////////////////
-//Image of library
-/////////////////////////
-        //set image of the library
+//set image of the library
         let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: imagePath)
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
 
-/////////////////////////
-//googleMaps
-/////////////////////////
-        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0,
-            longitude:library.coordinates.1, zoom:15)
-        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width/1.5, height: self.mapView.frame.height), camera:camera)
-        let marker = GMSMarker()
-        marker.position = camera.target
-        marker.snippet = self.library.name
-        marker.map = location
-        self.mapView.addSubview(location)
+//load googlemaps
+        loadGoogleMaps()
+//set progress view settings
+        setProgressWheelSettings()
         
-/////////////////////////
-//Circular Progress Circle
-/////////////////////////
-        progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-        progress.startAngle = -90
-        progress.progressThickness = 0.1
-        progress.trackThickness = 0.1
-        progress.clockwise = true
-        progress.gradientRotateSpeed = 2
-        progress.roundedCorners = false
-        progress.glowMode = .Forward
-        progress.glowAmount = 0.9
-        progress.setColors(UIColor.whiteColor())
-        progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
-        
-        //remove email button for those without emails
+//remove email button for those without emails
         if(self.library.email == "") {
             self.emailButton.removeFromSuperview()
             self.leadingContraint.constant = UIScreen.mainScreen().bounds.width/4 + 10 //- self.emailButton.frame.width/2
@@ -153,7 +101,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             //self.backgroundEmailPhone.backgroundColor = UIColor.yellowColor()
             self.backgroundEmailPhone.frame.insetInPlace(dx: 100, dy: 0)
         }
-
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -164,7 +111,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             self.imageView.addSubview(progress)
             
             //adding uilabel
-            var nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            let nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             nLaptops.center = CGPoint(x: self.progress.center.x, y: self.progress.center.y)
             nLaptops.numberOfLines = 2
             nLaptops.text = "\(self.library.availableLaptops) \n" + "Laptops"
@@ -184,20 +131,16 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     override func transitionFromViewController(fromViewController: UIViewController, toViewController: UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
         self.navigationController?.navigationBar.translucent = false
-
     }
     
-    
-/////////////////////////
-//Other housekeeping
-/////////////////////////
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.translucent = true
+    }
     
     //make status bar change font color back to white
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.translucent = false
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -206,7 +149,44 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     }
     
     
-    //call phone number
+/////////////////////////
+//Circular Progress Circle
+/////////////////////////
+    private func setProgressWheelSettings() {
+        if self.library.maximumLaptops != 0 {
+            progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+            progress.startAngle = -90
+            progress.progressThickness = 0.1
+            progress.trackThickness = 0.1
+            progress.clockwise = true
+            progress.gradientRotateSpeed = 2
+            progress.roundedCorners = false
+            progress.glowMode = .Forward
+            progress.glowAmount = 0.9
+            progress.setColors(UIColor.whiteColor())
+            progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
+        }
+    }
+
+/////////////////////////
+//googleMaps
+/////////////////////////
+    private func loadGoogleMaps() {
+        //google maps
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
+        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0, longitude:library.coordinates.1, zoom:15)
+        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width/1.5, height: self.mapView.frame.height), camera:camera)
+        let marker = GMSMarker()
+        marker.position = camera.target
+        marker.snippet = self.library.name
+        marker.map = location
+        self.mapView.addSubview(location)
+    }
+
+/////////////////////////
+//Call a phone number
+/////////////////////////
     private func callNumber(phoneNumber:String) {
         if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
             let application:UIApplication = UIApplication.sharedApplication()
@@ -215,10 +195,34 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             }
         }
     }
-    
-    //send email
-    
 
+/////////////////////////
+//Populate days of week with info
+/////////////////////////
+    private func populateDaysOfWeek() {
+        for i in 0..<7 {
+            let day = self.library?.week[i] as dayInWeek!
+            let name = day.name
+            let open = day.open
+            let close = day.close
+            let dayOfMonth = day.dayOfMonth
+            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
+            //scroll to current Day
+            if(i == self.library.todayElement) {
+                tileInScroll.dayOfMonth.textColor = UIColor.whiteColor()
+                tileInScroll.backgroundColor = themeColor
+            }
+            self.scrollView.addSubview(tileInScroll)
+        }
+        if(self.library.todayElement != -1) {
+            self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
+        }
+    }
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

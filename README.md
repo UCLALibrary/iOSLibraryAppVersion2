@@ -28,6 +28,9 @@ The controller of the list of libraries.  Controls the view that appears upon la
 ### KDCircularProgress.swift
 The view for the progress circle in the library view.
 
+### Main.storyboard
+A lot of layout is done here.  All settings added to make the app responsive is here.
+
 ### MenuController.swift
 The controller for the menu view showing 'Ask A Librarian' 'My Account' etc.
 
@@ -39,8 +42,6 @@ The Storyboard.  A lot of ux and ui is done here so it is worth looking at.  Ifs
 
 ### UCLA Library-Bridging-Header.h
 Needed because google's API was originally built for Obj-C.
-
-### WebView
 
 ### info.plist
 A lot of security settings that need to be changed when app is released into the store.  For instance, it will allow communication between google.com and anumat.com.

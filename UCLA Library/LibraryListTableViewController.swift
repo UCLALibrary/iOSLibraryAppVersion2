@@ -79,8 +79,6 @@ class LibraryListTableViewController: UITableViewController {
         //mke cell reusable
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         
-        //cell.hidden = true
-
         // Configure the cell's look
         let library = self.libraries[indexPath.row]
         

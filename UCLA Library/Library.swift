@@ -35,7 +35,6 @@ class Library: NSObject {
     var email:String! //email of the library
     var phoneNumber:String! //phone Number of the library
     
-    
     init(name: String? = nil) {
         self.name = name
         self.id = nil
@@ -45,34 +44,25 @@ class Library: NSObject {
         //i.e {tuesday:"...", monday:"...", friday:"...",} etc.
         //this way we can directly hash into the array i.e if(monday) library.week[0] = "monday's value"
         //sorting is another option, but we would like to avoid the cpu of that
-        var temp = dayInWeek(name:"",open:"",close:"", dayOfMonth: 0)
+        let temp = dayInWeek(name:"",open:"",close:"", dayOfMonth: 0)
         self.week = Array<dayInWeek>(count: 7, repeatedValue: temp)
-        
         super.init()
     }
-    
-    
     
     //return the state of the phone: open, closed, or about to close in string form.
     //also populates todayElement
     //future developers: maybe use enums instead?
     //adjust time scale to 0 - 24 instead of 12am 12pm etc
     func getState() -> String {
-        let calendar = NSCalendar.currentCalendar()
-        let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Day], fromDate: currentDate)
-        
-        //access day in week array
-        let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
-        print("today \(dateComponents.day)")
-        print("listed day of month \(week[0].dayOfMonth)")
-        print("indexintodayarray \(indexIntoDayArray)")
-
+        let currentDayInfo = getTodayInfo()
+        let indexIntoDayArray = currentDayInfo.0
+        let currentTime = currentDayInfo.1
         
         let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
         let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
-        self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //this means that anumat's API is broken
-        
+        self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //-1 means that anumat's API is broken
+        print("close: \(close)")
+        print("open: \(open)")
         
         //if closed today, simply return closed
         if (close == "closed") {
@@ -88,7 +78,6 @@ class Library: NSObject {
         var openTime = Double(componentsOpen[0].componentsSeparatedByString(":")[0])! + Double(componentsOpen[0].componentsSeparatedByString(":")[1])!/60
         
         var closeTime = Double(componentsClose[0].componentsSeparatedByString(":")[0])! + Double(componentsClose[0].componentsSeparatedByString(":")[1])!/60
-        
         
         /****
          11am - 9pm check
@@ -107,8 +96,6 @@ class Library: NSObject {
         if(componentsOpen[1] == "PM") {
             openTime = openTime + 12
         }
-        
-        var currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
         
         //library closes in the AM
         if(componentsClose[1] == "AM") {
@@ -129,29 +116,40 @@ class Library: NSObject {
         } else {
             return "open"
         }
-        
-        
     }
-    
     
     //return a tuple where first is open time, second is closing time
     func getHoursToday() -> (String, String) {
-        let calendar = NSCalendar.currentCalendar()
-        let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Day], fromDate: currentDate)
-        print("current day \(dateComponents.day)")
-        print("first day of week \(week[0].dayOfMonth)")
-        
-        //access day in week array
-        let indexIntoDayArray = dateComponents.day - week[0].dayOfMonth
-        
+        let indexIntoDayArray = getTodayInfo().0
         if(indexIntoDayArray < 0 || indexIntoDayArray > 6) {
             return (week[0].open, week[0].close)
         }
-
         print("the index is \(indexIntoDayArray)")
-
         return (week[indexIntoDayArray].open, week[indexIntoDayArray].close)
+    }
+    
+    
+    //get index into the current day and the Current Time
+    private func getTodayInfo() -> (Int,Double) {
+        let calendar = NSCalendar.currentCalendar()
+        let currentDate = NSDate()
+        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Day], fromDate: currentDate)
+        
+        //access day in week array
+        var indexIntoDayArray = dateComponents.day - self.week[0].dayOfMonth
+        if(indexIntoDayArray < 0) {
+            indexIntoDayArray = 0
+            while dateComponents.day != self.week[indexIntoDayArray].dayOfMonth {
+                indexIntoDayArray += 1
+            }
+        }
+        print(" ")
+        print("today \(dateComponents.day)")
+        print("listed day of month \(self.week[0].dayOfMonth)")
+        print("indexintodayarray \(indexIntoDayArray)")
+        let currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
+        
+        return (indexIntoDayArray, currentTime)
     }
     
     
@@ -243,7 +241,7 @@ class Library: NSObject {
         
         self.phoneNumber = mydictionary[self.name]?.0
         self.email = mydictionary[self.name]?.1
-        
     }
+
     
 }
