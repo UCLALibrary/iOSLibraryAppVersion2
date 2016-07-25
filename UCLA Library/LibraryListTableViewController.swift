@@ -40,7 +40,6 @@ class LibraryListTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: CGRectZero)
         self.tableView.backgroundColor = UIColor.whiteColor()
 
-        
         //progress indicator
         //add the activity to the ViewController's view
         view.addSubview(activityIndicatorView)
@@ -93,8 +92,6 @@ class LibraryListTableViewController: UITableViewController {
             var icon = UIImageView(image: UIImage(named: "open.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
             cell.accessoryView = icon
-            //cell.addSubview(icon)
-           // icon.image =
         } else if(libState == "closing soon") {
             var icon = UIImageView(image: UIImage(named: "soon.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
@@ -192,7 +189,7 @@ class LibraryListTableViewController: UITableViewController {
         ]
         
         
-        //Using Alamofire to make a getRequest
+        //Using Alamofire to make a GET Request
         Alamofire.request(.GET, "http://anumat.com/hours")
             .responseJSON {
                 response in switch response.result {
@@ -209,7 +206,6 @@ class LibraryListTableViewController: UITableViewController {
                             if let curr = lib as? NSDictionary {
                                 var currentLibrary = Library()
                                 
-                                //iterating thru JSON response via pattern matching, like ocaml/ML
                                 for (key, value) in curr {
                                     
                                     //tempKey will be either be the day of the week, the ID of the library, or name of library
@@ -229,7 +225,6 @@ class LibraryListTableViewController: UITableViewController {
                                                 currentLibrary.getCoordinates()
                                                 currentLibrary.getMaxLaptops()
                                                 currentLibrary.getContactDetails()
-                                                
                                             }
                                         }
                                             
@@ -248,13 +243,10 @@ class LibraryListTableViewController: UITableViewController {
                                                 //get the opening & closing times
                                                 if let open = dayOfWeek["open"] as? String {
                                                     if let close = dayOfWeek["close"] as? String {
-                                                        
                                                         //get day of month
                                                         if let dayOfMonth = dayOfWeek["date"] as? Int {
-
                                                             //create a day struct storing open and close of M T W Th F S Sn
                                                             let day = dayInWeek(name: tempKey.capitalizedString, open: open, close: close, dayOfMonth: dayOfMonth)
-                                                            
                                                             //store that into the library's day array
                                                             //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
                                                             currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
@@ -262,19 +254,22 @@ class LibraryListTableViewController: UITableViewController {
                                                     
                                                     }
                                                 }
+                                            } else {
+                                                //library has no hours
+                                                currentLibrary.name = nil
+                                                break
                                             }
                                         }
-                                        
-                                        
                                     }
                                 }
-                                
-                                //append the library to currentLibrary
-                                localLibraries.append(currentLibrary)
+                                if(currentLibrary.name != nil) {
+                                    //append the library to currentLibrary
+                                    localLibraries.append(currentLibrary)
+                                }
                             }
                             
                         }
-                        
+
                         self.libraries = localLibraries
                         
                         //remove activity indicator view
