@@ -120,11 +120,11 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             self.imageView.addSubview(nLaptops)
             
             progress.animateFromAngle(0, toAngle: angle, duration: 1.5) { completed in
-                if completed {
-                    print("animation stopped, completed")
-                } else {
-                    print("animation stopped, was interrupted")
-                }
+//                if completed {
+//                    print("animation stopped, completed")
+//                } else {
+//                    print("animation stopped, was interrupted")
+//                }
             }
         }
     }

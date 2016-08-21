@@ -295,34 +295,4 @@ class LibraryListTableViewController: UITableViewController {
             return
         })
     }
-    
-    
-//////////////////////////////////////
-//
-//////////////////////////////////////
-    
-    enum LibraryState {
-        case ClosingSoon
-        case Open
-        case Close
-    }
-    
-    //library:Library
-    func openClosingOrSoon() -> LibraryState {
-        var state = LibraryState.Open
-
-        
-        let calendar = NSCalendar.currentCalendar()
-        
-        //print("the day is \(day), the month is \(month)")
-        let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Day, NSCalendarUnit.Month, NSCalendarUnit.Year, NSCalendarUnit.WeekOfYear, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Second, NSCalendarUnit.Nanosecond], fromDate: currentDate)
-        
-        print("day = \(dateComponents.day)", "month = \(dateComponents.month)", "year = \(dateComponents.year)", "week of year = \(dateComponents.weekOfYear)", "hour = \(dateComponents.hour)", "minute = \(dateComponents.minute)", "second = \(dateComponents.second)", "nanosecond = \(dateComponents.nanosecond)" , separator: ", ", terminator: "")
-        
-        return state
-    }
-    
-    
-
 }

@@ -61,8 +61,8 @@ class Library: NSObject {
         let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
         let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
         self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //-1 means that anumat's API is broken
-        print("close: \(close)")
-        print("open: \(open)")
+//        print("close: \(close)")
+//        print("open: \(open)")
         
         //if closed today, simply return closed
         if (close == "closed") {
@@ -108,7 +108,7 @@ class Library: NSObject {
                 return "open"
             }
         }
-        
+         
         if(currentTime > closeTime || currentTime < openTime) {
             return "closed"
         } else if (currentTime > closeTime - 1) {
@@ -124,7 +124,7 @@ class Library: NSObject {
         if(indexIntoDayArray < 0 || indexIntoDayArray > 6) {
             return (week[0].open, week[0].close)
         }
-        print("the index is \(indexIntoDayArray)")
+        //print("the index is \(indexIntoDayArray)")
         return (week[indexIntoDayArray].open, week[indexIntoDayArray].close)
     }
     
@@ -143,10 +143,6 @@ class Library: NSObject {
                 indexIntoDayArray += 1
             }
         }
-        print(" ")
-        print("today \(dateComponents.day)")
-        print("listed day of month \(self.week[0].dayOfMonth)")
-        print("indexintodayarray \(indexIntoDayArray)")
         let currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
         
         return (indexIntoDayArray, currentTime)

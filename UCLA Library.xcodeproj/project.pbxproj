@@ -30,8 +30,7 @@
 		73771B601C9E6B1700DDF5ED /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5F1C9E6B1700DDF5ED /* Library.swift */; };
 		73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B691C9E87F000DDF5ED /* DetailViewController.swift */; };
 		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
-		73D207601CBA187A00B2EE35 /* technology.svg in Resources */ = {isa = PBXBuildFile; fileRef = 73D2075F1CBA187A00B2EE35 /* technology.svg */; };
-		73D207651CBB453600B2EE35 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73D207621CBB453600B2EE35 /* close.png */; };
+		73A0B4641D5FE80A002CF2B7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73A0B4631D5FE80A002CF2B7 /* close.png */; };
 		73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */; };
 		73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */; };
 		73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */; };
@@ -96,8 +95,7 @@
 		73771B5F1C9E6B1700DDF5ED /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
-		73D2075F1CBA187A00B2EE35 /* technology.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = technology.svg; path = ../../../../Downloads/technology.svg; sourceTree = "<group>"; };
-		73D207621CBB453600B2EE35 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = ../../../../Downloads/close.png; sourceTree = "<group>"; };
+		73A0B4631D5FE80A002CF2B7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArtsLibrary.png; sourceTree = "<group>"; };
 		73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BiomedicalLibrary.png; sourceTree = "<group>"; };
 		73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EastAsianLibrary.png; sourceTree = "<group>"; };
@@ -220,10 +218,9 @@
 				733206881CC4993F00C82876 /* UCLA Library-Bridging-Header.h */,
 				7370BB171CCCC4C00087D7AD /* menu.png */,
 				7337F7421CD71FA6009E8283 /* soon.png */,
-				73D207621CBB453600B2EE35 /* close.png */,
-				73D2075F1CBA187A00B2EE35 /* technology.svg */,
 				73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */,
 				73DC7D851CA360D100F0CE12 /* BiomedicalLibrary.png */,
+				73A0B4631D5FE80A002CF2B7 /* close.png */,
 				735B6EBD1CBCA76C00300192 /* open.png */,
 				73DC7D861CA360D100F0CE12 /* EastAsianLibrary.png */,
 				73DC7D871CA360D100F0CE12 /* Icon.png */,
@@ -360,7 +357,6 @@
 				73DC7D971CA360D100F0CE12 /* ManagementLibrary.png in Resources */,
 				73DC7D991CA360D100F0CE12 /* PowellLibrary.png in Resources */,
 				73DC7D951CA360D100F0CE12 /* Icon.png in Resources */,
-				73D207601CBA187A00B2EE35 /* technology.svg in Resources */,
 				73DC7D931CA360D100F0CE12 /* BiomedicalLibrary.png in Resources */,
 				73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */,
 				73DC7D981CA360D100F0CE12 /* MusicLibrary.jpg in Resources */,
@@ -369,7 +365,6 @@
 				73771B351C9E629F00DDF5ED /* Assets.xcassets in Resources */,
 				7370BB181CCCC4C00087D7AD /* menu.png in Resources */,
 				73DC7D941CA360D100F0CE12 /* EastAsianLibrary.png in Resources */,
-				73D207651CBB453600B2EE35 /* close.png in Resources */,
 				73771B331C9E629F00DDF5ED /* Main.storyboard in Resources */,
 				735B6EB81CBCA6A100300192 /* title.png in Resources */,
 				73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */,
@@ -377,6 +372,7 @@
 				7337F7431CD71FA6009E8283 /* soon.png in Resources */,
 				7332067F1CC30EE700C82876 /* x.png in Resources */,
 				73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */,
+				73A0B4641D5FE80A002CF2B7 /* close.png in Resources */,
 				735B6EBE1CBCA76C00300192 /* open.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,16 +599,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: hsuregan@gmail.com (9849DAT77N)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";
+				PRODUCT_BUNDLE_IDENTIFIER = "DQ8W763H6H.phwd.UCLA-Library-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
@@ -626,16 +622,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: UCLA Library (DQ8W763H6H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-Library";
+				PRODUCT_BUNDLE_IDENTIFIER = "DQ8W763H6H.phwd.UCLA-Library-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
