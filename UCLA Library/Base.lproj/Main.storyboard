@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lg8-QC-wOT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lg8-QC-wOT">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -243,7 +242,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-rC-Z4y" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="120" width="500" height="42"/>
+                                <rect key="frame" x="50" y="170" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Ask A Librarian">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -253,7 +252,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="244" width="500" height="42"/>
+                                <rect key="frame" x="50" y="232" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Research Guides">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -263,7 +262,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-P3-jca" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="306" width="500" height="42"/>
+                                <rect key="frame" x="50" y="294" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Search Catalogues">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,7 +272,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-ed-t5s" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="368" width="500" height="42"/>
+                                <rect key="frame" x="50" y="356" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Go To Full Site">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,7 +282,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-Yd-sg3" userLabel="Credits" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="430" width="500" height="42"/>
+                                <rect key="frame" x="50" y="418" width="500" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Credits">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -292,16 +291,6 @@
                                     <segue destination="5F8-op-0v2" kind="popoverPresentation" popoverAnchorView="MM6-Yd-sg3" id="9tC-vr-ASu">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5p4-gw-FoJ" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="182" width="500" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="My Account">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="MyAccount:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="xia-I1-l6p"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -313,32 +302,23 @@
                             <constraint firstItem="IMy-P3-jca" firstAttribute="top" secondItem="Aau-2y-Eip" secondAttribute="bottom" constant="20" id="3DH-hP-UrD"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="3lC-Pu-H7e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9dB-rC-Z4y" secondAttribute="trailing" constant="30" id="4M7-4o-5aS"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="Bth-ed-t5s" secondAttribute="trailing" id="5nv-Z6-kHM"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="BZo-ak-wVM"/>
                             <constraint firstItem="MM6-Yd-sg3" firstAttribute="top" secondItem="Bth-ed-t5s" secondAttribute="bottom" constant="20" id="FDx-Ct-vuq"/>
                             <constraint firstItem="9dL-lt-1hE" firstAttribute="top" secondItem="jpm-fx-0HW" secondAttribute="top" id="GKP-1d-LaP"/>
                             <constraint firstItem="Bth-ed-t5s" firstAttribute="top" secondItem="IMy-P3-jca" secondAttribute="bottom" constant="20" id="Gtj-RW-6Jn"/>
-                            <constraint firstItem="9dB-rC-Z4y" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="100" id="Gzb-Pl-Zot"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="IMy-P3-jca" secondAttribute="trailing" id="LuX-AT-Bj9"/>
+                            <constraint firstItem="9dB-rC-Z4y" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="150" id="Gzb-Pl-Zot"/>
                             <constraint firstItem="Ght-yp-Oub" firstAttribute="top" secondItem="peL-Sy-Zx2" secondAttribute="bottom" constant="20" id="OP5-nw-G5v"/>
                             <constraint firstItem="9dB-rC-Z4y" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="PAa-ZH-Q1R"/>
                             <constraint firstItem="9dL-lt-1hE" firstAttribute="bottom" secondItem="tzh-Mc-7w2" secondAttribute="top" id="R8D-6A-Xf1"/>
-                            <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="5p4-gw-FoJ" secondAttribute="bottom" constant="20" id="RXN-CL-lci"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="top" secondItem="9dB-rC-Z4y" secondAttribute="bottom" constant="20" id="WEF-Y7-MNz"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="IMy-P3-jca" secondAttribute="leading" id="XUP-e9-58R"/>
+                            <constraint firstItem="Aau-2y-Eip" firstAttribute="top" secondItem="9dB-rC-Z4y" secondAttribute="bottom" constant="20" id="TOf-Oz-wHO"/>
                             <constraint firstItem="IMy-P3-jca" firstAttribute="top" secondItem="Aau-2y-Eip" secondAttribute="bottom" constant="20" id="Y3P-Pa-En2"/>
                             <constraint firstItem="MM6-Yd-sg3" firstAttribute="centerX" secondItem="9dL-lt-1hE" secondAttribute="centerX" id="bFW-G6-xB2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Bth-ed-t5s" secondAttribute="trailing" constant="30" id="eWJ-gW-YPM"/>
                             <constraint firstItem="MM6-Yd-sg3" firstAttribute="trailing" secondItem="Bth-ed-t5s" secondAttribute="trailing" id="fKu-C3-mil"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Aau-2y-Eip" secondAttribute="leading" id="fp0-9c-MG7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ght-yp-Oub" secondAttribute="trailing" constant="20" id="fpt-MS-dB1"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="Bth-ed-t5s" secondAttribute="leading" id="klO-yd-76z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5p4-gw-FoJ" secondAttribute="trailing" constant="30" id="m8A-Ns-ZqS"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="trailing" secondItem="Aau-2y-Eip" secondAttribute="trailing" id="o4w-pl-mpv"/>
                             <constraint firstItem="IMy-P3-jca" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="poy-QF-jaU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Aau-2y-Eip" secondAttribute="trailing" constant="30" id="ptO-TX-MA6"/>
                             <constraint firstItem="Aau-2y-Eip" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="qgU-yV-reY"/>
-                            <constraint firstItem="5p4-gw-FoJ" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leadingMargin" constant="30" id="roZ-7I-A4L"/>
                             <constraint firstItem="9dL-lt-1hE" firstAttribute="leading" secondItem="jpm-fx-0HW" secondAttribute="leading" id="tpE-x5-rN2"/>
                         </constraints>
                     </view>
