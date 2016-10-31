@@ -7,6 +7,7 @@ pod 'Alamofire', '~> 3.0'
 
 platform :ios, '8.1'
 pod 'GoogleMaps'
+pod 'Google/Analytics'
 
 target 'UCLA Library' do
 

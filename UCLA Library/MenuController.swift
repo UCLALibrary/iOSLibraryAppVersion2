@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MenuController: UIViewController {
 
@@ -23,11 +24,6 @@ class MenuController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-//    override func viewDidDisappear(animated: Bool) {
-//        self.navigationController?.navigationBar.translucent = false
-//    }
-    
     
     //theese IBActions 'dismiss' the menu (translucent light blue modal) from the screen either from the x button of anywhere on the screen aside from the menu buttons
     @IBAction func dismissMenu(sender: AnyObject) {
@@ -49,23 +45,33 @@ class MenuController: UIViewController {
     }
     */
     @IBAction func AskALibrarian(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"http://www.questionpoint.org/crs/qwidgetV4/patronChatQwidget.jsp?langcode=1&instid=11069&ts=1461524954773&skin=gray&size=standard&referer=http%3A%2F%2Fwww.library.ucla.edu%2Fsupport%2Fresearch-help")!)
+        //UIApplication.sharedApplication().openURL(NSURL(string:"http://www.questionpoint.org/crs/qwidgetV4/patronChatQwidget.jsp?langcode=1&instid=11069&ts=1461524954773&skin=gray&size=standard&referer=http%3A%2F%2Fwww.library.ucla.edu%2Fsupport%2Fresearch-help")!)
+        openURL("http://www.questionpoint.org/crs/qwidgetV4/patronChatQwidget.jsp?langcode=1&instid=11069&ts=1461524954773&skin=gray&size=standard&referer=http%3A%2F%2Fwww.library.ucla.edu%2Fsupport%2Fresearch-help")
     }
     
-    @IBAction func MyAccount(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"http://catalog.library.ucla.edu/vwebv/login")!)
-    }
+//    @IBAction func MyAccount(sender: AnyObject) {
+//        UIApplication.sharedApplication().openURL(NSURL(string:"http://catalog.library.ucla.edu/vwebv/login")!)
+//    }
     
     @IBAction func ResearchGuides(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"http://guides.library.ucla.edu/")!)
+        //UIApplication.sharedApplication().openURL(NSURL(string:"http://guides.library.ucla.edu/")!)
+        openURL("http://guides.library.ucla.edu/")
     }
     
     @IBAction func SearchCatalogues(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"http://catalog.library.ucla.edu/")!)
+        //UIApplication.sharedApplication().openURL(NSURL(string:"http://catalog.library.ucla.edu/")!)
+        openURL("http://catalog.library.ucla.edu/")
     }
     
     @IBAction func GoToFullSite(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string:"https://www.library.ucla.edu/")!)
+        //UIApplication.sharedApplication().openURL(NSURL(string:"https://www.library.ucla.edu/")!)
+        openURL("https://www.library.ucla.edu/")
+    }
+    
+    func openURL(urlString:String) {
+    //TODO: Open in safari view controller
+        let svc = SFSafariViewController(URL: NSURL(string: urlString)!, entersReaderIfAvailable: true)
+        self.presentViewController(svc, animated: true, completion: nil)
     }
     
    

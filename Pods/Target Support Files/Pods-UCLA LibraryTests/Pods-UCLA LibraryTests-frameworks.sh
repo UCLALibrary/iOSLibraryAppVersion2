@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-UCLA LibraryTests/Alamofire.framework"
+  install_framework "Pods-UCLA LibraryTests/GoogleToolboxForMac.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-UCLA LibraryTests/Alamofire.framework"
+  install_framework "Pods-UCLA LibraryTests/GoogleToolboxForMac.framework"
 fi

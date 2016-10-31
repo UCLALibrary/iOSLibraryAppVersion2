@@ -29,6 +29,9 @@
 		73771B5E1C9E688400DDF5ED /* LibraryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */; };
 		73771B601C9E6B1700DDF5ED /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B5F1C9E6B1700DDF5ED /* Library.swift */; };
 		73771B6A1C9E87F000DDF5ED /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73771B691C9E87F000DDF5ED /* DetailViewController.swift */; };
+		7399E7831DC7E4010076D32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7399E7821DC7E4010076D32E /* GoogleService-Info.plist */; };
+		7399E7841DC7E4010076D32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7399E7821DC7E4010076D32E /* GoogleService-Info.plist */; };
+		7399E7851DC7E4010076D32E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7399E7821DC7E4010076D32E /* GoogleService-Info.plist */; };
 		739E4DD71C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */; };
 		73A0B4641D5FE80A002CF2B7 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 73A0B4631D5FE80A002CF2B7 /* close.png */; };
 		73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */; };
@@ -94,6 +97,7 @@
 		73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListTableViewController.swift; sourceTree = "<group>"; };
 		73771B5F1C9E6B1700DDF5ED /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		7399E7821DC7E4010076D32E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
 		73A0B4631D5FE80A002CF2B7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		73DC7D841CA360D100F0CE12 /* ArtsLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArtsLibrary.png; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		73771B211C9E629F00DDF5ED = {
 			isa = PBXGroup;
 			children = (
+				7399E7821DC7E4010076D32E /* GoogleService-Info.plist */,
 				73771B2C1C9E629F00DDF5ED /* UCLA Library */,
 				73771B411C9E62A000DDF5ED /* UCLA LibraryTests */,
 				73771B4C1C9E62A000DDF5ED /* UCLA LibraryUITests */,
@@ -374,6 +379,7 @@
 				73DC7D921CA360D100F0CE12 /* ArtsLibrary.png in Resources */,
 				73A0B4641D5FE80A002CF2B7 /* close.png in Resources */,
 				735B6EBE1CBCA76C00300192 /* open.png in Resources */,
+				7399E7831DC7E4010076D32E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7399E7841DC7E4010076D32E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7399E7851DC7E4010076D32E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@ import UIKit
 import MessageUI
 import GoogleMaps
 
-
 //subclassing this controller with the regular viewcontroller AND email delegate cause we be sendin some emails
 class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
 

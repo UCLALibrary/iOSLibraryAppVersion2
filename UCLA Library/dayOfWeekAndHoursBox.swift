@@ -41,7 +41,6 @@ class dayOfWeekAndHoursBox: UIView {
         
         //make day of month font size larger
         dayOfMonth.font = dayOfMonth.font.fontWithSize(40)
-        
 
         //insert text
         dayOfMonth.text = "\(dayInMonth)"
