@@ -17,7 +17,8 @@ class LibraryListTableViewController: UITableViewController {
     //instantiate a gray Activity Indicator View
     let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         //make font color white

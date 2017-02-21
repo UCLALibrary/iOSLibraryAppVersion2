@@ -246,7 +246,7 @@ public class KDCircularProgress: UIView {
         animation.fromValue = fromAngle
         animation.toValue = toAngle
         animation.duration = animationDuration
-        animation.delegate = self
+        //animation.delegate = self
         angle = toAngle
         animationCompletionBlock = completion
         
@@ -261,7 +261,7 @@ public class KDCircularProgress: UIView {
     }
     
     public func pauseAnimation() {
-        guard let presentationLayer = progressLayer.presentationLayer() as? KDCircularProgressViewLayer else { return }
+        guard let presentationLayer = progressLayer.presentationLayer() else { return }
         let currentValue = presentationLayer.angle
         progressLayer.removeAllAnimations()
         animationCompletionBlock = nil
@@ -277,7 +277,7 @@ public class KDCircularProgress: UIView {
         return progressLayer.animationForKey("angle") != nil
     }
     
-    override public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if let completionBlock = animationCompletionBlock {
             completionBlock(flag)
             animationCompletionBlock = nil
@@ -405,16 +405,16 @@ public class KDCircularProgress: UIView {
             let reducedAngle = UtilityFunctions.Mod(angle, range: 360, minMax: (0, 360))
             let fromAngle = ConversionFunctions.DegreesToRadians(CGFloat(-startAngle))
             let toAngle = ConversionFunctions.DegreesToRadians(CGFloat((clockwise == true ? -reducedAngle : reducedAngle) - startAngle))
-            CGContextAddArc(imageCtx, CGFloat(size.width/2.0),CGFloat(size.height/2.0), arcRadius, fromAngle, toAngle, clockwise == true ? 1 : 0)
+            CGContextAddArc(imageCtx!, CGFloat(size.width/2.0),CGFloat(size.height/2.0), arcRadius, fromAngle, toAngle, clockwise == true ? 1 : 0)
             let glowValue = GlowConstants.glowAmountForAngle(reducedAngle, glowAmount: glowAmount, glowMode: glowMode, size: size.width)
             if glowValue > 0 {
-                CGContextSetShadowWithColor(imageCtx, CGSizeZero, glowValue, UIColor.blackColor().CGColor)
+                CGContextSetShadowWithColor(imageCtx!, CGSizeZero, glowValue, UIColor.blackColor().CGColor)
             }
-            CGContextSetLineCap(imageCtx, roundedCorners == true ? .Round : .Butt)
-            CGContextSetLineWidth(imageCtx, progressLineWidth)
-            CGContextDrawPath(imageCtx, .Stroke)
+            CGContextSetLineCap(imageCtx!, roundedCorners == true ? .Round : .Butt)
+            CGContextSetLineWidth(imageCtx!, progressLineWidth)
+            CGContextDrawPath(imageCtx!, .Stroke)
             
-            let drawMask: CGImageRef = CGBitmapContextCreateImage(UIGraphicsGetCurrentContext())!
+            let drawMask: CGImageRef = CGBitmapContextCreateImage(UIGraphicsGetCurrentContext()!)!
             UIGraphicsEndImageContext()
             
             CGContextSaveGState(ctx)

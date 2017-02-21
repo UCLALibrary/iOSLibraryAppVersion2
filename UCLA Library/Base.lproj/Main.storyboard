@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lg8-QC-wOT">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Lg8-QC-wOT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Library List Table View Controller-->
@@ -11,31 +15,31 @@
             <objects>
                 <tableViewController modalTransitionStyle="partialCurl" id="HFQ-h8-W7h" customClass="LibraryListTableViewController" customModule="UCLA_Library" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="uFO-sf-WiD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="cell" textLabel="fQy-ob-46J" detailTextLabel="uH5-dT-Gmy" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="SwV-5V-w0c" customClass="LibraryTableCell" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SwV-5V-w0c" id="GZ7-TD-fhz">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fQy-ob-46J">
                                             <rect key="frame" x="15" y="9" width="44" height="27.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                            <color key="textColor" red="0.10588235294117647" green="0.5607843137254902" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.10588235294117647" green="0.5607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uH5-dT-Gmy">
                                             <rect key="frame" x="15" y="36.5" width="33" height="15.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -53,11 +57,11 @@
                     <navigationItem key="navigationItem" id="KWi-g5-DPM">
                         <barButtonItem key="rightBarButtonItem" width="50" style="plain" id="C4f-TE-Wl4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lrn-Cd-M1G">
-                                <rect key="frame" x="550" y="7" width="30" height="30"/>
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="menu.png"/>
                                 <state key="highlighted">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="WiV-Ya-3Gn" kind="presentation" identifier="ToMenu" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="3Yb-3e-e3P"/>
@@ -68,7 +72,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKH-FO-VrO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="-578"/>
+            <point key="canvasLocation" x="-306" y="-818"/>
         </scene>
         <!--Title-->
         <scene sceneID="Pd4-BI-2zu">
@@ -79,39 +83,39 @@
                         <viewControllerLayoutGuide type="bottom" id="7It-E8-iSO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="miE-Y2-fMC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6G-6Q-h49">
-                                <rect key="frame" x="0.0" y="330" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="330" width="375" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ImE-gc-bPU"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAz-Q5-YMC">
-                                <rect key="frame" x="0.0" y="440" width="600" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="440" width="375" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="0j7-Ub-oaE"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7wP-3x-CPp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24963466726618705" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.24963466726618705" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="1ud-6X-Uv3"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-0T-cxQ" userLabel="backgroundEmailPhone">
-                                <rect key="frame" x="0.0" y="280" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="280" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="276" height="40"/>
-                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="10" y="0.0" width="172.5" height="40"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="PhoneDown"/>
                                         <state key="highlighted" image="Phone">
-                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -123,8 +127,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                        <rect key="frame" x="314" y="0.0" width="276" height="40"/>
-                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="192.5" y="0.0" width="172.5" height="40"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="MailDown"/>
                                         <state key="highlighted" image="Mail"/>
                                         <userDefinedRuntimeAttributes>
@@ -149,7 +153,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7wP-3x-CPp" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="0Su-Y2-czE"/>
                             <constraint firstItem="D6G-6Q-h49" firstAttribute="width" secondItem="miE-Y2-fMC" secondAttribute="width" id="2p2-y4-ccD"/>
@@ -169,11 +173,11 @@
                     <toolbarItems>
                         <barButtonItem width="50" style="plain" id="IcN-xj-ddu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ehr-9c-ohA">
-                                <rect key="frame" x="20" y="7" width="50" height="30"/>
+                                <rect key="frame" x="16" y="7" width="50" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="menu.png"/>
                                 <state key="highlighted">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                         </barButtonItem>
@@ -181,11 +185,11 @@
                     <navigationItem key="navigationItem" title="Title" id="RHE-Ww-TZ2">
                         <barButtonItem key="rightBarButtonItem" width="50" style="plain" id="PNY-NU-rEe">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gqi-mt-1MY">
-                                <rect key="frame" x="550" y="7" width="30" height="30"/>
+                                <rect key="frame" x="329" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="menu.png"/>
                                 <state key="highlighted">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="WiV-Ya-3Gn" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="YaQ-0A-TTj"/>
@@ -208,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zHu-6h-1dx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="-291"/>
+            <point key="canvasLocation" x="914" y="-571"/>
         </scene>
         <!--Menu Controller-->
         <scene sceneID="OpP-rz-XfH">
@@ -219,11 +223,11 @@
                         <viewControllerLayoutGuide type="bottom" id="tzh-Mc-7w2"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="jpm-fx-0HW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-lt-1hE" userLabel="BackgroundClose">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="dismissMenu1:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="rZq-3x-SjE"/>
@@ -231,7 +235,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ght-yp-Oub" userLabel="Close">
-                                <rect key="frame" x="530" y="40" width="30" height="30"/>
+                                <rect key="frame" x="309" y="40" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="VVY-s1-6jw"/>
                                     <constraint firstAttribute="height" constant="30" id="cJv-Nz-ZSN"/>
@@ -242,50 +246,50 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-rC-Z4y" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="120" width="500" height="42"/>
+                                <rect key="frame" x="46" y="120" width="283" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Ask A Librarian">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="AskALibrarian:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="Mi7-to-hDL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aau-2y-Eip" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="182" width="500" height="42"/>
+                                <rect key="frame" x="46" y="182" width="283" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Research Guides">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="ResearchGuides:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="jyc-xY-bLu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-P3-jca" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="244" width="500" height="42"/>
+                                <rect key="frame" x="46" y="244" width="283" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Search Catalogues">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="SearchCatalogues:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="SNS-pm-KnH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bth-ed-t5s" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="306" width="500" height="42"/>
+                                <rect key="frame" x="46" y="306" width="283" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Go To Full Site">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="GoToFullSite:" destination="WiV-Ya-3Gn" eventType="touchUpInside" id="CgD-yV-iQF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM6-Yd-sg3" userLabel="Credits" customClass="MenuButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                <rect key="frame" x="50" y="368" width="500" height="42"/>
+                                <rect key="frame" x="46" y="368" width="283" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Credits">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="5F8-op-0v2" kind="popoverPresentation" popoverAnchorView="MM6-Yd-sg3" id="9tC-vr-ASu">
@@ -294,8 +298,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="0.5" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="IMy-P3-jca" secondAttribute="trailing" constant="30" id="1vp-Hu-3hG"/>
                             <constraint firstItem="MM6-Yd-sg3" firstAttribute="leading" secondItem="Bth-ed-t5s" secondAttribute="leading" id="2Ng-OQ-kKG"/>
@@ -325,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="coP-va-hoe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="856" y="-1652"/>
+            <point key="canvasLocation" x="852" y="-1592"/>
         </scene>
         <!--Credits Controller-->
         <scene sceneID="ptm-Hb-L3V">
@@ -358,30 +362,36 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Close" translatesAutoresizingMaskIntoConstraints="NO" id="Vse-e6-ch4">
                                                         <rect key="frame" x="12" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="open.png" translatesAutoresizingMaskIntoConstraints="NO" id="0EW-oZ-YcA">
                                                         <rect key="frame" x="50" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Phone" translatesAutoresizingMaskIntoConstraints="NO" id="PV6-tW-8Gx">
                                                         <rect key="frame" x="122" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mail" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-Nw-1RP">
                                                         <rect key="frame" x="160" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="3sd-mQ-Xza">
                                                         <rect key="frame" x="198" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="soon.png" translatesAutoresizingMaskIntoConstraints="NO" id="RbR-XS-v5h">
                                                         <rect key="frame" x="88" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="252" id="2eG-fW-Mtr"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.0" green="0.23529411759999999" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.23529411759999999" blue="0.62745098040000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="R8w-k1-C2n" firstAttribute="top" secondItem="9vK-Je-9W9" secondAttribute="bottom" constant="49" id="21M-k8-Sxv"/>
                                             <constraint firstItem="9vK-Je-9W9" firstAttribute="top" secondItem="fuT-kJ-SLU" secondAttribute="top" constant="102" id="91b-Hg-hl0"/>
@@ -398,11 +408,11 @@
                                     <constraint firstAttribute="height" constant="52" id="2uZ-S9-oSE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="highlightedColor" red="1" green="0.95013729579999995" blue="0.97166451590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JzY-Gj-KVZ" firstAttribute="top" secondItem="XtT-4K-jjy" secondAttribute="bottom" constant="250" id="7YK-cy-Ag8"/>
                             <constraint firstItem="JzY-Gj-KVZ" firstAttribute="leading" secondItem="va9-TD-hg9" secondAttribute="leading" constant="20" id="FVk-zK-9ie"/>
@@ -416,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3r-KW-K96" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-334" y="-1352"/>
+            <point key="canvasLocation" x="-485" y="-1622"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF0-gp-Siu">
@@ -434,15 +444,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHP-I4-RVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-777" y="-570"/>
+            <point key="canvasLocation" x="-1026" y="-818"/>
         </scene>
     </scenes>
     <resources>
         <image name="Close" width="32" height="32"/>
         <image name="Mail" width="32" height="32"/>
-        <image name="MailDown" width="64" height="64"/>
+        <image name="MailDown" width="32" height="32"/>
         <image name="Phone" width="32" height="32"/>
-        <image name="PhoneDown" width="64" height="64"/>
+        <image name="PhoneDown" width="32" height="32"/>
         <image name="menu.png" width="64" height="64"/>
         <image name="open.png" width="64" height="64"/>
         <image name="soon.png" width="64" height="64"/>
@@ -451,5 +461,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="3Yb-3e-e3P"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

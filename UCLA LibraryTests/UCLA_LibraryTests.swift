@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import UCLA_Library
+//@testable import UCLA_Library
 
 class UCLA_LibraryTests: XCTestCase {
     
