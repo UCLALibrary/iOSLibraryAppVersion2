@@ -26,7 +26,7 @@ class LibraryListTableViewController: UITableViewController {
         
         //library logo
         let image = UIImage(named: "title.png")!
-        var imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
         imageView.center.x = self.view.center.x
         imageView.contentMode = .ScaleAspectFit
         imageView.image = image
@@ -105,15 +105,15 @@ class LibraryListTableViewController: UITableViewController {
                 
         //depending on the state of the library, a certain 'close', 'open', or 'closing soon' icon will appear on the right of each row of the table
         if(libState == "open") {
-            var icon = UIImageView(image: UIImage(named: "open.png"))
+            let icon = UIImageView(image: UIImage(named: "open.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
             cell.accessoryView = icon
         } else if(libState == "closing soon") {
-            var icon = UIImageView(image: UIImage(named: "soon.png"))
+            let icon = UIImageView(image: UIImage(named: "soon.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
             cell.accessoryView = icon
         } else if(libState == "closed") {
-            var icon = UIImageView(image: UIImage(named: "close.png"))
+            let icon = UIImageView(image: UIImage(named: "close.png"))
             icon.frame = CGRect(x: cell.frame.maxX - 50, y: cell.bounds.minY+10, width: 30, height: 30)
             cell.accessoryView = icon
         }
@@ -220,7 +220,7 @@ class LibraryListTableViewController: UITableViewController {
                     if let response = JSON as? NSArray {
                         for lib in response {
                             if let curr = lib as? NSDictionary {
-                                var currentLibrary = Library()
+                                let currentLibrary = Library()
                                 
                                 for (key, value) in curr {
                                     

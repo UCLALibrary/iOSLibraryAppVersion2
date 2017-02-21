@@ -25,7 +25,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet var leadingContraint: NSLayoutConstraint!
     @IBOutlet var widthOfButtonContainer: NSLayoutConstraint!
     // Delegate requirement
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -37,7 +37,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     //Button to send email
     @IBAction func emailLibrary(sender: AnyObject) {
         // Create email message
-        var email = MFMailComposeViewController()
+        let email = MFMailComposeViewController()
         email.mailComposeDelegate = self
         email.setToRecipients([self.library.email])
         email.setSubject("Library Inquiry")

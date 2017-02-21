@@ -25,18 +25,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SwV-5V-w0c" id="GZ7-TD-fhz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fQy-ob-46J">
-                                            <rect key="frame" x="15" y="9" width="44" height="27.5"/>
+                                            <rect key="frame" x="15" y="8" width="44" height="28"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <color key="textColor" red="0.10588235294117647" green="0.5607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uH5-dT-Gmy">
-                                            <rect key="frame" x="15" y="36.5" width="33" height="15.5"/>
+                                            <rect key="frame" x="15" y="36" width="33" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="280" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqu-yg-Bws" userLabel="Phone Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="172.5" height="40"/>
+                                        <rect key="frame" x="10" y="0.0" width="173" height="40"/>
                                         <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="PhoneDown"/>
                                         <state key="highlighted" image="Phone">
@@ -127,7 +127,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fC-Jq-RZz" userLabel="Email Button" customClass="ContactButtons" customModule="UCLA_Library" customModuleProvider="target">
-                                        <rect key="frame" x="192.5" y="0.0" width="172.5" height="40"/>
+                                        <rect key="frame" x="193" y="0.0" width="172" height="40"/>
                                         <color key="backgroundColor" red="0.10588235294117647" green="0.5607843137254902" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="MailDown"/>
                                         <state key="highlighted" image="Mail"/>
@@ -433,7 +433,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lg8-QC-wOT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gZq-IV-gg8">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gZq-IV-gg8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
