@@ -22,8 +22,6 @@ struct dayInWeek {
     }
 }
 
-
-
 class Library: NSObject {
     var name: String! //name of library
     var id: Int! //id of library
@@ -61,9 +59,7 @@ class Library: NSObject {
         let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
         let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
         self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //-1 means that anumat's API is broken
-//        print("close: \(close)")
-//        print("open: \(open)")
-        
+
         //if closed today, simply return closed
         if (close == "closed") {
             return "closed"

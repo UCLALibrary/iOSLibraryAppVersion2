@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73194B701E3EEB8900A624A6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73194B6F1E3EEB8900A624A6 /* DataManager.swift */; };
 		7332067D1CC305F100C82876 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332067C1CC305F100C82876 /* MenuController.swift */; };
 		7332067F1CC30EE700C82876 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7332067E1CC30EE700C82876 /* x.png */; };
 		733206811CC3272800C82876 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733206801CC3272800C82876 /* MenuButtons.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		39E15F2233010F57126F6745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		73194B6F1E3EEB8900A624A6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		7332067C1CC305F100C82876 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7332067E1CC30EE700C82876 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x.png; path = ../x.png; sourceTree = "<group>"; };
 		733206801CC3272800C82876 /* MenuButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuButtons.swift; path = "UCLA Library/MenuButtons.swift"; sourceTree = SOURCE_ROOT; };
@@ -185,6 +187,7 @@
 				739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */,
 				73771B5F1C9E6B1700DDF5ED /* Library.swift */,
 				73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */,
+				73194B6F1E3EEB8900A624A6 /* DataManager.swift */,
 				73549A1A1CA37DA200A7DA01 /* KDCircularProgress.swift */,
 				7332067C1CC305F100C82876 /* MenuController.swift */,
 				7337F7401CD1E15C009E8283 /* CreditsController.swift */,
@@ -465,6 +468,7 @@
 				7337F7411CD1E15C009E8283 /* CreditsController.swift in Sources */,
 				733206811CC3272800C82876 /* MenuButtons.swift in Sources */,
 				73549A1B1CA37DA200A7DA01 /* KDCircularProgress.swift in Sources */,
+				73194B701E3EEB8900A624A6 /* DataManager.swift in Sources */,
 				7370BB161CC76F120087D7AD /* ContactButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

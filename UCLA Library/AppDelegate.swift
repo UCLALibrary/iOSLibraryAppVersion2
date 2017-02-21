@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let googleKey = "AIzaSyBivOndhlgn98R3bVqla3Pvn9_5Os_k40Y"
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         //GOOGLE Maps
         

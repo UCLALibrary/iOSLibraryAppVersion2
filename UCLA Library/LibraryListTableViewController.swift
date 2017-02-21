@@ -13,6 +13,7 @@ import Google
 class LibraryListTableViewController: UITableViewController {
     
     var libraries:[Library] = []
+    let data = DataManager()
     
     //instantiate a gray Activity Indicator View
     let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
@@ -48,9 +49,7 @@ class LibraryListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        let name =  "hello"
-       // let name = "Pattern~\(self.title!)"
-        
+        let name =  "User"
 //
 //        // The UA-XXXXX-Y tracker ID is loaded automatically from the
 //        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
@@ -67,6 +66,7 @@ class LibraryListTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         self.getLibraryData()
+        self.data.getLibraryData()
     }
 
     
@@ -192,7 +192,22 @@ class LibraryListTableViewController: UITableViewController {
     ////////////////////////////////////////////////////////////////////////////////////
     
     func getLibraryData() {
-        
+        //Using Alamofire to make a GET Request
+        Alamofire.request(.GET, "http://anumat.com/hours")
+            .responseJSON {
+                response in switch response.result {
+                case .Success(let JSON):
+                    print("success!");
+                    if let response = JSON as? NSArray {
+                        self.handleSuccess(response)
+                    }
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
+                }
+        }
+    }
+    
+    func handleSuccess(response: NSArray) {
         let sortDictionary: [String:Int] = [
             "monday" : 0,
             "tuesday" : 1,
@@ -202,104 +217,83 @@ class LibraryListTableViewController: UITableViewController {
             "saturday" : 5,
             "sunday" : 6
         ]
-        
-        
-        //Using Alamofire to make a GET Request
-        Alamofire.request(.GET, "http://anumat.com/hours")
-            .responseJSON {
-                response in switch response.result {
-                case .Success(let JSON):
+        var localLibraries:[Library] = []
+        //if let chain is to ensure SECURE unwraping
+            for lib in response {
+                if let curr = lib as? NSDictionary {
+                    var currentLibrary = Library()
                     
-                    var localLibraries:[Library] = []
-                    
-                    //if let chain is to ensure SECURE unwraping
-                    //Don't believe me? look @ apple docs
-                    //do not think this is superfluous, without it the app could easily crash
-                    //do not think that you can just force unwrap with 'as!'
-                    if let response = JSON as? NSArray {
-                        for lib in response {
-                            if let curr = lib as? NSDictionary {
-                                var currentLibrary = Library()
-                                
-                                for (key, value) in curr {
-                                    
-                                    //tempKey will be either be the day of the week, the ID of the library, or name of library
-                                    if let tempKey = key as? String {
-                                        
-                                        //if the key is the ID of the library
-                                        if tempKey == "id" {
-                                            if let idValue = value as? String {
-                                                currentLibrary.id = Int(idValue) as Int!
-                                            }
-                                        }
-                                            
-                                        //if the key is the NAME of the library
-                                        else if tempKey == "name" {
-                                            if let libraryName = value as? String {
-                                                currentLibrary.name = libraryName as String!
-                                                currentLibrary.getCoordinates()
-                                                currentLibrary.getMaxLaptops()
-                                                currentLibrary.getContactDetails()
-                                            }
-                                        }
-                                            
-                                        //if the key is the NUMBER of laptops available
-                                        else if tempKey == "laptops" {
-                                            if let nLaptops = value as? Int {
-                                                currentLibrary.availableLaptops = nLaptops as Int!
-                                            }
-                                        }
-                                        
-                                        else {
-                                            
-                                            //if the key is the DAY of the week
-                                            if let dayOfWeek = value as? NSDictionary {
-                                                
-                                                //get the opening & closing times
-                                                if let open = dayOfWeek["open"] as? String {
-                                                    if let close = dayOfWeek["close"] as? String {
-                                                        //get day of month
-                                                        if let dayOfMonth = dayOfWeek["date"] as? Int {
-                                                            //create a day struct storing open and close of M T W Th F S Sn
-                                                            let day = dayInWeek(name: tempKey.capitalizedString, open: open, close: close, dayOfMonth: dayOfMonth)
-                                                            //store that into the library's day array
-                                                            //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
-                                                            currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
-                                                        }
-                                                    
-                                                    }
-                                                }
-                                            } else {
-                                                //library has no hours
-                                                currentLibrary.name = nil
-                                                break
-                                            }
-                                        }
-                                    }
-                                }
-                                if(currentLibrary.name != nil) {
-                                    //append the library to currentLibrary
-                                    localLibraries.append(currentLibrary)
+                    for (key, value) in curr {
+                        
+                        //tempKey will be either be the day of the week, the ID of the library, or name of library
+                        if let tempKey = key as? String {
+                            
+                            //if the key is the ID of the library
+                            if tempKey == "id" {
+                                if let idValue = value as? String {
+                                    currentLibrary.id = Int(idValue) as Int!
                                 }
                             }
-                            
+                                
+                                //if the key is the NAME of the library
+                            else if tempKey == "name" {
+                                if let libraryName = value as? String {
+                                    currentLibrary.name = libraryName as String!
+                                    currentLibrary.getCoordinates()
+                                    currentLibrary.getMaxLaptops()
+                                    currentLibrary.getContactDetails()
+                                }
+                            }
+                                
+                                //if the key is the NUMBER of laptops available
+                            else if tempKey == "laptops" {
+                                if let nLaptops = value as? Int {
+                                    currentLibrary.availableLaptops = nLaptops as Int!
+                                }
+                            }
+                                
+                            else {
+                                
+                                //if the key is the DAY of the week
+                                if let dayOfWeek = value as? NSDictionary {
+                                    
+                                    //get the opening & closing times
+                                    if let open = dayOfWeek["open"] as? String {
+                                        if let close = dayOfWeek["close"] as? String {
+                                            //get day of month
+                                            if let dayOfMonth = dayOfWeek["date"] as? Int {
+                                                //create a day struct storing open and close of M T W Th F S Sn
+                                                let day = dayInWeek(name: tempKey.capitalizedString, open: open, close: close, dayOfMonth: dayOfMonth)
+                                                //store that into the library's day array
+                                                //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
+                                                currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
+                                            }
+                                            
+                                        }
+                                    }
+                                } else {
+                                    //library has no hours
+                                    currentLibrary.name = nil
+                                    break
+                                }
+                            }
                         }
-
-                        self.libraries = localLibraries
-                        
-                        //remove activity indicator view
-                        self.activityIndicatorView.removeFromSuperview()
-                        
-                        //refresh Table in the TableView since this GET request is ASYNCHRONOUS
-                        self.refreshTable()
-                        
                     }
-                    
-                case .Failure(let error):
-                    print("Request failed with error: \(error)")
-                }
+                    if(currentLibrary.name != nil) {
+                        //append the library to currentLibrary
+                        localLibraries.append(currentLibrary)
+                    }
+            }
+            
+            self.libraries = localLibraries
+            
+            //remove activity indicator view
+            self.activityIndicatorView.removeFromSuperview()
+            
+            //refresh Table in the TableView since this GET request is ASYNCHRONOUS
+            self.refreshTable()
+            
         }
-        
     }
     
     //function to refresh Table since the GET request used is ASYNCHRONOUS
