@@ -24,6 +24,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet var backgroundEmailPhone: UIView!
     @IBOutlet var leadingContraint: NSLayoutConstraint!
     @IBOutlet var widthOfButtonContainer: NSLayoutConstraint!
+    
     // Delegate requirement
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -68,31 +69,29 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         //add library name to title
         self.navigationItem.title = self.library.name
         
-/////////////////////////
-//Days of week and corresponding hours
-/////////////////////////
+        /////////////////////////
+        //Days of week and corresponding hours
+        /////////////////////////
         
-//780 specifies the overall width of the scroll view (which extends beyond the screen)
+        //780 specifies the overall width of the scroll view (which extends beyond the screen)
         self.scrollView.contentSize = CGSizeMake(780, self.scrollView.frame.size.height)
         
-//disable vertical scrolling
+        //disable vertical scrolling
         self.automaticallyAdjustsScrollViewInsets = false;
         
-//POPULATE the scrollview with tiles showing the day and hours open and scroll to day
+        //POPULATE the scrollview with tiles showing the day and hours open and scroll to day
         populateDaysOfWeek()
 
-//set image of the library
+        //set image of the library
         let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: imagePath)
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
 
-//load googlemaps
-        //loadGoogleMaps()
-//set progress view settings
+        //set progress view settings
         setProgressWheelSettings()
         
-//remove email button for those without emails
+        //remove email button for those without emails
         if(self.library.email == "") {
             self.emailButton.removeFromSuperview()
             self.leadingContraint.constant = UIScreen.mainScreen().bounds.width/4 + 10 //- self.emailButton.frame.width/2
@@ -128,6 +127,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         }
     }
     
+    // Only load Google Maps once the views of different devices have been correctly laid out
     override func viewDidLayoutSubviews() {
         loadGoogleMaps()
     }
@@ -136,25 +136,20 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.navigationController?.navigationBar.translucent = false
     }
     
+    // When the view will appear, make the navbar translucent
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBar.translucent = true
     }
     
-    //make status bar change font color back to white
+    // Make status bar change font color back to white
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.translucent = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-/////////////////////////
-//Circular Progress Circle
-/////////////////////////
+    /////////////////////////
+    //Circular Progress Circle
+    /////////////////////////
     private func setProgressWheelSettings() {
         if self.library.maximumLaptops != 0 {
             progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -171,15 +166,15 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         }
     }
 
-/////////////////////////
-//googleMaps
-/////////////////////////
+    /////////////////////////
+    //Google Maps
+    /////////////////////////
     private func loadGoogleMaps() {
         //google maps
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         self.GmapView.frame.size.height = screenSize.height
         self.GmapView.frame.size.width = screenSize.width
-        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0, longitude:library.coordinates.1, zoom:15)
+        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0, longitude:library.coordinates.1, zoom:15.5)
         let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height * 0.4), camera:camera)
         let marker = GMSMarker()
         marker.position = camera.target
@@ -188,9 +183,9 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.mapView.addSubview(location)
     }
 
-/////////////////////////
-//Call a phone number
-/////////////////////////
+    /////////////////////////
+    //Call a phone number
+    /////////////////////////
     private func callNumber(phoneNumber:String) {
         if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
             let application:UIApplication = UIApplication.sharedApplication()
@@ -200,9 +195,9 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         }
     }
 
-/////////////////////////
-//Populate days of week with info
-/////////////////////////
+    /////////////////////////
+    //Populate days of week with info
+    /////////////////////////
     private func populateDaysOfWeek() {
         for i in 0..<7 {
             let day = self.library?.week[i] as dayInWeek!
@@ -222,19 +217,4 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
         }
     }
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

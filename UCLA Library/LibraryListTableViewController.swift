@@ -49,15 +49,15 @@ class LibraryListTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+                
         let name =  "hello"
-       // let name = "Pattern~\(self.title!)"
+        // let name = "Pattern~\(self.title!)"
         
-//
-//        // The UA-XXXXX-Y tracker ID is loaded automatically from the
-//        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
-//        // If you're copying this to an app just using Analytics, you'll
-//        // need to configure your tracking ID here.
-//        // [START screen_view_hit_swift]
+        // The UA-XXXXX-Y tracker ID is loaded automatically from the
+        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+        // If you're copying this to an app just using Analytics, you'll
+        // need to configure your tracking ID here.
+        // [START screen_view_hit_swift]
         let tracker = GAI.sharedInstance().defaultTracker
         tracker.set(kGAIScreenName, value: name)
         
@@ -65,17 +65,9 @@ class LibraryListTableViewController: UITableViewController {
         tracker.send(builder.build() as [NSObject : AnyObject])
     }
     
-    
     override func viewDidAppear(animated: Bool) {
         self.getLibraryData()
     }
-
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
     // MARK: - Table view data source
 
