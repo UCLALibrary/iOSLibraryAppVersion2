@@ -88,7 +88,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         self.imageView.clipsToBounds = true;
 
 //load googlemaps
-        loadGoogleMaps()
+        //loadGoogleMaps()
 //set progress view settings
         setProgressWheelSettings()
         
@@ -126,6 +126,10 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
 //                }
             }
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        loadGoogleMaps()
     }
     
     override func transitionFromViewController(fromViewController: UIViewController, toViewController: UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
@@ -173,9 +177,10 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     private func loadGoogleMaps() {
         //google maps
         let screenSize: CGRect = UIScreen.mainScreen().bounds
-        self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
+        self.GmapView.frame.size.height = screenSize.height
+        self.GmapView.frame.size.width = screenSize.width
         let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0, longitude:library.coordinates.1, zoom:15)
-        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width/1.5, height: self.mapView.frame.height), camera:camera)
+        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
         let marker = GMSMarker()
         marker.position = camera.target
         marker.snippet = self.library.name
