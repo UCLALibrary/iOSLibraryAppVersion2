@@ -45,7 +45,7 @@ class Library: NSObject {
         //this way we can directly hash into the array i.e if(monday) library.week[0] = "monday's value"
         //sorting is another option, but we would like to avoid the cpu of that
         let temp = dayInWeek(name:"",open:"",close:"", dayOfMonth: 0)
-        self.week = Array<dayInWeek>(count: 7, repeatedValue: temp)
+        self.week = Array<dayInWeek>(repeating: temp, count: 7)
         super.init()
     }
     
@@ -71,13 +71,13 @@ class Library: NSObject {
         
     //algo to isolate the number from the string format that is returned from server
         //split the string into an array
-        let componentsOpen = open.componentsSeparatedByString(" ")
-        let componentsClose = close.componentsSeparatedByString(" ")
+        let componentsOpen = open?.components(separatedBy: " ")
+        let componentsClose = close?.components(separatedBy: " ")
         
         //first element is the componentsClose time in HH:MM
-        var openTime = Double(componentsOpen[0].componentsSeparatedByString(":")[0])! + Double(componentsOpen[0].componentsSeparatedByString(":")[1])!/60
+        var openTime = Double((componentsOpen?[0].components(separatedBy: ":")[0])!)! + Double((componentsOpen?[0].components(separatedBy: ":")[1])!)!/60
         
-        var closeTime = Double(componentsClose[0].componentsSeparatedByString(":")[0])! + Double(componentsClose[0].componentsSeparatedByString(":")[1])!/60
+        var closeTime = Double((componentsClose?[0].components(separatedBy: ":")[0])!)! + Double((componentsClose?[0].components(separatedBy: ":")[1])!)!/60
         
         /****
          11am - 9pm check
@@ -89,16 +89,16 @@ class Library: NSObject {
         *****/
         
         //if its PM make sure to add 12
-        if(componentsClose[1] == "PM") { //|| (componentsClose[1] == "AM" && closeTime - 12 < 1)) { - no longer needed bc of closes in the AM case
+        if(componentsClose?[1] == "PM") { //|| (componentsClose[1] == "AM" && closeTime - 12 < 1)) { - no longer needed bc of closes in the AM case
             closeTime = closeTime + 12
         }
         
-        if(componentsOpen[1] == "PM") {
+        if(componentsOpen?[1] == "PM") {
             openTime = openTime + 12
         }
         
         //library closes in the AM
-        if(componentsClose[1] == "AM") {
+        if(componentsClose?[1] == "AM") {
             //closing case
             if(closeTime < currentTime && currentTime < openTime) {
                 return "closed"
@@ -130,20 +130,20 @@ class Library: NSObject {
     
     
     //get index into the current day and the Current Time
-    private func getTodayInfo() -> (Int,Double) {
-        let calendar = NSCalendar.currentCalendar()
-        let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Day], fromDate: currentDate)
+    fileprivate func getTodayInfo() -> (Int,Double) {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let dateComponents = (calendar as NSCalendar).components([NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.day], from: currentDate)
         
         //access day in week array
-        var indexIntoDayArray = dateComponents.day - self.week[0].dayOfMonth
+        var indexIntoDayArray = dateComponents.day! - self.week[0].dayOfMonth
         if(indexIntoDayArray < 0) {
             indexIntoDayArray = 0
             while dateComponents.day != self.week[indexIntoDayArray].dayOfMonth {
                 indexIntoDayArray += 1
             }
         }
-        let currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
+        let currentTime = Double(dateComponents.hour!) + Double(dateComponents.minute!)/60
         
         return (indexIntoDayArray, currentTime)
     }

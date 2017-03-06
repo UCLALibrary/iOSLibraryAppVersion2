@@ -15,28 +15,28 @@ class LibraryListTableViewController: UITableViewController {
     var libraries:[Library] = []
     
     //instantiate a gray Activity Indicator View
-    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         //make font color white
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         //library logo
         let image = UIImage(named: "title.png")!
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150/1.1, height: 30/1.1))
         imageView.center.x = self.view.center.x
-        imageView.contentMode = .ScaleAspectFit
+        imageView.contentMode = .scaleAspectFit
         imageView.image = image
         self.navigationItem.titleView = imageView
         
         //color the navbar
         self.navigationController!.navigationBar.barTintColor = themeColor
-        self.navigationController!.navigationBar.translucent = false
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
-        self.tableView.backgroundColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.isTranslucent = false
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.tableView.backgroundColor = UIColor.white
 
         //progress indicator
         //add the activity to the ViewController's view
@@ -48,7 +48,7 @@ class LibraryListTableViewController: UITableViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
                 
         let name =  "hello"
         // let name = "Pattern~\(self.title!)"
@@ -59,32 +59,33 @@ class LibraryListTableViewController: UITableViewController {
         // need to configure your tracking ID here.
         // [START screen_view_hit_swift]
         let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: name)
+        tracker?.set(kGAIScreenName, value: name)
         
         let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
+        let build = builder?.build() as NSDictionary? as? [AnyHashable: Any] ?? [:]
+        tracker?.send(build)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.getLibraryData()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.libraries.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //mke cell reusable
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         // Configure the cell's look
         let library = self.libraries[indexPath.row]
@@ -155,7 +156,7 @@ class LibraryListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
@@ -164,9 +165,9 @@ class LibraryListTableViewController: UITableViewController {
         
         //transfer data from one controller to the other
         if(segue.identifier == "ToDetailView") {
-            let indexPath = self.tableView.indexPathForCell(sender as! UITableViewCell)!
+            let indexPath = self.tableView.indexPath(for: sender as! UITableViewCell)!
             let library = self.libraries[indexPath.row]
-            let detailViewOfLibrary = segue.destinationViewController as! DetailViewController
+            let detailViewOfLibrary = segue.destination as! DetailViewController
             detailViewOfLibrary.library = library
             
         }
@@ -198,10 +199,10 @@ class LibraryListTableViewController: UITableViewController {
         
         
         //Using Alamofire to make a GET Request
-        Alamofire.request(.GET, "http://anumat.com/hours")
+        Alamofire.request("http://anumat.com/hours")
             .responseJSON {
                 response in switch response.result {
-                case .Success(let JSON):
+                case .success(let JSON):
                     
                     var localLibraries:[Library] = []
                     
@@ -254,7 +255,7 @@ class LibraryListTableViewController: UITableViewController {
                                                         //get day of month
                                                         if let dayOfMonth = dayOfWeek["date"] as? Int {
                                                             //create a day struct storing open and close of M T W Th F S Sn
-                                                            let day = dayInWeek(name: tempKey.capitalizedString, open: open, close: close, dayOfMonth: dayOfMonth)
+                                                            let day = dayInWeek(name: tempKey.capitalized, open: open, close: close, dayOfMonth: dayOfMonth)
                                                             //store that into the library's day array
                                                             //we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
                                                             currentLibrary.week[sortDictionary["\(tempKey)"]!] = day
@@ -288,7 +289,7 @@ class LibraryListTableViewController: UITableViewController {
                         
                     }
                     
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
         }
@@ -298,7 +299,7 @@ class LibraryListTableViewController: UITableViewController {
     //function to refresh Table since the GET request used is ASYNCHRONOUS
     func refreshTable()
     {
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             self.tableView.reloadData()
             return
         })
