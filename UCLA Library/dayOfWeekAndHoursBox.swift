@@ -21,7 +21,6 @@ class dayOfWeekAndHoursBox: UIView {
         self.customInit(dayOfweek, open: open, close: close, dayInMonth: dayOfMonth);
     }
     
-    
     //probably not needed but Stack Overflow said it was
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder);
