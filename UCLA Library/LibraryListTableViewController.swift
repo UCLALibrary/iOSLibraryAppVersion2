@@ -198,7 +198,8 @@ class LibraryListTableViewController: UITableViewController {
         ]
         
         
-        //Using Alamofire to make a GET Request
+        // Using Alamofire to make a GET Request
+        // Updated syntax when migrating to Alamofire v4.4
         Alamofire.request("http://anumat.com/hours")
             .responseJSON {
                 response in switch response.result {

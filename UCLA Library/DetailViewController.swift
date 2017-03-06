@@ -202,15 +202,35 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             let close = day?.close
             let dayOfMonth = day?.dayOfMonth
             let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name!, open:open!, close:close!, dayOfMonth: dayOfMonth!)
-            //scroll to current Day
+            
+            // Differentiate the box that represents today's date
             if(i == self.library.todayElement) {
                 tileInScroll.dayOfMonth.textColor = UIColor.white
                 tileInScroll.backgroundColor = themeColor
             }
+            
             self.scrollView.addSubview(tileInScroll)
         }
-        if(self.library.todayElement != -1) {
-            self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
+        
+        // Changed by Nathan - needs code review for Issue #12
+        // If today's element is valid, scroll to the correct box
+        if self.library.todayElement != -1
+        {
+            // Grab the number of complete boxes that fit on the screen size
+            let screenWidth = UIScreen.main.bounds.width
+            let boxesPerScreen = screenWidth / 110
+            
+            // Depending on the number of boxes we can fit per screen, set the content offset to automatically scroll to today's day
+            if self.library.todayElement <= Int(7 - boxesPerScreen)
+            {
+                self.scrollView.contentOffset.x = CGFloat(110 * self.library.todayElement)
+            }
+                
+            // If scrolling to that day scrolls too far, then we would rather the scrollview just scroll to the end of the list
+            else
+            {
+                self.scrollView.contentOffset.x = scrollView.contentSize.width + scrollView.contentInset.right - scrollView.bounds.size.width
+            }
         }
     }
 }
