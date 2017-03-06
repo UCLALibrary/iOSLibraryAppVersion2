@@ -186,7 +186,7 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         if let phoneCallURL:URL = URL(string: "tel://\(phoneNumber)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                application.openURL(phoneCallURL);
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
             }
         }
     }
