@@ -115,6 +115,11 @@ class LibraryListTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(hours.0) - \(hours.1)"
         return cell
     }
+    
+    // Deselect the row after selecting it. This fixes Issue #14
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 
 
     /*
