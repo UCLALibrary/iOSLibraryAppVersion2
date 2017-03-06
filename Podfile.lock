@@ -23,7 +23,7 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.4)
   - Google/Analytics
   - GoogleMaps
 
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
 
-PODFILE CHECKSUM: 75fe19059fc54b3a3d9a21a7b2f4aa90e3342967
+PODFILE CHECKSUM: aceb503ceb97f9ea1b04ec1966d94f2e1a84fb60
 
 COCOAPODS: 1.2.0
