@@ -46,10 +46,9 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
         present(email, animated: true, completion: nil)
     }
 
-
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         //make font color white
         UIApplication.shared.statusBarStyle = .lightContent

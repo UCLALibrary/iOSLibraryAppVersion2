@@ -16,7 +16,6 @@ class MenuController: UIViewController {
         view.backgroundColor = UIColor.init(red: 27/255, green: 143/255, blue: 232/255, alpha: 0.9)
         //view.opaque = false
         
-
         // Do any additional setup after loading the view.
     }
 
@@ -73,6 +72,4 @@ class MenuController: UIViewController {
         let svc = SFSafariViewController(url: URL(string: urlString)!, entersReaderIfAvailable: true)
         self.present(svc, animated: true, completion: nil)
     }
-    
-   
 }

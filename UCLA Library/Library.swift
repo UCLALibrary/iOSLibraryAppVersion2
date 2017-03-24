@@ -22,8 +22,6 @@ struct dayInWeek {
     }
 }
 
-
-
 class Library: NSObject {
     var name: String! //name of library
     var id: Int! //id of library
@@ -69,7 +67,7 @@ class Library: NSObject {
             return "closed"
         }
         
-    //algo to isolate the number from the string format that is returned from server
+        //algo to isolate the number from the string format that is returned from server
         //split the string into an array
         let componentsOpen = open?.components(separatedBy: " ")
         let componentsClose = close?.components(separatedBy: " ")
@@ -108,7 +106,8 @@ class Library: NSObject {
                 return "open"
             }
         }
-         
+        
+        //logic for when a certain library is closed or not
         if(currentTime > closeTime || currentTime < openTime) {
             return "closed"
         } else if (currentTime > closeTime - 1) {
@@ -148,7 +147,7 @@ class Library: NSObject {
         return (indexIntoDayArray, currentTime)
     }
     
-    
+    //get the name of the library from each key
     func getName() -> String {
         let mydictionary: [String:String] = [
             "Arts Library" : "Arts",
@@ -166,7 +165,7 @@ class Library: NSObject {
         return mydictionary[self.name]!
     }
     
-    
+    //get the coordinates of each library
     func getCoordinates() {
         let mydictionary: [String:(Double, Double)] = [
             "Arts Library" : (34.074079, -118.439218),
@@ -184,7 +183,7 @@ class Library: NSObject {
         self.coordinates = mydictionary[self.name]
     }
     
-    
+    //get the background images for each library
     func getImagePath() -> String {
         let mydictionary: [String:String] = [
             "Arts Library" : "ArtsLibrary.png",
@@ -202,6 +201,7 @@ class Library: NSObject {
         return mydictionary[self.name]!
     }
     
+    //get the number of laptops available for each library
     func getMaxLaptops() {
         let mydictionary: [String:Int] = [
             "Arts Library" : 11,
@@ -217,9 +217,9 @@ class Library: NSObject {
             "Southern Regional Library Facility" : 0
         ]
         self.maximumLaptops = mydictionary[self.name]
-
     }
     
+    //get the phone numbers and emails of each library
     func getContactDetails() {
         let mydictionary: [String:(String, String)] = [
             "Arts Library" : ("3102065425","arts-ref@library.ucla.edu"),
@@ -237,7 +237,5 @@ class Library: NSObject {
         
         self.phoneNumber = mydictionary[self.name]?.0
         self.email = mydictionary[self.name]?.1
-    }
-
-    
+    }    
 }

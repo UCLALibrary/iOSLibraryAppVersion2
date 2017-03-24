@@ -23,8 +23,6 @@ class MenuButtons: UIButton {
         setTitleColor(UIColor.white, for: .highlighted)
         
         setBackgroundColor(UIColor.white, forState: UIControlState())
-
-        
         
         //setBackgroundImage(UIImage(contentsOfFile: tintColor), forState: .Highlighted)
     }
@@ -46,5 +44,4 @@ class MenuButtons: UIButton {
         // Drawing code
     }
     */
-
 }

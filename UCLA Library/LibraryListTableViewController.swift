@@ -82,7 +82,6 @@ class LibraryListTableViewController: UITableViewController {
         return self.libraries.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //mke cell reusable
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -121,7 +120,6 @@ class LibraryListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: false)
     }
 
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -157,7 +155,6 @@ class LibraryListTableViewController: UITableViewController {
     }
     */
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -179,12 +176,7 @@ class LibraryListTableViewController: UITableViewController {
         else if(segue.identifier == "ToMenu") {
             //to menu
         }
-
-        
     }
-    
-    
-    
     
     ////////////////////////////////////////////////////////////////////////////////////
     //Regan's Functions
