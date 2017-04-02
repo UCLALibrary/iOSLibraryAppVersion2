@@ -46,3 +46,10 @@ Needed because google's API was originally built for Obj-C.
 ### info.plist
 A lot of security settings that need to be changed when app is released into the store.  For instance, it will allow communication between google.com and anumat.com.
 
+### Set Up
+1. Download cocoapods with 'sudo gem install cocoapods'
+2. cd into the project in terminal, then type pod install
+3. Type in 'pod update' to update the frameworks
+4. Open the .xcworkspace file in XCode
+5. Build and Run!
+
