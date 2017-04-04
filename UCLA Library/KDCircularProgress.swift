@@ -17,11 +17,11 @@ open class KDCircularProgress: UIView {
     
     fileprivate struct ConversionFunctions {
         static func DegreesToRadians (_ value:CGFloat) -> CGFloat {
-            return value * CGFloat(M_PI) / 180.0
+            return value * CGFloat(Double.pi) / 180.0
         }
         
         static func RadiansToDegrees (_ value:CGFloat) -> CGFloat {
-            return value * 180.0 / CGFloat(M_PI)
+            return value * 180.0 / CGFloat(Double.pi)
         }
     }
     
@@ -395,7 +395,7 @@ open class KDCircularProgress: UIView {
             //CGContextAddArc(ctx, CGFloat(size.width/2.0), CGFloat(size.height/2.0), arcRadius, 0, CGFloat(M_PI * 2), 0)
             
             let center = CGPoint(x: size.width/2.0, y: size.height/2.0)
-            ctx.addArc(center: center, radius: arcRadius, startAngle: 0, endAngle: CGFloat(M_PI * 2), clockwise: true)
+            ctx.addArc(center: center, radius: arcRadius, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
             
             trackColor.set()
             ctx.setStrokeColor(trackColor.cgColor)
@@ -477,7 +477,7 @@ open class KDCircularProgress: UIView {
             }
             
             let halfX = bounds.size.width/2.0
-            let floatPi = CGFloat(M_PI)
+            let floatPi = CGFloat(Double.pi)
             let rotateSpeed = clockwise == true ? gradientRotateSpeed : gradientRotateSpeed * -1
             let angleInRadians = ConversionFunctions.DegreesToRadians(rotateSpeed! * CGFloat(angle) - 90)
             let oppositeAngle = angleInRadians > floatPi ? angleInRadians - floatPi : angleInRadians + floatPi
