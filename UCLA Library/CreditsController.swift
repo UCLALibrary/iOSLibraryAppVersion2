@@ -21,8 +21,8 @@ class CreditsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func CloseCredits(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: {})
+    @IBAction func CloseCredits(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: {})
     }
 
     /*

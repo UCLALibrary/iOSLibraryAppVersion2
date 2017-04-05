@@ -43,7 +43,7 @@ class Library: NSObject {
         //this way we can directly hash into the array i.e if(monday) library.week[0] = "monday's value"
         //sorting is another option, but we would like to avoid the cpu of that
         let temp = dayInWeek(name:"",open:"",close:"", dayOfMonth: 0)
-        self.week = Array<dayInWeek>(count: 7, repeatedValue: temp)
+        self.week = Array<dayInWeek>(repeating: temp, count: 7)
         super.init()
     }
     
@@ -59,21 +59,23 @@ class Library: NSObject {
         let close = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].close : week[0].close
         let open = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? week[indexIntoDayArray].open : week[0].open
         self.todayElement = indexIntoDayArray > -1 && indexIntoDayArray < 7 ? indexIntoDayArray : -1 //-1 means that anumat's API is broken
-
+        //        print("close: \(close)")
+        //        print("open: \(open)")
+        
         //if closed today, simply return closed
         if (close == "closed") {
             return "closed"
         }
         
-    //algo to isolate the number from the string format that is returned from server
+        //algo to isolate the number from the string format that is returned from server
         //split the string into an array
-        let componentsOpen = open.componentsSeparatedByString(" ")
-        let componentsClose = close.componentsSeparatedByString(" ")
+        let componentsOpen = open?.components(separatedBy: " ")
+        let componentsClose = close?.components(separatedBy: " ")
         
         //first element is the componentsClose time in HH:MM
-        var openTime = Double(componentsOpen[0].componentsSeparatedByString(":")[0])! + Double(componentsOpen[0].componentsSeparatedByString(":")[1])!/60
+        var openTime = Double((componentsOpen?[0].components(separatedBy: ":")[0])!)! + Double((componentsOpen?[0].components(separatedBy: ":")[1])!)!/60
         
-        var closeTime = Double(componentsClose[0].componentsSeparatedByString(":")[0])! + Double(componentsClose[0].componentsSeparatedByString(":")[1])!/60
+        var closeTime = Double((componentsClose?[0].components(separatedBy: ":")[0])!)! + Double((componentsClose?[0].components(separatedBy: ":")[1])!)!/60
         
         /****
          11am - 9pm check
@@ -82,19 +84,19 @@ class Library: NSObject {
          11am - 2am -> 11 , 2 -> closed [2, 11]
          6am - 3am -> 6, 3 -> closed [3, 6]
          9am - 12am -> 9, 0 -> closed [9, 12]
-        *****/
+         *****/
         
         //if its PM make sure to add 12
-        if(componentsClose[1] == "PM") { //|| (componentsClose[1] == "AM" && closeTime - 12 < 1)) { - no longer needed bc of closes in the AM case
+        if(componentsClose?[1] == "PM") { //|| (componentsClose[1] == "AM" && closeTime - 12 < 1)) { - no longer needed bc of closes in the AM case
             closeTime = closeTime + 12
         }
         
-        if(componentsOpen[1] == "PM") {
+        if(componentsOpen?[1] == "PM") {
             openTime = openTime + 12
         }
         
         //library closes in the AM
-        if(componentsClose[1] == "AM") {
+        if(componentsClose?[1] == "AM") {
             //closing case
             if(closeTime < currentTime && currentTime < openTime) {
                 return "closed"
@@ -104,7 +106,8 @@ class Library: NSObject {
                 return "open"
             }
         }
-         
+        
+        //logic for when a certain library is closed or not
         if(currentTime > closeTime || currentTime < openTime) {
             return "closed"
         } else if (currentTime > closeTime - 1) {
@@ -126,25 +129,25 @@ class Library: NSObject {
     
     
     //get index into the current day and the Current Time
-    private func getTodayInfo() -> (Int,Double) {
-        let calendar = NSCalendar.currentCalendar()
-        let currentDate = NSDate()
-        let dateComponents = calendar.components([NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Day], fromDate: currentDate)
+    fileprivate func getTodayInfo() -> (Int,Double) {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let dateComponents = (calendar as NSCalendar).components([NSCalendar.Unit.hour, NSCalendar.Unit.minute, NSCalendar.Unit.day], from: currentDate)
         
         //access day in week array
-        var indexIntoDayArray = dateComponents.day - self.week[0].dayOfMonth
+        var indexIntoDayArray = dateComponents.day! - self.week[0].dayOfMonth
         if(indexIntoDayArray < 0) {
             indexIntoDayArray = 0
             while dateComponents.day != self.week[indexIntoDayArray].dayOfMonth {
                 indexIntoDayArray += 1
             }
         }
-        let currentTime = Double(dateComponents.hour) + Double(dateComponents.minute)/60
+        let currentTime = Double(dateComponents.hour!) + Double(dateComponents.minute!)/60
         
         return (indexIntoDayArray, currentTime)
     }
     
-    
+    //get the name of the library from each key
     func getName() -> String {
         let mydictionary: [String:String] = [
             "Arts Library" : "Arts",
@@ -162,7 +165,7 @@ class Library: NSObject {
         return mydictionary[self.name]!
     }
     
-    
+    //get the coordinates of each library
     func getCoordinates() {
         let mydictionary: [String:(Double, Double)] = [
             "Arts Library" : (34.074079, -118.439218),
@@ -180,7 +183,7 @@ class Library: NSObject {
         self.coordinates = mydictionary[self.name]
     }
     
-    
+    //get the background images for each library
     func getImagePath() -> String {
         let mydictionary: [String:String] = [
             "Arts Library" : "ArtsLibrary.png",
@@ -198,6 +201,7 @@ class Library: NSObject {
         return mydictionary[self.name]!
     }
     
+    //get the number of laptops available for each library
     func getMaxLaptops() {
         let mydictionary: [String:Int] = [
             "Arts Library" : 11,
@@ -213,9 +217,9 @@ class Library: NSObject {
             "Southern Regional Library Facility" : 0
         ]
         self.maximumLaptops = mydictionary[self.name]
-
     }
     
+    //get the phone numbers and emails of each library
     func getContactDetails() {
         let mydictionary: [String:(String, String)] = [
             "Arts Library" : ("3102065425","arts-ref@library.ucla.edu"),
@@ -233,7 +237,5 @@ class Library: NSObject {
         
         self.phoneNumber = mydictionary[self.name]?.0
         self.email = mydictionary[self.name]?.1
-    }
-
-    
+    }    
 }

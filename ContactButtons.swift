@@ -14,9 +14,9 @@ class ContactButtons: UIButton {
         super.init(coder: aDecoder)
         layer.cornerRadius = 20.0
         clipsToBounds = true
-        setBackgroundColor(UIColor.yellowColor(), forState: .Highlighted)
-        setBackgroundColor(UIColor.yellowColor(), forState: .Focused)
-        setBackgroundColor(UIColor.yellowColor(), forState: .Selected)
+        setBackgroundColor(UIColor.yellow, forState: .highlighted)
+        setBackgroundColor(UIColor.yellow, forState: .focused)
+        setBackgroundColor(UIColor.yellow, forState: .selected)
     }
 
     /*
@@ -27,13 +27,13 @@ class ContactButtons: UIButton {
     }
     */
     
-    func setBackgroundColor(color: UIColor, forState: UIControlState) {
+    func setBackgroundColor(_ color: UIColor, forState: UIControlState) {
         UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        CGContextSetFillColorWithColor(UIGraphicsGetCurrentContext(), color.CGColor)
-        CGContextFillRect(UIGraphicsGetCurrentContext(), CGRect(x: 0, y: 0, width: 1, height: 1))
+        UIGraphicsGetCurrentContext()!.setFillColor(color.cgColor)
+        UIGraphicsGetCurrentContext()!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
         let colorImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.setBackgroundImage(colorImage, forState: forState)
+        self.setBackgroundImage(colorImage, for: forState)
     }
 
 }

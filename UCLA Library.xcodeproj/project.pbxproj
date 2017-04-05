@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41704C95ADEFA2CAECC3902A /* Pods_UCLA_LibraryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546FFD70106A2CB86FFE612B /* Pods_UCLA_LibraryTests.framework */; };
 		73194B701E3EEB8900A624A6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73194B6F1E3EEB8900A624A6 /* DataManager.swift */; };
 		7332067D1CC305F100C82876 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7332067C1CC305F100C82876 /* MenuController.swift */; };
 		7332067F1CC30EE700C82876 /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7332067E1CC30EE700C82876 /* x.png */; };
@@ -46,7 +47,8 @@
 		73DC7D9A1CA360D100F0CE12 /* ResearchLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */; };
 		73DC7D9B1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */; };
 		73DC7D9C1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */; };
-		EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FD22D2C0361120A338CDD9 /* Pods.framework */; };
+		9061824726FBC190F02B8AA4 /* Pods_UCLA_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402BD438DD13DCD628150A26 /* Pods_UCLA_Library.framework */; };
+		E4DF4E523C103C239455704B /* Pods_UCLA_LibraryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABC7034D31876E8539424EB /* Pods_UCLA_LibraryUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39E15F2233010F57126F6745 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		05A2C51B26E6B0F4F01CABD6 /* Pods-UCLA LibraryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA LibraryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA LibraryTests/Pods-UCLA LibraryTests.release.xcconfig"; sourceTree = "<group>"; };
+		402BD438DD13DCD628150A26 /* Pods_UCLA_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCLA_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		546FFD70106A2CB86FFE612B /* Pods_UCLA_LibraryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCLA_LibraryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		684616E09C9507F0DA5F8461 /* Pods-UCLA LibraryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA LibraryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA LibraryUITests/Pods-UCLA LibraryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		73194B6F1E3EEB8900A624A6 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		7332067C1CC305F100C82876 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7332067E1CC30EE700C82876 /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = x.png; path = ../x.png; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 		73771B5D1C9E688400DDF5ED /* LibraryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryListTableViewController.swift; sourceTree = "<group>"; };
 		73771B5F1C9E6B1700DDF5ED /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		73771B691C9E87F000DDF5ED /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		738395A01E949F0800AC7F30 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = "../../Library/Developer/Xcode/DerivedData/UCLA_Library-dxuhoumxwmyzjlccybjihugsaiqp/Build/Products/Release-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework"; sourceTree = "<group>"; };
 		7399E7821DC7E4010076D32E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		739E4DD61C9ED7EA007AAA1D /* dayOfWeekAndHoursBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dayOfWeekAndHoursBox.swift; sourceTree = "<group>"; };
 		73A0B4631D5FE80A002CF2B7 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
@@ -113,8 +119,12 @@
 		73DC7D8C1CA360D100F0CE12 /* ResearchLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ResearchLibrary.png; sourceTree = "<group>"; };
 		73DC7D8D1CA360D100F0CE12 /* ScienceandEngineeringLibrary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScienceandEngineeringLibrary.png; sourceTree = "<group>"; };
 		73DC7D8E1CA360D100F0CE12 /* SouthernRegionalLibraryFacility.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SouthernRegionalLibraryFacility.jpg; sourceTree = "<group>"; };
-		B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7ABC7034D31876E8539424EB /* Pods_UCLA_LibraryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UCLA_LibraryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C6699090A6D7AED66076CA1 /* Pods-UCLA Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA Library/Pods-UCLA Library.debug.xcconfig"; sourceTree = "<group>"; };
+		92CC146C5DCC40B6D4DFFF4B /* Pods-UCLA LibraryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA LibraryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA LibraryUITests/Pods-UCLA LibraryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9FD22D2C0361120A338CDD9 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D86E91E7039B08AD8AC5E266 /* Pods-UCLA Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA Library/Pods-UCLA Library.release.xcconfig"; sourceTree = "<group>"; };
+		E55EACA69E51432AF2FC4C25 /* Pods-UCLA LibraryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UCLA LibraryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UCLA LibraryTests/Pods-UCLA LibraryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73399A331CB4CFB000124550 /* Alamofire.framework in Frameworks */,
-				EBCC005EB794859A08CF34C1 /* Pods.framework in Frameworks */,
+				9061824726FBC190F02B8AA4 /* Pods_UCLA_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41704C95ADEFA2CAECC3902A /* Pods_UCLA_LibraryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DF4E523C103C239455704B /* Pods_UCLA_LibraryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +159,12 @@
 		0D87B6F3B5A5E55B25149BAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				738395A01E949F0800AC7F30 /* GoogleToolboxForMac.framework */,
 				73399A321CB4CFB000124550 /* Alamofire.framework */,
 				B9FD22D2C0361120A338CDD9 /* Pods.framework */,
+				402BD438DD13DCD628150A26 /* Pods_UCLA_Library.framework */,
+				546FFD70106A2CB86FFE612B /* Pods_UCLA_LibraryTests.framework */,
+				7ABC7034D31876E8539424EB /* Pods_UCLA_LibraryUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,8 +177,8 @@
 				73771B411C9E62A000DDF5ED /* UCLA LibraryTests */,
 				73771B4C1C9E62A000DDF5ED /* UCLA LibraryUITests */,
 				73771B2B1C9E629F00DDF5ED /* Products */,
-				843A9A7DBDB0B4966DD599A9 /* Pods */,
 				0D87B6F3B5A5E55B25149BAE /* Frameworks */,
+				C02764F937426DF987024C20 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,11 +261,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		843A9A7DBDB0B4966DD599A9 /* Pods */ = {
+		C02764F937426DF987024C20 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				39E15F2233010F57126F6745 /* Pods.debug.xcconfig */,
-				B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */,
+				8C6699090A6D7AED66076CA1 /* Pods-UCLA Library.debug.xcconfig */,
+				D86E91E7039B08AD8AC5E266 /* Pods-UCLA Library.release.xcconfig */,
+				E55EACA69E51432AF2FC4C25 /* Pods-UCLA LibraryTests.debug.xcconfig */,
+				05A2C51B26E6B0F4F01CABD6 /* Pods-UCLA LibraryTests.release.xcconfig */,
+				92CC146C5DCC40B6D4DFFF4B /* Pods-UCLA LibraryUITests.debug.xcconfig */,
+				684616E09C9507F0DA5F8461 /* Pods-UCLA LibraryUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -261,12 +281,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73771B521C9E62A000DDF5ED /* Build configuration list for PBXNativeTarget "UCLA Library" */;
 			buildPhases = (
-				BB58D7476D342DC0DCE33CE1 /* Check Pods Manifest.lock */,
+				C2C494AF4CC11C5366175622 /* [CP] Check Pods Manifest.lock */,
 				73771B261C9E629F00DDF5ED /* Sources */,
 				73771B271C9E629F00DDF5ED /* Frameworks */,
 				73771B281C9E629F00DDF5ED /* Resources */,
-				E65C6618514ECE963E36E193 /* Embed Pods Frameworks */,
-				DFF35F2B618D59202A3FC193 /* Copy Pods Resources */,
+				9543D72DC60DA96036982E9A /* [CP] Embed Pods Frameworks */,
+				DCB450D4B47E4C48F9E3292B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,9 +301,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73771B551C9E62A000DDF5ED /* Build configuration list for PBXNativeTarget "UCLA LibraryTests" */;
 			buildPhases = (
+				8DB0BD89DCCE77324E2A41E7 /* [CP] Check Pods Manifest.lock */,
 				73771B3A1C9E629F00DDF5ED /* Sources */,
 				73771B3B1C9E629F00DDF5ED /* Frameworks */,
 				73771B3C1C9E629F00DDF5ED /* Resources */,
+				D0933CAD313DC160C4932040 /* [CP] Embed Pods Frameworks */,
+				8EB5A79453BB9121A4D465C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73771B581C9E62A000DDF5ED /* Build configuration list for PBXNativeTarget "UCLA LibraryUITests" */;
 			buildPhases = (
+				EAE96E1F8926ED6DA4C19DE8 /* [CP] Check Pods Manifest.lock */,
 				73771B451C9E62A000DDF5ED /* Sources */,
 				73771B461C9E62A000DDF5ED /* Frameworks */,
 				73771B471C9E62A000DDF5ED /* Resources */,
+				FE48E43266B88EDBB95D5708 /* [CP] Embed Pods Frameworks */,
+				1F13B47F2A5BE03EB2B88F7C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,20 +351,23 @@
 				TargetAttributes = {
 					73771B291C9E629F00DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = DQ8W763H6H;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
 					};
 					73771B3D1C9E629F00DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = 73771B291C9E629F00DDF5ED;
 					};
 					73771B481C9E62A000DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0830;
 						TestTargetID = 73771B291C9E629F00DDF5ED;
 					};
 				};
 			};
 			buildConfigurationList = 73771B251C9E629F00DDF5ED /* Build configuration list for PBXProject "UCLA Library" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -405,49 +434,139 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BB58D7476D342DC0DCE33CE1 /* Check Pods Manifest.lock */ = {
+		1F13B47F2A5BE03EB2B88F7C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA LibraryUITests/Pods-UCLA LibraryUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DFF35F2B618D59202A3FC193 /* Copy Pods Resources */ = {
+		8DB0BD89DCCE77324E2A41E7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E65C6618514ECE963E36E193 /* Embed Pods Frameworks */ = {
+		8EB5A79453BB9121A4D465C7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA LibraryTests/Pods-UCLA LibraryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9543D72DC60DA96036982E9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA Library/Pods-UCLA Library-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2C494AF4CC11C5366175622 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0933CAD313DC160C4932040 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA LibraryTests/Pods-UCLA LibraryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCB450D4B47E4C48F9E3292B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA Library/Pods-UCLA Library-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE96E1F8926ED6DA4C19DE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE48E43266B88EDBB95D5708 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UCLA LibraryUITests/Pods-UCLA LibraryUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -611,80 +730,92 @@
 		};
 		73771B531C9E62A000DDF5ED /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39E15F2233010F57126F6745 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 8C6699090A6D7AED66076CA1 /* Pods-UCLA Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: UCLA Library (DQ8W763H6H)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Regan Hsu (9C46QGA825)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XC5CC7LAWJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.builducla.uclalibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reganhsu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		73771B541C9E62A000DDF5ED /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B01FF520AC57BCEF0907BF8D /* Pods.release.xcconfig */;
+			baseConfigurationReference = D86E91E7039B08AD8AC5E266 /* Pods-UCLA Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: UCLA Library (DQ8W763H6H)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: UCLA Library (DQ8W763H6H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = XC5CC7LAWJ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "UCLA Library/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.builducla.uclalibrary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reganhsu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "UCLA Library/UCLA Library-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		73771B561C9E62A000DDF5ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E55EACA69E51432AF2FC4C25 /* Pods-UCLA LibraryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "UCLA LibraryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-LibraryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCLA Library.app/UCLA Library";
 			};
 			name = Debug;
 		};
 		73771B571C9E62A000DDF5ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05A2C51B26E6B0F4F01CABD6 /* Pods-UCLA LibraryTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "UCLA LibraryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-LibraryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UCLA Library.app/UCLA Library";
 			};
 			name = Release;
 		};
 		73771B591C9E62A000DDF5ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92CC146C5DCC40B6D4DFFF4B /* Pods-UCLA LibraryUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "UCLA LibraryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-LibraryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "UCLA Library";
 				USES_XCTRUNNER = YES;
 			};
@@ -692,11 +823,13 @@
 		};
 		73771B5A1C9E62A000DDF5ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 684616E09C9507F0DA5F8461 /* Pods-UCLA LibraryUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "UCLA LibraryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phwd.UCLA-LibraryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "UCLA Library";
 				USES_XCTRUNNER = YES;
 			};

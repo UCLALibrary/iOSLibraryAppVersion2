@@ -28,19 +28,19 @@ class dayOfWeekAndHoursBox: UIView {
         self.customInit("-", open: "-", close: "-", dayInMonth: 0);
     }
     
-    func customInit(day:String, open:String, close:String, dayInMonth:Int) {
+    func customInit(_ day:String, open:String, close:String, dayInMonth:Int) {
         self.layer.cornerRadius = 5;
 
         self.backgroundColor = UIColor.init(red: 233/255, green: 233/255, blue: 233/255, alpha: 1)
 
         //CENTER day of week, open time, close time
-        dayOfMonth.textAlignment = NSTextAlignment.Center
-        dayOfweek.textAlignment = NSTextAlignment.Center
-        openTime.textAlignment = NSTextAlignment.Center
-        closeTime.textAlignment = NSTextAlignment.Center
+        dayOfMonth.textAlignment = NSTextAlignment.center
+        dayOfweek.textAlignment = NSTextAlignment.center
+        openTime.textAlignment = NSTextAlignment.center
+        closeTime.textAlignment = NSTextAlignment.center
         
         //make day of month font size larger
-        dayOfMonth.font = dayOfMonth.font.fontWithSize(40)
+        dayOfMonth.font = dayOfMonth.font.withSize(40)
 
         //insert text
         dayOfMonth.text = "\(dayInMonth)"
@@ -50,9 +50,9 @@ class dayOfWeekAndHoursBox: UIView {
         
         //color of text
         dayOfMonth.textColor = UIColor.init(red: 0x1B/255, green: 0x8F/255, blue: 0xE8/255, alpha: 1)
-        dayOfweek.textColor = UIColor.blackColor()
-        openTime.textColor = UIColor.blackColor()
-        closeTime.textColor = UIColor.blackColor()
+        dayOfweek.textColor = UIColor.black
+        openTime.textColor = UIColor.black
+        closeTime.textColor = UIColor.black
         
         //add the components to the square
         self.addSubview(dayOfweek)

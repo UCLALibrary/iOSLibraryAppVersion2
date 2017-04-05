@@ -12,7 +12,7 @@ import GoogleMaps
 
 //subclassing this controller with the regular viewcontroller AND email delegate cause we be sendin some emails
 class DetailViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet var mapView: UIView!
@@ -24,85 +24,83 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet var backgroundEmailPhone: UIView!
     @IBOutlet var leadingContraint: NSLayoutConstraint!
     @IBOutlet var widthOfButtonContainer: NSLayoutConstraint!
+    
     // Delegate requirement
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true, completion: nil)
     }
-
+    
     //Button to call phone
-    @IBAction func callLibrary(sender: AnyObject) {
+    @IBAction func callLibrary(_ sender: AnyObject) {
         callNumber(self.library.phoneNumber)
     }
     
     //Button to send email
-    @IBAction func emailLibrary(sender: AnyObject) {
+    @IBAction func emailLibrary(_ sender: AnyObject) {
         // Create email message
-        var email = MFMailComposeViewController()
+        let email = MFMailComposeViewController()
         email.mailComposeDelegate = self
         email.setToRecipients([self.library.email])
         email.setSubject("Library Inquiry")
         //email.setMessageBody("Some example text", isHTML: false) // or true, if you prefer
-        presentViewController(email, animated: true, completion: nil)
+        present(email, animated: true, completion: nil)
     }
-
-
+    
+    // Do any additional setup after loading the view.
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
         //make font color white
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         //change the back button color
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.tintColor = UIColor.white
         
         //change the title color
-        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         //add image to view and make changes to image
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
         
         //add library name to title
         self.navigationItem.title = self.library.name
         
-/////////////////////////
-//Days of week and corresponding hours
-/////////////////////////
+        /////////////////////////
+        //Days of week and corresponding hours
+        /////////////////////////
         
-//780 specifies the overall width of the scroll view (which extends beyond the screen)
-        self.scrollView.contentSize = CGSizeMake(780, self.scrollView.frame.size.height)
+        //780 specifies the overall width of the scroll view (which extends beyond the screen)
+        self.scrollView.contentSize = CGSize(width: 780, height: self.scrollView.frame.size.height)
         
-//disable vertical scrolling
+        //disable vertical scrolling
         self.automaticallyAdjustsScrollViewInsets = false;
         
-//POPULATE the scrollview with tiles showing the day and hours open and scroll to day
+        //POPULATE the scrollview with tiles showing the day and hours open and scroll to day
         populateDaysOfWeek()
-
-//set image of the library
+        
+        //set image of the library
         let imagePath = self.library.getImagePath()
         self.imageView.image = UIImage(named: imagePath)
         //crop image instead of scaling
         self.imageView.clipsToBounds = true;
-
-//load googlemaps
-        loadGoogleMaps()
-//set progress view settings
+        
+        //set progress view settings
         setProgressWheelSettings()
         
-//remove email button for those without emails
+        //remove email button for those without emails
         if(self.library.email == "") {
             self.emailButton.removeFromSuperview()
-            self.leadingContraint.constant = UIScreen.mainScreen().bounds.width/4 + 10 //- self.emailButton.frame.width/2
+            self.leadingContraint.constant = UIScreen.main.bounds.width/4 + 10 //- self.emailButton.frame.width/2
             self.backgroundEmailPhone.removeConstraint(widthOfButtonContainer)
             //self.backgroundEmailPhone.backgroundColor = UIColor.yellowColor()
-            self.backgroundEmailPhone.frame.insetInPlace(dx: 100, dy: 0)
+            self.backgroundEmailPhone.frame.insetBy(dx: 100, dy: 0)
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         //library has laptops for lending
         if self.library.maximumLaptops != 0 {
             let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
@@ -113,45 +111,45 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             let nLaptops = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             nLaptops.center = CGPoint(x: self.progress.center.x, y: self.progress.center.y)
             nLaptops.numberOfLines = 2
-            nLaptops.text = "\(self.library.availableLaptops) \n" + "Laptops"
-            nLaptops.textColor = UIColor.whiteColor()
-            nLaptops.textAlignment = NSTextAlignment.Center
+            nLaptops.text = "\(self.library.availableLaptops!) \n" + "Laptops"
+            nLaptops.textColor = UIColor.white
+            nLaptops.textAlignment = NSTextAlignment.center
             self.imageView.addSubview(nLaptops)
             
             progress.animateFromAngle(0, toAngle: angle, duration: 1.5) { completed in
-//                if completed {
-//                    print("animation stopped, completed")
-//                } else {
-//                    print("animation stopped, was interrupted")
-//                }
+                //                if completed {
+                //                    print("animation stopped, completed")
+                //                } else {
+                //                    print("animation stopped, was interrupted")
+                //                }
             }
         }
     }
     
-    override func transitionFromViewController(fromViewController: UIViewController, toViewController: UIViewController, duration: NSTimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
-        self.navigationController?.navigationBar.translucent = false
+    // Only load Google Maps once the views of different devices have been correctly laid out
+    override func viewDidLayoutSubviews() {
+        loadGoogleMaps()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.navigationBar.translucent = true
+    override func transition(from fromViewController: UIViewController, to toViewController: UIViewController, duration: TimeInterval, options: UIViewAnimationOptions, animations: (() -> Void)?, completion: ((Bool) -> Void)?) {
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
-    //make status bar change font color back to white
-    override func viewWillDisappear(animated: Bool) {
+    // When the view will appear, make the navbar translucent
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    // Make status bar change font color back to white
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-/////////////////////////
-//Circular Progress Circle
-/////////////////////////
-    private func setProgressWheelSettings() {
+    /////////////////////////
+    //Circular Progress Circle
+    /////////////////////////
+    fileprivate func setProgressWheelSettings() {
         if self.library.maximumLaptops != 0 {
             progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
             progress.startAngle = -90
@@ -160,76 +158,80 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             progress.clockwise = true
             progress.gradientRotateSpeed = 2
             progress.roundedCorners = false
-            progress.glowMode = .Forward
+            progress.glowMode = .forward
             progress.glowAmount = 0.9
-            progress.setColors(UIColor.whiteColor())
+            progress.setColors(UIColor.white)
             progress.center = CGPoint(x: view.center.x, y: self.imageView.center.y)
         }
     }
-
-/////////////////////////
-//googleMaps
-/////////////////////////
-    private func loadGoogleMaps() {
-        //google maps
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        self.GmapView.frame.size.height = screenSize.height - self.GmapView.frame.minY
-        let camera = GMSCameraPosition.cameraWithLatitude(library.coordinates.0, longitude:library.coordinates.1, zoom:15)
-        let location = GMSMapView.mapWithFrame(CGRect(x: 0, y: 0, width: self.mapView.frame.width/1.5, height: self.mapView.frame.height), camera:camera)
+    
+    /////////////////////////
+    //Google Maps
+    /////////////////////////
+    fileprivate func loadGoogleMaps() {
+        let camera = GMSCameraPosition.camera(withLatitude: library.coordinates.0, longitude:library.coordinates.1, zoom:15)
+        let location = GMSMapView.map(withFrame: CGRect(x: 0, y: 0, width: self.mapView.frame.width, height: self.mapView.frame.height), camera:camera)
         let marker = GMSMarker()
         marker.position = camera.target
         marker.snippet = self.library.name
         marker.map = location
         self.mapView.addSubview(location)
     }
-
-/////////////////////////
-//Call a phone number
-/////////////////////////
-    private func callNumber(phoneNumber:String) {
-        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
-            let application:UIApplication = UIApplication.sharedApplication()
+    
+    /////////////////////////
+    //Call a phone number
+    /////////////////////////
+    fileprivate func callNumber(_ phoneNumber:String) {
+        if let phoneCallURL:URL = URL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                application.openURL(phoneCallURL);
+                if #available(iOS 10.0, *) {
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }
     }
-
-/////////////////////////
-//Populate days of week with info
-/////////////////////////
-    private func populateDaysOfWeek() {
+    
+    /////////////////////////
+    //Populate days of week with info
+    /////////////////////////
+    fileprivate func populateDaysOfWeek() {
         for i in 0..<7 {
             let day = self.library?.week[i] as dayInWeek!
-            let name = day.name
-            let open = day.open
-            let close = day.close
-            let dayOfMonth = day.dayOfMonth
-            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name, open:open, close:close, dayOfMonth: dayOfMonth)
-            //scroll to current Day
+            let name = day?.name
+            let open = day?.open
+            let close = day?.close
+            let dayOfMonth = day?.dayOfMonth
+            let tileInScroll = dayOfWeekAndHoursBox(frame: CGRect(origin: CGPoint(x:10+i*110, y:0), size: CGSize(width: self.scrollView.frame.size.height, height: self.scrollView.frame.size.height)), dayOfweek:name!, open:open!, close:close!, dayOfMonth: dayOfMonth!)
+            // Differentiate the box that represents today's date
             if(i == self.library.todayElement) {
-                tileInScroll.dayOfMonth.textColor = UIColor.whiteColor()
+                tileInScroll.dayOfMonth.textColor = UIColor.white
                 tileInScroll.backgroundColor = themeColor
             }
             self.scrollView.addSubview(tileInScroll)
         }
-        if(self.library.todayElement != -1) {
-            self.scrollView.contentOffset = CGPoint(x: 110*self.library.todayElement, y: 0)
+        
+        // Changed by Nathan - needs code review for Issue #12
+        // Depending on the number of boxes we can fit per screen, set the content offset to automatically scroll to today's day
+        if self.library.todayElement != -1
+        {
+            // Grab the number of complete boxes that fit on the screen size
+            let screenWidth = UIScreen.main.bounds.width
+            let boxesPerScreen = Int(screenWidth / 110)
+            
+            // If scrolling and making today's box the first box results in not reaching the end of the list yet, scroll there
+            if self.library.todayElement < 7 - boxesPerScreen
+            {
+                self.scrollView.contentOffset.x = CGFloat(110 * self.library.todayElement)
+            }
+                
+                // Otherwise if scrolling to today's day scrolls too far, then we would rather the scrollview just scroll to the end of the list and stop
+            else
+            {
+                self.scrollView.contentOffset.x = scrollView.contentSize.width + scrollView.contentInset.right - scrollView.bounds.size.width
+            }
         }
     }
-    
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
