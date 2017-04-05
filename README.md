@@ -36,12 +36,12 @@ Getting started on working
 
 Team
 ----------------
-Casey Grzecka: cgrzecka@library.ucla.edu
-Lewis Hong: 
-Michael Jung:
-Nathan Tsai:
-Patrick Shih:
-Regan Hsu: hsuregan@ucla.edu
+* Casey Grzecka: cgrzecka@library.ucla.edu 
+* Lewis Hong: smlewishong@gmail.com
+* Michael Jung: michaeljung1996@gmail.com
+* Nathan Tsai: nwtsai@gmail.com
+* Patrick Shih:  patrickkshih@gmail.com
+* Regan Hsu: hsuregan@ucla.edu
 
 
 Other Info
