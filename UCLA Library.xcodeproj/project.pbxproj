@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -342,7 +342,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = "Regan Hsu";
+				ORGANIZATIONNAME = nwtsai.me;
 				TargetAttributes = {
 					73771B291C9E629F00DDF5ED = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -363,7 +363,7 @@
 				};
 			};
 			buildConfigurationList = 73771B251C9E629F00DDF5ED /* Build configuration list for PBXProject "UCLA Library" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
