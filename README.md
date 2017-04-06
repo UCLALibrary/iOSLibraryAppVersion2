@@ -94,15 +94,15 @@ A lot of security settings that need to be changed when app is released into the
 
 ### Set Up
 1. Download cocoapods with 'sudo gem install cocoapods'
-2. cd into the project in terminal, then type pod install
+2. cd into the project in terminal, then type 'pod install'
 3. Type in 'pod update' to update the frameworks
-4. Open the .xcworkspace file in XCode
+4. Open the .xcworkspace file with XCode
 5. Build and Run!
-6. If you have compiler errors are they are contained within the Alamofire framework, do the following:
+6. If you have compiler errors and they are contained within the Alamofire framework, do the following:
 - Open the Podfile and comment out the pod 'Alamofire', '4.x' line
 - Run pod update to remove the old Alamofire framework
 - Go to XCode and clean the project (cmd + shift + k)
 - Uncomment the Alamofire fire line in the Podfile
-- In XCode, go to Preferences -> Location -> and press the little arrow under Derived Data
-- This will open a directory showing the folder. Delete the Derived Data folder
+- In XCode, go to Preferences -> Location -> and press the little grey arrow under Derived Data
+- This will open a directory showing the folder. Delete the Derived Data folder.
 - Clean the project once more and run!
