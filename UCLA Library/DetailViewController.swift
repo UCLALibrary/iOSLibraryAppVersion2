@@ -103,7 +103,12 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
     override func viewDidAppear(_ animated: Bool) {
         //library has laptops for lending
         if self.library.maximumLaptops != 0 {
-            let percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
+            var percentOfLaptopsAvailable = Double(self.library.availableLaptops)/Double(self.library.maximumLaptops)
+            //in the case that a library has more laptops than the maximum number
+            //TODO: a routine to retrieve the maximum number of laptops
+            if (percentOfLaptopsAvailable > 1) {
+                percentOfLaptopsAvailable = 1
+            }
             let angle = Int(360*percentOfLaptopsAvailable)
             self.imageView.addSubview(progress)
             
@@ -117,11 +122,6 @@ class DetailViewController: UIViewController, MFMailComposeViewControllerDelegat
             self.imageView.addSubview(nLaptops)
             
             progress.animateFromAngle(0, toAngle: angle, duration: 1.5) { completed in
-                //                if completed {
-                //                    print("animation stopped, completed")
-                //                } else {
-                //                    print("animation stopped, was interrupted")
-                //                }
             }
         }
     }
