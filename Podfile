@@ -4,6 +4,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 pod 'Alamofire', '~> 4.4'
+pod 'SwiftyJSON'
 pod 'GoogleMaps'
 pod 'Google/Analytics'
 

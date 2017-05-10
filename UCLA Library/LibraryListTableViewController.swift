@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 import Google
 
 class LibraryListTableViewController: UITableViewController {
@@ -68,6 +69,7 @@ class LibraryListTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.getLibraryData()
+        self.getLibraryDataHoursAPI()
     }
     
     // MARK: - Table view data source
@@ -194,7 +196,6 @@ class LibraryListTableViewController: UITableViewController {
             "sunday" : 6
         ]
         
-        
         // Using Alamofire to make a GET Request
         // Updated syntax when migrating to Alamofire v4.4
         Alamofire.request("http://anumat.com/hours")
@@ -291,7 +292,38 @@ class LibraryListTableViewController: UITableViewController {
                     print("Request failed with error: \(error)")
                 }
         }
+    }
+    
+    // Use new hours API to get the time for this week
+    func getLibraryDataHoursAPI() {
         
+        // Initialize temporary array of libraries each time this function is called
+        var localLibraries:[Library] = []
+        
+        // Make a get request and parse JSON data
+        Alamofire.request("https://webservices.library.ucla.edu/calendar/units").responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                for value in json["locations"].arrayValue {
+                    if(value["category"] == "library") {
+                        let currentLibrary = Library()
+                        currentLibrary.id = value["lid"].intValue
+                        currentLibrary.name = value["name"].stringValue
+                        print(currentLibrary.id)
+                        print(currentLibrary.name)
+                        localLibraries.append(currentLibrary)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        // Display these libraries on the home page
+        //self.libraries = localLibraries
+        //self.activityIndicatorView.removeFromSuperview()
+        //self.refreshTable()
     }
     
     //function to refresh Table since the GET request used is ASYNCHRONOUS
