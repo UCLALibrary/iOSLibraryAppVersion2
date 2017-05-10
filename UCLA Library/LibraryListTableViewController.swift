@@ -300,8 +300,8 @@ class LibraryListTableViewController: UITableViewController {
         // Initialize temporary array of libraries each time this function is called
         var localLibraries:[Library] = []
         
-        // Make a get request and parse JSON data
-        Alamofire.request("https://webservices.library.ucla.edu/calendar/units").responseJSON { response in
+        // Make a get request for units and parse JSON data
+        /*Alamofire.request("https://webservices.library.ucla.edu/calendar/units").responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -312,6 +312,33 @@ class LibraryListTableViewController: UITableViewController {
                         currentLibrary.name = value["name"].stringValue
                         print(currentLibrary.id)
                         print(currentLibrary.name)
+                        localLibraries.append(currentLibrary)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }*/
+        
+        // Make a get request for library hours and parse JSON data
+        Alamofire.request("https://webservices.library.ucla.edu/calendar/hours/weekly/0/weeks/1").responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                for value in json["locations"].arrayValue {
+                    if(value["category"] == "library") {
+                        let currentLibrary = Library()
+                        currentLibrary.id = value["lid"].intValue
+                        currentLibrary.name = value["name"].stringValue
+                        print(currentLibrary.id)
+                        print(currentLibrary.name)
+                        print(value["weeks"][0]["Sunday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Monday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Tuesday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Wednesday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Thursday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Friday"]["times"]["hours"][0]["to"].stringValue)
+                        print(value["weeks"][0]["Saturday"]["times"]["hours"][0]["to"].stringValue)
                         localLibraries.append(currentLibrary)
                     }
                 }
