@@ -68,7 +68,7 @@ class LibraryListTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.getLibraryData()
+        //self.getLibraryData()
         self.getLibraryDataHoursAPI()
     }
     
@@ -332,25 +332,46 @@ class LibraryListTableViewController: UITableViewController {
                         currentLibrary.name = value["name"].stringValue
                         print(currentLibrary.id)
                         print(currentLibrary.name)
-                        print(value["weeks"][0]["Sunday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Monday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Tuesday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Wednesday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Thursday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Friday"]["times"]["hours"][0]["to"].stringValue)
-                        print(value["weeks"][0]["Saturday"]["times"]["hours"][0]["to"].stringValue)
+                        /*print(value["weeks"][0]["Sunday"]["times"]["hours"])
+                        print(value["weeks"][0]["Monday"]["times"]["hours"])
+                        print(value["weeks"][0]["Tuesday"]["times"]["hours"])
+                        print(value["weeks"][0]["Wednesday"]["times"]["hours"])
+                        print(value["weeks"][0]["Thursday"]["times"]["hours"])
+                        print(value["weeks"][0]["Friday"]["times"]["hours"])
+                        print(value["weeks"][0]["Saturday"]["times"]["hours"])*/
+                        
+                        let days_in_week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+                        for current_day in days_in_week {
+                            if(value["weeks"][0][current_day]["times"]["hours"] != nil) {
+                                let open = value["weeks"][0][current_day]["times"]["hours"][0]["from"].stringValue
+                                let close = value["weeks"][0][current_day]["times"]["hours"][0]["to"].stringValue
+                                let date = value["weeks"][0][current_day]["date"].stringValue
+                                let start = date.index(date.endIndex, offsetBy: -2)
+                                let dayOfMonth = Int(date.substring(from: start))!
+                                print(current_day)
+                                print(open)
+                                print(close)
+                                print(date)
+                                print(dayOfMonth)
+                                let day = dayInWeek(name: current_day, open: open, close: close, dayOfMonth: dayOfMonth)
+                                // we are doing this because the JSON result by day is out of order (M T W Th F Sn out of order)
+                                //currentLibrary.week[sortDictionary["\(current_day)"]!] = day
+                            }
+                        }
+                        
                         localLibraries.append(currentLibrary)
                     }
                 }
+                
+                // Display these libraries on the home page
+                self.libraries = localLibraries
+                self.activityIndicatorView.removeFromSuperview()
+                self.refreshTable()
+                
             case .failure(let error):
                 print(error)
             }
         }
-        
-        // Display these libraries on the home page
-        //self.libraries = localLibraries
-        //self.activityIndicatorView.removeFromSuperview()
-        //self.refreshTable()
     }
     
     //function to refresh Table since the GET request used is ASYNCHRONOUS
