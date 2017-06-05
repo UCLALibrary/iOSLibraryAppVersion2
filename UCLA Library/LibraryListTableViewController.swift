@@ -201,7 +201,6 @@ class LibraryListTableViewController: UITableViewController {
             .responseJSON {
                 response in switch response.result {
                 case .success(let JSON):
-                    print("yAY")
                     var localLibraries:[Library] = []
                     
                     //if let chain is to ensure SECURE unwraping
