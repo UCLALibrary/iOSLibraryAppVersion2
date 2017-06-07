@@ -240,6 +240,10 @@ class LibraryListTableViewController: UITableViewController {
                                                 currentLibrary.availableLaptops = nLaptops as Int!
                                             }
                                         }
+                                        
+                                        else if tempKey == "geo" {
+                                            continue
+                                        }
                                             
                                         else {
                                             
